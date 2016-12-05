@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		EBF304801DF62A8E00AD50D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3047F1DF62A8E00AD50D0 /* AppDelegate.swift */; };
-		EBF304821DF62A8E00AD50D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF304811DF62A8E00AD50D0 /* ViewController.swift */; };
 		EBF304851DF62A8E00AD50D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBF304831DF62A8E00AD50D0 /* Main.storyboard */; };
 		EBF304871DF62A8E00AD50D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBF304861DF62A8E00AD50D0 /* Assets.xcassets */; };
 		EBF3048A1DF62A8E00AD50D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBF304881DF62A8E00AD50D0 /* LaunchScreen.storyboard */; };
 		EBF304951DF62A8F00AD50D0 /* MockSoloTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF304941DF62A8F00AD50D0 /* MockSoloTests.swift */; };
 		EBF304A01DF62A8F00AD50D0 /* MockSoloUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3049F1DF62A8F00AD50D0 /* MockSoloUITests.swift */; };
+		EBF304AE1DF62EB300AD50D0 /* MSADraftPlayersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF304AD1DF62EB300AD50D0 /* MSADraftPlayersTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +36,6 @@
 /* Begin PBXFileReference section */
 		EBF3047C1DF62A8E00AD50D0 /* MockSolo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MockSolo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBF3047F1DF62A8E00AD50D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EBF304811DF62A8E00AD50D0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EBF304841DF62A8E00AD50D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EBF304861DF62A8E00AD50D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EBF304891DF62A8E00AD50D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +46,7 @@
 		EBF3049B1DF62A8F00AD50D0 /* MockSoloUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MockSoloUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBF3049F1DF62A8F00AD50D0 /* MockSoloUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSoloUITests.swift; sourceTree = "<group>"; };
 		EBF304A11DF62A8F00AD50D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBF304AD1DF62EB300AD50D0 /* MSADraftPlayersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSADraftPlayersTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +98,11 @@
 			isa = PBXGroup;
 			children = (
 				EBF3047F1DF62A8E00AD50D0 /* AppDelegate.swift */,
-				EBF304811DF62A8E00AD50D0 /* ViewController.swift */,
 				EBF304831DF62A8E00AD50D0 /* Main.storyboard */,
 				EBF304861DF62A8E00AD50D0 /* Assets.xcassets */,
 				EBF304881DF62A8E00AD50D0 /* LaunchScreen.storyboard */,
 				EBF3048B1DF62A8F00AD50D0 /* Info.plist */,
+				EBF304AD1DF62EB300AD50D0 /* MSADraftPlayersTableViewController.swift */,
 			);
 			path = MockSolo;
 			sourceTree = "<group>";
@@ -262,7 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBF304821DF62A8E00AD50D0 /* ViewController.swift in Sources */,
+				EBF304AE1DF62EB300AD50D0 /* MSADraftPlayersTableViewController.swift in Sources */,
 				EBF304801DF62A8E00AD50D0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
