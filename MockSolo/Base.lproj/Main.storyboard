@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Draft Players View Controller-->
         <scene sceneID="OAu-vG-EEY">
             <objects>
-                <viewController id="D7Z-nL-cQs" sceneMemberID="viewController">
+                <viewController id="D7Z-nL-cQs" customClass="MSADraftPlayersViewController" customModule="MockSolo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="u9v-Ge-4iX"/>
                         <viewControllerLayoutGuide type="bottom" id="Il4-hs-ioc"/>
@@ -41,6 +41,10 @@
                             <constraint firstItem="M3l-aS-Sip" firstAttribute="leading" secondItem="I1f-4T-PJ1" secondAttribute="leading" id="fyT-f4-VTH"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="draftPlayersSearchBar" destination="M3l-aS-Sip" id="sB1-09-ACe"/>
+                        <outlet property="draftPlayersTableView" destination="R0z-yP-GVJ" id="kuw-Q7-lhg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HGB-2s-7Vp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
