@@ -47,6 +47,10 @@ extension DraftPlayersViewController: UITableViewDataSource {
     let cellReuseIdentifier = "PlayerCell"
     let cell: PlayerCell = PlayerCell(style: .default, reuseIdentifier: cellReuseIdentifier)
     let rank = Int(indexPath[1]) + 1
+    
+    cell.playerRankLabel?.text = String(rank)
+    cell.playerRankLabel.sizeToFit()
+    
     cell.playerNameLabel?.text = playerList[rank]?["name"]
     cell.playerNameLabel?.sizeToFit()
 
