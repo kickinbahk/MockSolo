@@ -20,17 +20,13 @@ class PlayerCell: UITableViewCell {
     playerNameLabel = UILabel()
     
     let labelHeight: CGFloat = 30
-    let labelWidth: CGFloat = 150
+    let labelWidth: CGFloat = 70
     
-    playerNameLabel.frame = CGRect(x: 20, y: 0, width: labelWidth, height: labelHeight)
+    playerNameLabel.frame = CGRect(x: 20, y: 5, width: labelWidth, height: labelHeight)
     playerNameLabel.textColor = UIColor.black
     contentView.addSubview(playerNameLabel)
   }
   
-  override func awakeFromNib() {
-    super.awakeFromNib()
-    // Initialization code
-  }
 
   override func setSelected(_ selected: Bool, animated: Bool) {
     super.setSelected(selected, animated: animated)

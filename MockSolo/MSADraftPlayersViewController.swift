@@ -14,8 +14,8 @@ class DraftPlayersViewController: UIViewController {
   @IBOutlet weak var draftPlayersTableView: UITableView!
   
   var playerList: [Int: [String: String]] = [
-    0: ["name": "Carlos Correa"],
-    1: ["name": "Clayton Kershaw"],
+    1: ["name": "Carlos Correa"],
+    2: ["name": "Clayton Kershaw"],
     
   ]
   
@@ -26,7 +26,9 @@ class DraftPlayersViewController: UIViewController {
     draftPlayersTableView.dataSource = self
 
     draftPlayersTableView.contentInset = UIEdgeInsets(top: 64, left: 0, bottom: 0, right: 0)
-    // Do any additional setup after loading the view.
+    draftPlayersTableView.rowHeight = 70
+    
+    draftPlayersTableView.layoutIfNeeded()
   }
 
   // MARK: - Memory Warning
@@ -44,14 +46,21 @@ extension DraftPlayersViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cellReuseIdentifier = "PlayerCell"
     let cell: PlayerCell = PlayerCell(style: .default, reuseIdentifier: cellReuseIdentifier)
-    print(indexPath[1])
-    cell.playerNameLabel?.text = playerList[Int(indexPath[1])]!["name"]!
+    let rank = Int(indexPath[1]) + 1
+    cell.playerNameLabel?.text = playerList[rank]?["name"]
+    cell.playerNameLabel?.sizeToFit()
 
-    
     return cell
   }
+  
+
 }
 
 extension DraftPlayersViewController: UITableViewDelegate {
-  
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return 100.0
+  }
 }
+
+
+
