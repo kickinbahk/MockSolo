@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MSADraftPlayersViewController: UIViewController {
+class DraftPlayersViewController: UIViewController {
 
   @IBOutlet weak var draftPlayersSearchBar: UISearchBar!
   @IBOutlet weak var draftPlayersTableView: UITableView!
@@ -25,4 +25,12 @@ class MSADraftPlayersViewController: UIViewController {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
+}
+
+extension DraftPlayersViewController: UITableViewDataSource {
+  
+}
+
+extension DraftPlayersViewController: UITableViewDelegate {
+  
 }

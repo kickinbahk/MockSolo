@@ -12,7 +12,7 @@
         <!--Draft Players View Controller-->
         <scene sceneID="OAu-vG-EEY">
             <objects>
-                <viewController id="D7Z-nL-cQs" customClass="MSADraftPlayersViewController" customModule="MockSolo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="D7Z-nL-cQs" customClass="DraftPlayersViewController" customModule="MockSolo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="u9v-Ge-4iX"/>
                         <viewControllerLayoutGuide type="bottom" id="Il4-hs-ioc"/>

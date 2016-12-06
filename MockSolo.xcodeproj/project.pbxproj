@@ -14,6 +14,7 @@
 		EBF304951DF62A8F00AD50D0 /* MockSoloTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF304941DF62A8F00AD50D0 /* MockSoloTests.swift */; };
 		EBF304A01DF62A8F00AD50D0 /* MockSoloUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3049F1DF62A8F00AD50D0 /* MockSoloUITests.swift */; };
 		EBF304B01DF6352A00AD50D0 /* MSADraftPlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF304AF1DF6352A00AD50D0 /* MSADraftPlayersViewController.swift */; };
+		EBF304B21DF6385500AD50D0 /* MSAPlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF304B11DF6385500AD50D0 /* MSAPlayerCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		EBF3049F1DF62A8F00AD50D0 /* MockSoloUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSoloUITests.swift; sourceTree = "<group>"; };
 		EBF304A11DF62A8F00AD50D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBF304AF1DF6352A00AD50D0 /* MSADraftPlayersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSADraftPlayersViewController.swift; sourceTree = "<group>"; };
+		EBF304B11DF6385500AD50D0 /* MSAPlayerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSAPlayerCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				EBF304881DF62A8E00AD50D0 /* LaunchScreen.storyboard */,
 				EBF3048B1DF62A8F00AD50D0 /* Info.plist */,
 				EBF304AF1DF6352A00AD50D0 /* MSADraftPlayersViewController.swift */,
+				EBF304B11DF6385500AD50D0 /* MSAPlayerCell.swift */,
 			);
 			path = MockSolo;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBF304B21DF6385500AD50D0 /* MSAPlayerCell.swift in Sources */,
 				EBF304801DF62A8E00AD50D0 /* AppDelegate.swift in Sources */,
 				EBF304B01DF6352A00AD50D0 /* MSADraftPlayersViewController.swift in Sources */,
 			);
