@@ -9,27 +9,27 @@
 import UIKit
 
 class PlayerCell: UITableViewCell {
-  var playerNameLabel: UILabel = UILabel()
-  
-  override init(style: UITableViewCell, reuseIdentifier: String?) {
-    super.init(style: style, reuseIdentifier: reuseIdentifier)
-    
-    self.contentView.addSubview(playerNameLabel)
-  }
+  var playerNameLabel: UILabel!
 
   required init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
+    fatalError("init(coder)")
+  }
+  
+  override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    super.init(style: style, reuseIdentifier: reuseIdentifier)
+    playerNameLabel = UILabel()
+    
+    let labelHeight: CGFloat = 30
+    let labelWidth: CGFloat = 150
+    
+    playerNameLabel.frame = CGRect(x: 20, y: 0, width: labelWidth, height: labelHeight)
+    playerNameLabel.textColor = UIColor.black
+    contentView.addSubview(playerNameLabel)
   }
   
   override func awakeFromNib() {
     super.awakeFromNib()
     // Initialization code
-  }
-  
-  override func layoutSubviews() {
-    super.layoutSubviews()
-    
-    playerNameLabel.frame = CGRectMake(20, 10, self.bounds.size.width - 40, 25)
   }
 
   override func setSelected(_ selected: Bool, animated: Bool) {
