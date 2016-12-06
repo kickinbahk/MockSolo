@@ -13,9 +13,9 @@ class DraftPlayersViewController: UIViewController {
   @IBOutlet weak var draftPlayersSearchBar: UISearchBar!
   @IBOutlet weak var draftPlayersTableView: UITableView!
   
-  var playerList: [Int: [String: String]] = [
-    1: ["name": "Carlos Correa"],
-    2: ["name": "Clayton Kershaw"],
+  var playerList: [Int: [String: Any]] = [
+    1: ["name": "Carlos Correa", "position": ["SS"], "team": "CHC"],
+    2: ["name": "Clayton Kershaw", "position": ["SP"], "team": "LAD"],
     
   ]
   
@@ -51,7 +51,7 @@ extension DraftPlayersViewController: UITableViewDataSource {
     cell.playerRankLabel?.text = String(rank)
     cell.playerRankLabel.sizeToFit()
     
-    cell.playerNameLabel?.text = playerList[rank]?["name"]
+    cell.playerNameLabel?.text = playerList[rank]?["name"] as? String
     cell.playerNameLabel?.sizeToFit()
 
     return cell
