@@ -11,6 +11,7 @@ import UIKit
 class PlayerCell: UITableViewCell {
   var playerNameLabel: UILabel! = UILabel()
   var playerRankLabel: UILabel! = UILabel()
+  var playerTeamLabel: UILabel! = UILabel()
   var playerPositionLabel: UILabel! = UILabel ()
   
   struct PlayerNameLabelProps {
@@ -27,13 +28,22 @@ class PlayerCell: UITableViewCell {
     static let labelY: CGFloat = 18
   }
   
-  struct PlayerPositionLabelProps {
+  struct PlayerTeamLabelProps {
     static let labelWidth: CGFloat = 70
     static let labelHeight: CGFloat = 30
     static let labelX: CGFloat = 60
     static let labelY: CGFloat = 40
     static let opacity: CGFloat = 0.5
   }
+  
+  struct PlayerPositionLabelProps {
+    static let labelWidth: CGFloat = 70
+    static let labelHeight: CGFloat = 30
+    static let labelX: CGFloat = 120
+    static let labelY: CGFloat = 40
+    static let opacity: CGFloat = 0.5
+  }
+  
 
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder)")
@@ -55,6 +65,12 @@ class PlayerCell: UITableViewCell {
     playerRankLabel.textColor = UIColor.black
     playerRankLabel.font = UIFont.boldSystemFont(ofSize: 20)
     
+    playerTeamLabel.frame = CGRect(x: PlayerTeamLabelProps.labelX,
+                                       y: PlayerTeamLabelProps.labelY,
+                                       width: PlayerTeamLabelProps.labelWidth,
+                                       height: PlayerTeamLabelProps.labelHeight)
+    playerTeamLabel.textColor = UIColor.black.withAlphaComponent(PlayerTeamLabelProps.opacity)
+    
     playerPositionLabel.frame = CGRect(x: PlayerPositionLabelProps.labelX,
                                        y: PlayerPositionLabelProps.labelY,
                                        width: PlayerPositionLabelProps.labelWidth,
@@ -63,6 +79,7 @@ class PlayerCell: UITableViewCell {
     
     contentView.addSubview(playerNameLabel)
     contentView.addSubview(playerRankLabel)
+    contentView.addSubview(playerTeamLabel)
     contentView.addSubview(playerPositionLabel)
   }
   

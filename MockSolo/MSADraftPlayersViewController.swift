@@ -57,9 +57,13 @@ extension DraftPlayersViewController: UITableViewDataSource {
     
     cell.playerNameLabel?.text = playerList[rank]?["name"] as? String
     cell.playerNameLabel?.sizeToFit()
+
+    cell.playerTeamLabel?.text = playerList[rank]?["team"] as? String
+    cell.playerTeamLabel?.sizeToFit()
     
     cell.playerPositionLabel?.text = positionList
     cell.playerPositionLabel?.sizeToFit()
+    
 
     return cell
   }
