@@ -16,6 +16,7 @@ class DraftPlayersViewController: UIViewController {
   var playerList: [Int: [String: Any]] = [
     1: ["name": "Carlos Correa", "position": ["SS"], "team": "CHC"],
     2: ["name": "Clayton Kershaw", "position": ["SP"], "team": "LAD"],
+    3: ["name": "Jonathan Villar", "position": ["SS", "2B", "3B"], "team": "MIL"]
     
   ]
   
@@ -46,17 +47,28 @@ extension DraftPlayersViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cellReuseIdentifier = "PlayerCell"
     let cell: PlayerCell = PlayerCell(style: .default, reuseIdentifier: cellReuseIdentifier)
+    
     let rank = Int(indexPath[1]) + 1
+    let positionArray = playerList[rank]?["position"] as! [String]
+    let positionList = positionArray.joined(separator: ", ")
     
     cell.playerRankLabel?.text = String(rank)
-    cell.playerRankLabel.sizeToFit()
+    cell.playerRankLabel?.sizeToFit()
     
     cell.playerNameLabel?.text = playerList[rank]?["name"] as? String
     cell.playerNameLabel?.sizeToFit()
+    
+    cell.playerPositionLabel?.text = positionList
+    cell.playerPositionLabel?.sizeToFit()
 
     return cell
   }
   
+  func positionArrayToString(_ array: [String]) -> String {
+    let positionString = array.joined(separator: ", ")
+    print(positionString)
+    return positionString
+  }
 
 }
 
