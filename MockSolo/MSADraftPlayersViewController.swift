@@ -13,12 +13,7 @@ class DraftPlayersViewController: UIViewController {
   @IBOutlet weak var draftPlayersSearchBar: UISearchBar!
   @IBOutlet weak var draftPlayersTableView: UITableView!
   
-  var playerList: [Int: [String: Any]] = [
-    1: ["name": "Carlos Correa", "position": ["SS"], "team": "CHC"],
-    2: ["name": "Clayton Kershaw", "position": ["SP"], "team": "LAD"],
-    3: ["name": "Jonathan Villar", "position": ["SS", "2B", "3B"], "team": "MIL"]
-    
-  ]
+  var playerList = Players()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -41,7 +36,7 @@ class DraftPlayersViewController: UIViewController {
 
 extension DraftPlayersViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return playerList.count
+    return playerList.espnTopPlayerList.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -49,16 +44,19 @@ extension DraftPlayersViewController: UITableViewDataSource {
     let cell: PlayerCell = PlayerCell(style: .default, reuseIdentifier: cellReuseIdentifier)
     
     let rank = Int(indexPath[1]) + 1
-    let positionArray = playerList[rank]?["position"] as! [String]
+    let positionArray = playerList.espnTopPlayerList[rank]?["position"] as! [String]
     let positionList = positionArray.joined(separator: ", ")
+    
+    let playerTeam = playerList.espnTopPlayerList[rank]?["team"] as? String
+    let playerName = playerList.espnTopPlayerList[rank]?["name"] as? String
     
     cell.playerRankLabel?.text = String(rank)
     cell.playerRankLabel?.sizeToFit()
     
-    cell.playerNameLabel?.text = playerList[rank]?["name"] as? String
+    cell.playerNameLabel?.text = playerName
     cell.playerNameLabel?.sizeToFit()
 
-    cell.playerTeamLabel?.text = playerList[rank]?["team"] as? String
+    cell.playerTeamLabel?.text = playerTeam
     cell.playerTeamLabel?.sizeToFit()
     
     cell.playerPositionLabel?.text = positionList
@@ -68,12 +66,6 @@ extension DraftPlayersViewController: UITableViewDataSource {
     return cell
   }
   
-  func positionArrayToString(_ array: [String]) -> String {
-    let positionString = array.joined(separator: ", ")
-    print(positionString)
-    return positionString
-  }
-
 }
 
 extension DraftPlayersViewController: UITableViewDelegate {

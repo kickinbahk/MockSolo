@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB9D35951DF876820087BBCB /* Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9D35941DF876820087BBCB /* Players.swift */; };
 		EBF304801DF62A8E00AD50D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3047F1DF62A8E00AD50D0 /* AppDelegate.swift */; };
 		EBF304851DF62A8E00AD50D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBF304831DF62A8E00AD50D0 /* Main.storyboard */; };
 		EBF304871DF62A8E00AD50D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBF304861DF62A8E00AD50D0 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB9D35941DF876820087BBCB /* Players.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Players.swift; sourceTree = "<group>"; };
 		EBF3047C1DF62A8E00AD50D0 /* MockSolo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MockSolo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBF3047F1DF62A8E00AD50D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBF304841DF62A8E00AD50D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				EBF3048B1DF62A8F00AD50D0 /* Info.plist */,
 				EBF304AF1DF6352A00AD50D0 /* MSADraftPlayersViewController.swift */,
 				EBF304B11DF6385500AD50D0 /* MSAPlayerCell.swift */,
+				EB9D35941DF876820087BBCB /* Players.swift */,
 			);
 			path = MockSolo;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB9D35951DF876820087BBCB /* Players.swift in Sources */,
 				EBF304B21DF6385500AD50D0 /* MSAPlayerCell.swift in Sources */,
 				EBF304801DF62A8E00AD50D0 /* AppDelegate.swift in Sources */,
 				EBF304B01DF6352A00AD50D0 /* MSADraftPlayersViewController.swift in Sources */,
@@ -516,6 +520,7 @@
 				EBF304A61DF62A8F00AD50D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EBF304A71DF62A8F00AD50D0 /* Build configuration list for PBXNativeTarget "MockSoloTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +529,7 @@
 				EBF304A91DF62A8F00AD50D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EBF304AA1DF62A8F00AD50D0 /* Build configuration list for PBXNativeTarget "MockSoloUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +538,7 @@
 				EBF304AC1DF62A8F00AD50D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
