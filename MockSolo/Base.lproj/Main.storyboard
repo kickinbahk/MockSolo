@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="D7Z-nL-cQs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="UO8-YB-OIP">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Draft Players View Controller-->
+        <!--Item-->
         <scene sceneID="OAu-vG-EEY">
             <objects>
                 <viewController id="D7Z-nL-cQs" customClass="DraftPlayersViewController" customModule="MockSolo" customModuleProvider="target" sceneMemberID="viewController">
@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="R0z-yP-GVJ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="M3l-aS-Sip">
@@ -41,6 +41,7 @@
                             <constraint firstItem="M3l-aS-Sip" firstAttribute="leading" secondItem="I1f-4T-PJ1" secondAttribute="leading" id="fyT-f4-VTH"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="gJO-yn-4mg"/>
                     <connections>
                         <outlet property="draftPlayersSearchBar" destination="M3l-aS-Sip" id="sB1-09-ACe"/>
                         <outlet property="draftPlayersTableView" destination="R0z-yP-GVJ" id="kuw-Q7-lhg"/>
@@ -48,7 +49,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HGB-2s-7Vp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2507" y="76"/>
+            <point key="canvasLocation" x="3504.375" y="75"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="3vt-zd-gEG">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="UO8-YB-OIP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="m1e-He-SjT">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="D7Z-nL-cQs" kind="relationship" relationship="viewControllers" id="w6A-5z-3xg"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pcu-hZ-5hw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2506.875" y="75"/>
         </scene>
     </scenes>
 </document>
