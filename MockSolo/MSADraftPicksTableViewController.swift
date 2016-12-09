@@ -14,10 +14,20 @@ class DraftPicksTableViewController: UITableViewController {
                    "P", "P", "P", "P", "P", "P", "P", "P", "P",
                    "Bench", "Bench", "Bench"]
   
+  struct DraftPicksTableViewProps {
+    static let topContentInset: CGFloat = 10
+    static let bottomContentInset: CGFloat = 64
+    static let sideContentInset: CGFloat = 0
+    static let cellHeight: CGFloat = 54
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.tableView.contentInset = UIEdgeInsetsMake(10, 0, 64, 0)
-    self.tableView.rowHeight = 54
+    self.tableView.contentInset = UIEdgeInsetsMake(DraftPicksTableViewProps.topContentInset,
+                                                   DraftPicksTableViewProps.sideContentInset,
+                                                   DraftPicksTableViewProps.bottomContentInset,
+                                                   DraftPicksTableViewProps.sideContentInset)
+    self.tableView.rowHeight = DraftPicksTableViewProps.cellHeight
     self.tableView.allowsSelection = false
     
   }
