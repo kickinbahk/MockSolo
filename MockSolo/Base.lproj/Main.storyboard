@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Draft Players View Controller-->
         <scene sceneID="OAu-vG-EEY">
             <objects>
                 <viewController id="D7Z-nL-cQs" customClass="DraftPlayersViewController" customModule="MockSolo" customModuleProvider="target" sceneMemberID="viewController">
@@ -41,7 +41,7 @@
                             <constraint firstItem="M3l-aS-Sip" firstAttribute="leading" secondItem="I1f-4T-PJ1" secondAttribute="leading" id="fyT-f4-VTH"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="gJO-yn-4mg"/>
+                    <tabBarItem key="tabBarItem" systemItem="contacts" id="gJO-yn-4mg"/>
                     <connections>
                         <outlet property="draftPlayersSearchBar" destination="M3l-aS-Sip" id="sB1-09-ACe"/>
                         <outlet property="draftPlayersTableView" destination="R0z-yP-GVJ" id="kuw-Q7-lhg"/>
@@ -49,7 +49,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HGB-2s-7Vp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3504.375" y="75"/>
+            <point key="canvasLocation" x="3568" y="-252"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="3vt-zd-gEG">
@@ -57,16 +57,37 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="UO8-YB-OIP" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="m1e-He-SjT">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
                         <segue destination="D7Z-nL-cQs" kind="relationship" relationship="viewControllers" id="w6A-5z-3xg"/>
+                        <segue destination="BIM-Ty-Cnc" kind="relationship" relationship="viewControllers" id="naU-Rv-3rL"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pcu-hZ-5hw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2506.875" y="75"/>
+        </scene>
+        <!--Draft Picks Table View Controller-->
+        <scene sceneID="tTV-iN-dlh">
+            <objects>
+                <tableViewController id="BIM-Ty-Cnc" customClass="DraftPicksTableViewController" customModule="MockSolo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="MzT-AE-xBb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="BIM-Ty-Cnc" id="zUg-0i-Hcr"/>
+                            <outlet property="delegate" destination="BIM-Ty-Cnc" id="fG5-1V-iet"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" systemItem="mostViewed" id="AZ5-5e-OpR"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="biT-Td-0v5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3566" y="481"/>
         </scene>
     </scenes>
 </document>
