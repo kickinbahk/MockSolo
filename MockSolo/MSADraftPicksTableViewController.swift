@@ -17,6 +17,7 @@ class DraftPicksTableViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.tableView.contentInset = UIEdgeInsetsMake(10, 0, 54, 0)
+    self.tableView.allowsSelection = false
     
   }
 
