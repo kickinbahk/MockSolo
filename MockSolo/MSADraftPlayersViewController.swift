@@ -13,6 +13,13 @@ class DraftPlayersViewController: UIViewController {
   @IBOutlet weak var draftPlayersSearchBar: UISearchBar!
   @IBOutlet weak var draftPlayersTableView: UITableView!
   
+  struct DraftPlayersTableViewProps {
+    static let topContentInset: CGFloat = 64
+    static let bottomContentInset: CGFloat = 0
+    static let sideContentInset: CGFloat = 0
+    static let cellHeight: CGFloat = 70
+  }
+  
   var playerList = Players()
   
   override func viewDidLoad() {
@@ -21,8 +28,11 @@ class DraftPlayersViewController: UIViewController {
     draftPlayersTableView.delegate? = self
     draftPlayersTableView.dataSource = self
 
-    draftPlayersTableView.contentInset = UIEdgeInsets(top: 64, left: 0, bottom: 0, right: 0)
-    draftPlayersTableView.rowHeight = 70
+    draftPlayersTableView.contentInset = UIEdgeInsets(top: DraftPlayersTableViewProps.topContentInset,
+                                                      left: DraftPlayersTableViewProps.sideContentInset,
+                                                      bottom: DraftPlayersTableViewProps.bottomContentInset,
+                                                      right: DraftPlayersTableViewProps.sideContentInset)
+    draftPlayersTableView.rowHeight = DraftPlayersTableViewProps.cellHeight
     
     draftPlayersTableView.layoutIfNeeded()
   }

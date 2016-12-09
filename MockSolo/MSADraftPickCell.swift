@@ -30,7 +30,7 @@ class DraftPickCell: UITableViewCell {
                                            width: DraftPicksPositionLabelProps.labelWidth,
                                            height: DraftPicksPositionLabelProps.labelHeight)
     draftPicksPositionLabel.textColor = UIColor.black
-    draftPicksPositionLabel.font = UIFont.boldSystemFont(ofSize: 20)
+    draftPicksPositionLabel.font = UIFont.boldSystemFont(ofSize: 17)
     
     contentView.addSubview(draftPicksPositionLabel)
   }
