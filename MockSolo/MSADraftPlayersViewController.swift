@@ -17,7 +17,7 @@ class DraftPlayersViewController: UIViewController {
     static let topContentInset: CGFloat = 64
     static let bottomContentInset: CGFloat = 0
     static let sideContentInset: CGFloat = 0
-    static let cellHeight: CGFloat = 70
+    static let tableViewHeight: CGFloat = 70
   }
   
   var playerList = Players()
@@ -32,7 +32,7 @@ class DraftPlayersViewController: UIViewController {
                                                       left: DraftPlayersTableViewProps.sideContentInset,
                                                       bottom: DraftPlayersTableViewProps.bottomContentInset,
                                                       right: DraftPlayersTableViewProps.sideContentInset)
-    draftPlayersTableView.rowHeight = DraftPlayersTableViewProps.cellHeight
+    draftPlayersTableView.rowHeight = DraftPlayersTableViewProps.tableViewHeight
     
     draftPlayersTableView.layoutIfNeeded()
   }
@@ -53,7 +53,10 @@ extension DraftPlayersViewController: UITableViewDataSource {
     let cellReuseIdentifier = "PlayerCell"
     let cell: PlayerCell = PlayerCell(style: .default, reuseIdentifier: cellReuseIdentifier)
     
+    print(indexPath)
+    
     let rank = Int(indexPath[1]) + 1
+    print(playerList.espnTopPlayerList[rank]?["position"] as! [String])
     let positionArray = playerList.espnTopPlayerList[rank]?["position"] as! [String]
     let positionList = positionArray.joined(separator: ", ")
     
