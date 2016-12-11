@@ -13,6 +13,8 @@ class DraftPicksTableViewController: UITableViewController {
   var positionsArr = ["C", "1B", "2B", "SS", "2B/SS", "3B", "1B/3B", "OF", "OF", "OF", "OF", "OF", "Util",
                    "P", "P", "P", "P", "P", "P", "P", "P", "P",
                    "Bench", "Bench", "Bench"]
+
+  // TODO: Need way to add picked players to correct cell
   
   struct DraftPicksTableViewProps {
     static let topContentInset: CGFloat = 10
@@ -37,7 +39,6 @@ class DraftPicksTableViewController: UITableViewController {
   // MARK: - Table view data source
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    // #warning Incomplete implementation, return the number of rows
     return positionsArr.count
   }
 
