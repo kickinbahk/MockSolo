@@ -9,6 +9,9 @@
 import UIKit
 
 class DraftPlayersViewController: UIViewController {
+  
+  let playerList = Players()
+  var filteredPlayers = [Player]()
 
   @IBOutlet weak var draftPlayersSearchBar: UISearchBar!
   @IBOutlet weak var draftPlayersTableView: UITableView!
@@ -19,8 +22,7 @@ class DraftPlayersViewController: UIViewController {
     static let sideContentInset: CGFloat = 0
     static let cellHeight: CGFloat = 70
   }
-  
-  var playerList = Players()
+
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -38,6 +40,13 @@ class DraftPlayersViewController: UIViewController {
     
     draftPlayersTableView.layoutIfNeeded()
   }
+  
+  func filterPlayersForSearchText(searchText: String, scope: String = "All") {
+    filteredPlayers = playerList.filter { player in
+      return playerList.espnTopPlayerList.name.lowercaseString.containsSTring(searchText.lowercaseString)
+    }
+    draftPlayersTableView.reloadData()
+  }
 
   // MARK: - Memory Warning
   override func didReceiveMemoryWarning() {
@@ -54,8 +63,6 @@ extension DraftPlayersViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cellReuseIdentifier = "PlayerCell"
     let cell: PlayerCell = PlayerCell(style: .default, reuseIdentifier: cellReuseIdentifier)
-    
-    print(indexPath.row)
     
     let rank = indexPath.row + 1
     let positionArray = playerList.espnTopPlayerList[rank]?["position"] as! [String]
