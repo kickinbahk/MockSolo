@@ -98,6 +98,8 @@ class DraftPlayersViewController: UIViewController {
     draftPlayersTableView.delegate? = self
     draftPlayersTableView.dataSource = self
     
+    draftPlayersSearchBar.returnKeyType = UIReturnKeyType.done
+    draftPlayersSearchBar.enablesReturnKeyAutomatically = false
 
     draftPlayersTableView.contentInset = UIEdgeInsets(top: DraftPlayersTableViewProps.topContentInset,
                                                       left: DraftPlayersTableViewProps.sideContentInset,
@@ -182,6 +184,10 @@ extension DraftPlayersViewController: UISearchBarDelegate {
   
   func position(for bar: UIBarPositioning) -> UIBarPosition {
     return .topAttached
+  }
+  
+  func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    draftPlayersSearchBar.resignFirstResponder()
   }
 }
 
