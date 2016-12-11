@@ -13,7 +13,6 @@ class Player {
   var name: String
   var position: [String]
   var team: String
-  let espnTopPlayerList: [Int: [String: Any]]
     
   init(rank: Int, name: String, position: [String], team: String) {
     self.rank = rank
