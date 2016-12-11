@@ -17,7 +17,7 @@ class DraftPlayersViewController: UIViewController {
     static let topContentInset: CGFloat = 64
     static let bottomContentInset: CGFloat = 0
     static let sideContentInset: CGFloat = 0
-    static let tableViewHeight: CGFloat = 70
+    static let cellHeight: CGFloat = 70
   }
   
   var playerList = Players()
@@ -25,14 +25,16 @@ class DraftPlayersViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    draftPlayersSearchBar.delegate = self
     draftPlayersTableView.delegate? = self
     draftPlayersTableView.dataSource = self
+    
 
     draftPlayersTableView.contentInset = UIEdgeInsets(top: DraftPlayersTableViewProps.topContentInset,
                                                       left: DraftPlayersTableViewProps.sideContentInset,
                                                       bottom: DraftPlayersTableViewProps.bottomContentInset,
                                                       right: DraftPlayersTableViewProps.sideContentInset)
-    draftPlayersTableView.rowHeight = DraftPlayersTableViewProps.tableViewHeight
+    draftPlayersTableView.rowHeight = DraftPlayersTableViewProps.cellHeight
     
     draftPlayersTableView.layoutIfNeeded()
   }
@@ -84,6 +86,16 @@ extension DraftPlayersViewController: UITableViewDataSource {
 extension DraftPlayersViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return 100.0
+  }
+}
+
+extension DraftPlayersViewController: UISearchBarDelegate {
+  func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    print("search text is: \(draftPlayersSearchBar.text!)")
+  }
+  
+  func position(for bar: UIBarPositioning) -> UIBarPosition {
+    return .topAttached
   }
 }
 
