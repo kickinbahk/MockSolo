@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Draft Players View Controller-->
+        <!--Players-->
         <scene sceneID="OAu-vG-EEY">
             <objects>
                 <viewController id="D7Z-nL-cQs" customClass="DraftPlayersViewController" customModule="MockSolo" customModuleProvider="target" sceneMemberID="viewController">
@@ -41,7 +41,7 @@
                             <constraint firstItem="M3l-aS-Sip" firstAttribute="leading" secondItem="I1f-4T-PJ1" secondAttribute="leading" id="fyT-f4-VTH"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="contacts" id="gJO-yn-4mg"/>
+                    <tabBarItem key="tabBarItem" title="Players" id="gJO-yn-4mg" userLabel="Players"/>
                     <connections>
                         <outlet property="draftPlayersSearchBar" destination="M3l-aS-Sip" id="sB1-09-ACe"/>
                         <outlet property="draftPlayersTableView" destination="R0z-yP-GVJ" id="kuw-Q7-lhg"/>
@@ -70,7 +70,7 @@
             </objects>
             <point key="canvasLocation" x="2506.875" y="75"/>
         </scene>
-        <!--Draft Picks Table View Controller-->
+        <!--Draft Picks-->
         <scene sceneID="tTV-iN-dlh">
             <objects>
                 <tableViewController id="BIM-Ty-Cnc" customClass="DraftPicksTableViewController" customModule="MockSolo" customModuleProvider="target" sceneMemberID="viewController">
@@ -83,7 +83,7 @@
                             <outlet property="delegate" destination="BIM-Ty-Cnc" id="fG5-1V-iet"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" systemItem="mostViewed" id="AZ5-5e-OpR"/>
+                    <tabBarItem key="tabBarItem" title="Draft Picks" id="AZ5-5e-OpR" userLabel="Draft Picks"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="biT-Td-0v5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

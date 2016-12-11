@@ -55,10 +55,9 @@ extension DraftPlayersViewController: UITableViewDataSource {
     let cellReuseIdentifier = "PlayerCell"
     let cell: PlayerCell = PlayerCell(style: .default, reuseIdentifier: cellReuseIdentifier)
     
-    print(indexPath)
+    print(indexPath.row)
     
-    let rank = Int(indexPath[1]) + 1
-    print(playerList.espnTopPlayerList[rank]?["position"] as! [String])
+    let rank = indexPath.row + 1
     let positionArray = playerList.espnTopPlayerList[rank]?["position"] as! [String]
     let positionList = positionArray.joined(separator: ", ")
     
