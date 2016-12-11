@@ -79,7 +79,8 @@ class DraftPlayersViewController: UIViewController {
   ]
   
   var filteredPlayers = [Player]()
-
+  var searchIsActive = false
+  
   @IBOutlet weak var draftPlayersSearchBar: UISearchBar!
   @IBOutlet weak var draftPlayersTableView: UITableView!
   
@@ -110,7 +111,7 @@ class DraftPlayersViewController: UIViewController {
   
   func filterPlayersForSearchText(searchText: String, scope: String = "All") {
     filteredPlayers = playerList.filter { player in
-      return playerList.espnTopPlayerList.name.lowercaseString.containsSTring(searchText.lowercaseString)
+      return player.name.lowercased().contains(searchText.lowercased())
     }
     draftPlayersTableView.reloadData()
   }
@@ -124,30 +125,35 @@ class DraftPlayersViewController: UIViewController {
 
 extension DraftPlayersViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return filteredPlayers.count
+    
+    if searchIsActive && draftPlayersSearchBar.text != "" {
+      return filteredPlayers.count
+    }
+    return playerList.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cellReuseIdentifier = "PlayerCell"
     let cell: PlayerCell = PlayerCell(style: .default, reuseIdentifier: cellReuseIdentifier)
     
-    let rank = indexPath.row + 1
-    let positionArray = playerList.espnTopPlayerList[rank]?["position"] as! [String]
-    let positionList = positionArray.joined(separator: ", ")
+    let player: Player
     
-    let playerTeam = playerList.espnTopPlayerList[rank]?["team"] as? String
-    let playerName = playerList.espnTopPlayerList[rank]?["name"] as? String
+    if searchIsActive && draftPlayersSearchBar.text != "" {
+      player = filteredPlayers[indexPath.row]
+    } else {
+      player = playerList[indexPath.row]
+    }
     
-    cell.playerRankLabel?.text = String(rank)
+    cell.playerRankLabel?.text = String(player.rank)
     cell.playerRankLabel?.sizeToFit()
     
-    cell.playerNameLabel?.text = playerName
+    cell.playerNameLabel?.text = player.name
     cell.playerNameLabel?.sizeToFit()
 
-    cell.playerTeamLabel?.text = playerTeam
+    cell.playerTeamLabel?.text = player.team
     cell.playerTeamLabel?.sizeToFit()
     
-    cell.playerPositionLabel?.text = positionList
+    cell.playerPositionLabel?.text = player.position.joined(separator: ", ")
     cell.playerPositionLabel?.sizeToFit()
     
 
@@ -163,8 +169,16 @@ extension DraftPlayersViewController: UITableViewDelegate {
 }
 
 extension DraftPlayersViewController: UISearchBarDelegate {
-  func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-    print("search text is: \(draftPlayersSearchBar.text!)")
+  func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    filterPlayersForSearchText(searchText: searchText)
+  }
+  
+  func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+    searchIsActive = true
+  }
+  
+  func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+    searchIsActive = false
   }
   
   func position(for bar: UIBarPositioning) -> UIBarPosition {
