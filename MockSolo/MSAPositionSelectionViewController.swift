@@ -18,7 +18,7 @@ class PositionSelectionViewController: UIViewController {
     static let redness: CGFloat = 46/255
     static let greeness: CGFloat = 60/255
     static let blueness: CGFloat = 70/255
-    static let opacity: CGFloat = 1
+    static let opacity: CGFloat = 0.95
   }
   
   required init?(coder aDecoder: NSCoder) {
