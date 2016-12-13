@@ -11,6 +11,10 @@ import UIKit
 class PositionSelectionViewController: UIViewController {
   var isPopUp = false
   
+  struct PopUpViewProps {
+    static let radius: CGFloat = 10
+  }
+  
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     modalPresentationStyle = .custom
@@ -26,9 +30,9 @@ class PositionSelectionViewController: UIViewController {
     
     
     popUpView.frame = CGRect(x: 0, y: 0,
-                         width: view.frame.width / 1.5, height: view.frame.height - 400)
-    popUpView.backgroundColor = .blue
-    popUpView.layer.cornerRadius = 10
+                         width: self.view.frame.width / 1.5, height: self.view.frame.height - 400)
+    popUpView.backgroundColor = .gray
+    popUpView.layer.cornerRadius = PopUpViewProps.radius
     popUpView.center = CGPoint(x: self.view.center.x, y: self.view.center.y)
     view.addSubview(popUpView)
     
