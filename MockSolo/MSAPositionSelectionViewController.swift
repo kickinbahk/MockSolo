@@ -9,19 +9,27 @@
 import UIKit
 
 class PositionSelectionViewController: UIViewController {
-
+//  var rootViewController = UIApplication.shared.delegate?.window!.rootViewController!
+//  rootViewController.modalPresentationStyle = .currentContext
+//  var destinationController: UIViewController!
+  
+  required init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+    modalPresentationStyle = .custom
+    transitioningDelegate = self
+  }
   
   override func viewDidLoad() {
+
     super.viewDidLoad()
-    view = self.view
-    view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+    view.backgroundColor = UIColor.clear
 
 //    let popUp = UIView()
 //    
 //    
 //    popUp.frame = CGRect(x: 0, y: 0, width: 400, height: 400)
 //    popUp.backgroundColor = .gray
-//
+//  
     // view.addSubview(popUp)
   
   }
@@ -32,4 +40,10 @@ class PositionSelectionViewController: UIViewController {
       // Dispose of any resources that can be recreated.
   }
 
+}
+
+extension PositionSelectionViewController: UIViewControllerTransitioningDelegate {
+  func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+    return DimmingPresentationController(presentedViewController: presented, presenting: presenting)
+  }
 }

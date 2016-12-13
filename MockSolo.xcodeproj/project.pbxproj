@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		EB013BA11DFF6713006A8A29 /* MSAPositionSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB013BA01DFF6713006A8A29 /* MSAPositionSelectionViewController.swift */; };
+		EB013BA31E004638006A8A29 /* MSADimmingPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB013BA21E004638006A8A29 /* MSADimmingPresentationController.swift */; };
+		EB013BA51E004693006A8A29 /* MSAGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB013BA41E004693006A8A29 /* MSAGradientView.swift */; };
 		EB5C02A91DFB03880078253C /* MSADraftPicksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5C02A81DFB03880078253C /* MSADraftPicksTableViewController.swift */; };
 		EB5C02AB1DFB05280078253C /* MSADraftPickCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5C02AA1DFB05280078253C /* MSADraftPickCell.swift */; };
 		EB9D35951DF876820087BBCB /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9D35941DF876820087BBCB /* Player.swift */; };
@@ -40,6 +42,8 @@
 
 /* Begin PBXFileReference section */
 		EB013BA01DFF6713006A8A29 /* MSAPositionSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSAPositionSelectionViewController.swift; sourceTree = "<group>"; };
+		EB013BA21E004638006A8A29 /* MSADimmingPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSADimmingPresentationController.swift; sourceTree = "<group>"; };
+		EB013BA41E004693006A8A29 /* MSAGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSAGradientView.swift; sourceTree = "<group>"; };
 		EB5C02A81DFB03880078253C /* MSADraftPicksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSADraftPicksTableViewController.swift; sourceTree = "<group>"; };
 		EB5C02AA1DFB05280078253C /* MSADraftPickCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSADraftPickCell.swift; sourceTree = "<group>"; };
 		EB9D35941DF876820087BBCB /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
@@ -118,6 +122,8 @@
 				EB5C02A81DFB03880078253C /* MSADraftPicksTableViewController.swift */,
 				EB5C02AA1DFB05280078253C /* MSADraftPickCell.swift */,
 				EB013BA01DFF6713006A8A29 /* MSAPositionSelectionViewController.swift */,
+				EB013BA21E004638006A8A29 /* MSADimmingPresentationController.swift */,
+				EB013BA41E004693006A8A29 /* MSAGradientView.swift */,
 			);
 			path = MockSolo;
 			sourceTree = "<group>";
@@ -277,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB013BA51E004693006A8A29 /* MSAGradientView.swift in Sources */,
 				EB9D35951DF876820087BBCB /* Player.swift in Sources */,
 				EB5C02A91DFB03880078253C /* MSADraftPicksTableViewController.swift in Sources */,
 				EBF304B21DF6385500AD50D0 /* MSAPlayerCell.swift in Sources */,
@@ -284,6 +291,7 @@
 				EB013BA11DFF6713006A8A29 /* MSAPositionSelectionViewController.swift in Sources */,
 				EB5C02AB1DFB05280078253C /* MSADraftPickCell.swift in Sources */,
 				EBF304B01DF6352A00AD50D0 /* MSADraftPlayersViewController.swift in Sources */,
+				EB013BA31E004638006A8A29 /* MSADimmingPresentationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
