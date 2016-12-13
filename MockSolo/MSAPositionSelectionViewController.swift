@@ -13,6 +13,12 @@ class PositionSelectionViewController: UIViewController {
   
   struct PopUpViewProps {
     static let radius: CGFloat = 10
+    static let blueGray = UIColor(red: redness, green: greeness, blue: blueness, alpha: opacity)  // Hex: #7698B3
+    
+    static let redness: CGFloat = 46/255
+    static let greeness: CGFloat = 60/255
+    static let blueness: CGFloat = 70/255
+    static let opacity: CGFloat = 1
   }
   
   required init?(coder aDecoder: NSCoder) {
@@ -30,8 +36,9 @@ class PositionSelectionViewController: UIViewController {
     
     
     popUpView.frame = CGRect(x: 0, y: 0,
-                         width: self.view.frame.width / 1.5, height: self.view.frame.height - 400)
-    popUpView.backgroundColor = .gray
+                         width: self.view.frame.width / 1.5,
+                         height: self.view.frame.height - 400)
+    popUpView.backgroundColor = PopUpViewProps.blueGray
     popUpView.layer.cornerRadius = PopUpViewProps.radius
     popUpView.center = CGPoint(x: self.view.center.x, y: self.view.center.y)
     view.addSubview(popUpView)
