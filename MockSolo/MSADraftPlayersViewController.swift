@@ -95,7 +95,7 @@ class DraftPlayersViewController: UIViewController {
     super.viewDidLoad()
     
     draftPlayersSearchBar.delegate = self
-    draftPlayersTableView.delegate? = self
+    draftPlayersTableView.delegate = self
     draftPlayersTableView.dataSource = self
     
     draftPlayersSearchBar.returnKeyType = UIReturnKeyType.done
@@ -108,6 +108,15 @@ class DraftPlayersViewController: UIViewController {
     draftPlayersTableView.rowHeight = DraftPlayersTableViewProps.cellHeight
     
     draftPlayersTableView.layoutIfNeeded()
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "PositionSelection" {
+      let positionSelectionController = segue.destination as! PositionSelectionViewController
+      let indexPath = sender as! IndexPath
+      print(positionSelectionController)
+      print(indexPath.row)
+    }
   }
   
   func filterPlayersForSearchText(searchText: String, scope: String = "All") {
@@ -164,8 +173,9 @@ extension DraftPlayersViewController: UITableViewDataSource {
 }
 
 extension DraftPlayersViewController: UITableViewDelegate {
-  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return 100.0
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    draftPlayersTableView.deselectRow(at: indexPath, animated: true)
+    performSegue(withIdentifier: "PositionSelection", sender: indexPath)
   }
 }
 

@@ -45,16 +45,17 @@
                     <connections>
                         <outlet property="draftPlayersSearchBar" destination="M3l-aS-Sip" id="sB1-09-ACe"/>
                         <outlet property="draftPlayersTableView" destination="R0z-yP-GVJ" id="kuw-Q7-lhg"/>
+                        <segue destination="e9r-6U-ybr" kind="presentation" identifier="PositionSelection" id="HXt-qx-cIq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HGB-2s-7Vp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3568" y="-252"/>
         </scene>
-        <!--Position-->
+        <!--Position Selection-->
         <scene sceneID="WRL-02-uTo">
             <objects>
-                <viewController storyboardIdentifier="PositionSelection" id="e9r-6U-ybr" userLabel="Position" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PositionSelection" id="e9r-6U-ybr" userLabel="Position Selection" customClass="PositionSelectionViewController" customModule="MockSolo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bC2-wq-BIx"/>
                         <viewControllerLayoutGuide type="bottom" id="z4k-K4-gFf"/>

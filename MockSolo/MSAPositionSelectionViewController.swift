@@ -1,5 +1,5 @@
 //
-//  PositionSelectionViewController.swift
+//  MSAPositionSelectionViewController.swift
 //  MockSolo
 //
 //  Created by Josiah Mory on 12/12/16.
@@ -12,13 +12,15 @@ class PositionSelectionViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
     let popUp = UIView()
     
-    popUp.frame = CGRect(x: 0, y: 0, width: 400, height: 400)
     
-    view.addSubview(popUp)
-
-    // Do any additional setup after loading the view.
+    popUp.frame = CGRect(x: 0, y: 0, width: 400, height: 400)
+    popUp.backgroundColor = .gray
+    
+    // view.addSubview(popUp)
+  
   }
 
   // MARK: - Navigation
