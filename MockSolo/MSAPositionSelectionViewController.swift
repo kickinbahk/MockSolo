@@ -10,15 +10,18 @@ import UIKit
 
 class PositionSelectionViewController: UIViewController {
 
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
-    let popUp = UIView()
-    
-    
-    popUp.frame = CGRect(x: 0, y: 0, width: 400, height: 400)
-    popUp.backgroundColor = .gray
-    
+    view = self.view
+    view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+
+//    let popUp = UIView()
+//    
+//    
+//    popUp.frame = CGRect(x: 0, y: 0, width: 400, height: 400)
+//    popUp.backgroundColor = .gray
+//
     // view.addSubview(popUp)
   
   }
