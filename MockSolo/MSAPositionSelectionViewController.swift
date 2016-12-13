@@ -9,9 +9,7 @@
 import UIKit
 
 class PositionSelectionViewController: UIViewController {
-//  var rootViewController = UIApplication.shared.delegate?.window!.rootViewController!
-//  rootViewController.modalPresentationStyle = .currentContext
-//  var destinationController: UIViewController!
+  var isPopUp = false
   
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
@@ -24,14 +22,27 @@ class PositionSelectionViewController: UIViewController {
     super.viewDidLoad()
     view.backgroundColor = UIColor.clear
 
-//    let popUp = UIView()
-//    
-//    
-//    popUp.frame = CGRect(x: 0, y: 0, width: 400, height: 400)
-//    popUp.backgroundColor = .gray
-//  
-    // view.addSubview(popUp)
+    let popUpView = UIView()
+    
+    
+    popUpView.frame = CGRect(x: 0, y: 0,
+                         width: view.frame.width / 1.5, height: view.frame.height - 400)
+    popUpView.backgroundColor = .blue
+    popUpView.layer.cornerRadius = 10
+    popUpView.center = CGPoint(x: self.view.center.x, y: self.view.center.y)
+    view.addSubview(popUpView)
+    
+    if isPopUp {
+      let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(close))
+      gestureRecognizer.cancelsTouchesInView = false
+      gestureRecognizer.delegate = self
+      view.addGestureRecognizer(gestureRecognizer)
+    }
   
+  }
+  
+  @IBAction func close(_ sender: Any) {
+    dismiss(animated: true, completion: nil)
   }
 
   // MARK: - Navigation
@@ -45,5 +56,11 @@ class PositionSelectionViewController: UIViewController {
 extension PositionSelectionViewController: UIViewControllerTransitioningDelegate {
   func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
     return DimmingPresentationController(presentedViewController: presented, presenting: presenting)
+  }
+}
+
+extension PositionSelectionViewController: UIGestureRecognizerDelegate {
+  func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+    return(touch.view == self.view)
   }
 }

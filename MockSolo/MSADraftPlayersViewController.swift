@@ -114,8 +114,7 @@ class DraftPlayersViewController: UIViewController {
     if segue.identifier == "PositionSelection" {
       let positionSelectionController = segue.destination as! PositionSelectionViewController
       let indexPath = sender as! IndexPath
-      print(positionSelectionController)
-      print(indexPath.row)
+      positionSelectionController.isPopUp = true
     }
   }
   
