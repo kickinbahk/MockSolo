@@ -196,7 +196,7 @@ extension DraftPlayersViewController: UISearchBarDelegate {
   }
   
   func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-    searchIsActive = false
+    searchIsActive = true
   }
   
   func position(for bar: UIBarPositioning) -> UIBarPosition {
