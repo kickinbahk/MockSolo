@@ -19,6 +19,7 @@ class PositionSelectionViewController: UIViewController {
   }
   
   let playerNameLabel = UILabel()
+  var promptLabel = UILabel()
   
   struct PopUpViewProps {
     static let radius: CGFloat = 10
@@ -59,13 +60,18 @@ class PositionSelectionViewController: UIViewController {
                                    width: 10,
                                    height: 10)
     
-    popUpView.addSubview(playerNameLabel)
-    
+    promptLabel.frame = CGRect(x: 15,
+                               y: 40,
+                               width: 300,
+                               height: 30)
+    promptLabel.preferredMaxLayoutWidth = popUpView.bounds.width - 20
+
     if let closeImage = UIImage(named: "clear_btn") {
       closeButton.setImage(closeImage, for: [])
     }
 
-    
+    popUpView.addSubview(playerNameLabel)
+    popUpView.addSubview(promptLabel)
     popUpView.addSubview(closeButton)
     
     if isPopUp {
@@ -76,7 +82,7 @@ class PositionSelectionViewController: UIViewController {
       
       if selectedPlayer != nil {
         updateUI()
-        print(selectedPlayer)
+        popUpView.layoutIfNeeded()
       }
     }
 
@@ -90,6 +96,12 @@ class PositionSelectionViewController: UIViewController {
   func updateUI() {
     playerNameLabel.text = selectedPlayer.name
     playerNameLabel.sizeToFit()
+    
+    promptLabel.text = NSLocalizedString("What position would you like to add this player to?",
+                                    comment: "Position Pop Up Prompt")
+    promptLabel.lineBreakMode = .byWordWrapping
+    promptLabel.numberOfLines = 2
+    
   }
 
   // MARK: - Navigation
