@@ -33,8 +33,6 @@ class PositionSelectionViewController: UIViewController {
     view.backgroundColor = UIColor.clear
 
     let popUpView = UIView()
-    
-    
     popUpView.frame = CGRect(x: 0, y: 0,
                          width: self.view.frame.width / 1.5,
                          height: self.view.frame.height - 400)
@@ -42,6 +40,19 @@ class PositionSelectionViewController: UIViewController {
     popUpView.layer.cornerRadius = PopUpViewProps.radius
     popUpView.center = CGPoint(x: self.view.center.x, y: self.view.center.y)
     view.addSubview(popUpView)
+    
+    let closeButton = UIButton(type: .custom) as UIButton
+    closeButton.frame = CGRect(x: 175, y: 0, width: 40, height: 40)
+    closeButton.addTarget(self, action: #selector(PositionSelectionViewController.close(_:)), for: .touchUpInside)
+    
+    if let closeImage = UIImage(named: "clear_btn") {
+      print(closeImage)
+      closeButton.setImage(closeImage, for: [])
+    }
+    // closeButton.center = CGPoint(x: self.view.center.x, y: self.view.center.y)
+
+    
+    popUpView.addSubview(closeButton)
     
     if isPopUp {
       let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(close))
@@ -52,7 +63,7 @@ class PositionSelectionViewController: UIViewController {
   
   }
   
-  @IBAction func close(_ sender: Any) {
+  func close(_ sender: Any) {
     dismiss(animated: true, completion: nil)
   }
 
