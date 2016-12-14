@@ -10,6 +10,15 @@ import UIKit
 
 class PositionSelectionViewController: UIViewController {
   var isPopUp = false
+  var selectedPlayer: Player! {
+    didSet {
+      if isViewLoaded {
+        updateUI()
+      }
+    }
+  }
+  
+  let playerNameLabel = UILabel()
   
   struct PopUpViewProps {
     static let radius: CGFloat = 10
@@ -43,13 +52,18 @@ class PositionSelectionViewController: UIViewController {
     
     let closeButton = UIButton(type: .custom) as UIButton
     closeButton.frame = CGRect(x: 175, y: 0, width: 40, height: 40)
-    closeButton.addTarget(self, action: #selector(PositionSelectionViewController.close(_:)), for: .touchUpInside)
+    closeButton.addTarget(self, action: #selector(close), for: .touchUpInside)
+    
+    playerNameLabel.frame = CGRect(x: 15,
+                                   y: 20,
+                                   width: 10,
+                                   height: 10)
+    
+    popUpView.addSubview(playerNameLabel)
     
     if let closeImage = UIImage(named: "clear_btn") {
-      print(closeImage)
       closeButton.setImage(closeImage, for: [])
     }
-    // closeButton.center = CGPoint(x: self.view.center.x, y: self.view.center.y)
 
     
     popUpView.addSubview(closeButton)
@@ -59,12 +73,23 @@ class PositionSelectionViewController: UIViewController {
       gestureRecognizer.cancelsTouchesInView = false
       gestureRecognizer.delegate = self
       view.addGestureRecognizer(gestureRecognizer)
+      
+      if selectedPlayer != nil {
+        updateUI()
+        print(selectedPlayer)
+      }
     }
-  
+
+
   }
   
   func close(_ sender: Any) {
     dismiss(animated: true, completion: nil)
+  }
+  
+  func updateUI() {
+    playerNameLabel.text = selectedPlayer.name
+    playerNameLabel.sizeToFit()
   }
 
   // MARK: - Navigation

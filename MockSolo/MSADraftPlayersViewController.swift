@@ -114,6 +114,14 @@ class DraftPlayersViewController: UIViewController {
     if segue.identifier == "PositionSelection" {
       let positionSelectionController = segue.destination as! PositionSelectionViewController
       let indexPath = sender as! IndexPath
+      var selectedPlayer: Player
+      
+      if searchIsActive && draftPlayersSearchBar.text != "" {
+        selectedPlayer = filteredPlayers[indexPath.row]
+      } else {
+        selectedPlayer = playerList[indexPath.row]
+      }
+      positionSelectionController.selectedPlayer = selectedPlayer
       positionSelectionController.isPopUp = true
     }
   }
