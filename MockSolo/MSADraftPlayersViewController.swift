@@ -41,8 +41,8 @@ class DraftPlayersViewController: UIViewController {
     Player(rank: 29, name: "Gerrit Cole", position: ["SP"], team: "PIT"),
     Player(rank: 30, name: "George Springer", position: ["OF"], team: "HOU"),
     Player(rank: 31, name: "Corey Kluber", position: ["SP"], team: "CLE"),
-    Player(rank: 32, name: "Buster Posey", position: ["C/1B"], team: "SP"),
-    Player(rank: 33, name: "Chris Davis", position: ["1B/OF"], team: "BAL"),
+    Player(rank: 32, name: "Buster Posey", position: ["C", "1B"], team: "SP"),
+    Player(rank: 33, name: "Chris Davis", position: ["1B", "OF"], team: "BAL"),
     Player(rank: 34, name: "Jacob DeGrom", position: ["SP"], team: "NYM"),
     Player(rank: 35, name: "Matt Harvey", position: ["SP"], team: "NYM"),
     Player(rank: 36, name: "Todd Frazier", position: ["3B"], team: "CWS"),
@@ -170,7 +170,7 @@ extension DraftPlayersViewController: UITableViewDataSource {
     cell.playerTeamLabel?.text = player.team
     cell.playerTeamLabel?.sizeToFit()
     
-    cell.playerPositionLabel?.text = player.position.joined(separator: ", ")
+    cell.playerPositionLabel?.text = player.position.joined(separator: "/")
     cell.playerPositionLabel?.sizeToFit()
     
 

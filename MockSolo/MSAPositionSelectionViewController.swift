@@ -104,6 +104,7 @@ class PositionSelectionViewController: UIViewController {
     promptLabel.numberOfLines = 2
     
     let positionButtons = addPositionButtonsToPopUp(selectedPlayer.position)
+    print(selectedPlayer.position)
     for button in positionButtons {
       button.frame = CGRect(x: buttonX, y: 75, width: 40, height: 40)
       buttonX += 10.0
@@ -115,6 +116,7 @@ class PositionSelectionViewController: UIViewController {
   func addPositionButtonsToPopUp(_ positions: [String]) -> [UIButton] {
     var positionButtons = [UIButton]()
     for position in positions {
+      print(position)
       let newButton = UIButton()
       newButton.setTitle(position, for: .normal)
       positionButtons.append(newButton)
