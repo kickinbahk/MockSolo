@@ -107,7 +107,7 @@ class PositionSelectionViewController: UIViewController {
     print(selectedPlayer.position)
     for button in positionButtons {
       button.frame = CGRect(x: buttonX, y: 75, width: 40, height: 40)
-      buttonX += 10.0
+      buttonX += 20.0
       popUpView.addSubview(button)
     }
     
