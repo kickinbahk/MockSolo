@@ -19,7 +19,9 @@ class PositionSelectionViewController: UIViewController {
   }
   
   let playerNameLabel = UILabel()
-  var promptLabel = UILabel()
+  let promptLabel = UILabel()
+  let popUpView = UIView()
+  let closeButton = UIButton(type: .custom) as UIButton
   
   struct PopUpViewProps {
     static let radius: CGFloat = 10
@@ -41,8 +43,7 @@ class PositionSelectionViewController: UIViewController {
 
     super.viewDidLoad()
     view.backgroundColor = UIColor.clear
-
-    let popUpView = UIView()
+    
     popUpView.frame = CGRect(x: 0, y: 0,
                          width: self.view.frame.width / 1.5,
                          height: self.view.frame.height - 400)
@@ -51,7 +52,6 @@ class PositionSelectionViewController: UIViewController {
     popUpView.center = CGPoint(x: self.view.center.x, y: self.view.center.y)
     view.addSubview(popUpView)
     
-    let closeButton = UIButton(type: .custom) as UIButton
     closeButton.frame = CGRect(x: 175, y: 0, width: 40, height: 40)
     closeButton.addTarget(self, action: #selector(close), for: .touchUpInside)
     
@@ -94,6 +94,7 @@ class PositionSelectionViewController: UIViewController {
   }
   
   func updateUI() {
+    var buttonX: CGFloat = 15
     playerNameLabel.text = selectedPlayer.name
     playerNameLabel.sizeToFit()
     
@@ -102,6 +103,24 @@ class PositionSelectionViewController: UIViewController {
     promptLabel.lineBreakMode = .byWordWrapping
     promptLabel.numberOfLines = 2
     
+    let positionButtons = addPositionButtonsToPopUp(selectedPlayer.position)
+    for button in positionButtons {
+      button.frame = CGRect(x: buttonX, y: 75, width: 40, height: 40)
+      buttonX += 10.0
+      popUpView.addSubview(button)
+    }
+    
+  }
+  
+  func addPositionButtonsToPopUp(_ positions: [String]) -> [UIButton] {
+    var positionButtons = [UIButton]()
+    for position in positions {
+      let newButton = UIButton()
+      newButton.setTitle(position, for: .normal)
+      positionButtons.append(newButton)
+    }
+    
+    return positionButtons
   }
 
   // MARK: - Navigation
