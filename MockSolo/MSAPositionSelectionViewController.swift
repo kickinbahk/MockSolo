@@ -50,6 +50,7 @@ class PositionSelectionViewController: UIViewController {
     popUpView.backgroundColor = PopUpViewProps.blueGray
     popUpView.layer.cornerRadius = PopUpViewProps.radius
     popUpView.center = CGPoint(x: self.view.center.x, y: self.view.center.y)
+    
     view.addSubview(popUpView)
     
     closeButton.frame = CGRect(x: 175, y: 0, width: 40, height: 40)
@@ -74,6 +75,10 @@ class PositionSelectionViewController: UIViewController {
     popUpView.addSubview(promptLabel)
     popUpView.addSubview(closeButton)
     
+    closeButton.translatesAutoresizingMaskIntoConstraints = false
+    closeButton.trailingAnchor.constraint(equalTo: popUpView.trailingAnchor, constant: -15).isActive = true
+    closeButton.topAnchor.constraint(equalTo: popUpView.topAnchor, constant: 10).isActive = true
+    
     if isPopUp {
       let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(close))
       gestureRecognizer.cancelsTouchesInView = false
@@ -86,7 +91,7 @@ class PositionSelectionViewController: UIViewController {
       }
     }
 
-
+    popUpView.layoutIfNeeded()
   }
   
   func close(_ sender: Any) {
