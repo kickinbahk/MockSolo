@@ -108,14 +108,20 @@ class PositionSelectionViewController: UIViewController {
       popUpView.addSubview(button)
     }
     
-    playerNameLabel.translatesAutoresizingMaskIntoConstraints = false
-    playerNameLabel.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 5).isActive = true
-    playerNameLabel.topAnchor.constraint(equalTo: margins.topAnchor, constant: 10).isActive = true
-    dump(popUpView.topAnchor)
-    
     closeButton.translatesAutoresizingMaskIntoConstraints = false
     closeButton.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: 0).isActive = true
     closeButton.topAnchor.constraint(equalTo: margins.topAnchor, constant: -5).isActive = true
+    
+    playerNameLabel.translatesAutoresizingMaskIntoConstraints = false
+    playerNameLabel.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 5).isActive = true
+    playerNameLabel.topAnchor.constraint(equalTo: margins.topAnchor, constant: 10).isActive = true
+
+    promptLabel.translatesAutoresizingMaskIntoConstraints = false
+    promptLabel.topAnchor.constraint(equalTo: playerNameLabel.topAnchor, constant: 30).isActive = true
+    promptLabel.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 5).isActive = true
+    promptLabel.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: 0).isActive = true
+    
+
     
   }
   
