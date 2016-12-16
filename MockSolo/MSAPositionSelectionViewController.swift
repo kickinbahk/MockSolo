@@ -43,41 +43,10 @@ class PositionSelectionViewController: UIViewController {
 
     super.viewDidLoad()
     view.backgroundColor = UIColor.clear
-    
-    popUpView.frame = CGRect(x: 0, y: 0,
-                         width: self.view.frame.width / 1.5,
-                         height: self.view.frame.height - 400)
-    popUpView.backgroundColor = PopUpViewProps.blueGray
-    popUpView.layer.cornerRadius = PopUpViewProps.radius
-    popUpView.center = CGPoint(x: self.view.center.x, y: self.view.center.y)
-    
     view.addSubview(popUpView)
-    
-    closeButton.frame = CGRect(x: 175, y: 0, width: 40, height: 40)
-    closeButton.addTarget(self, action: #selector(close), for: .touchUpInside)
-    
-    playerNameLabel.frame = CGRect(x: 15,
-                                   y: 20,
-                                   width: 10,
-                                   height: 10)
-    
-    promptLabel.frame = CGRect(x: 15,
-                               y: 40,
-                               width: 300,
-                               height: 30)
-    promptLabel.preferredMaxLayoutWidth = popUpView.bounds.width - 20
-
-    if let closeImage = UIImage(named: "clear_btn") {
-      closeButton.setImage(closeImage, for: [])
-    }
-
     popUpView.addSubview(playerNameLabel)
     popUpView.addSubview(promptLabel)
     popUpView.addSubview(closeButton)
-    
-    closeButton.translatesAutoresizingMaskIntoConstraints = false
-    closeButton.trailingAnchor.constraint(equalTo: popUpView.trailingAnchor, constant: -15).isActive = true
-    closeButton.topAnchor.constraint(equalTo: popUpView.topAnchor, constant: 10).isActive = true
     
     if isPopUp {
       let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(close))
@@ -90,8 +59,6 @@ class PositionSelectionViewController: UIViewController {
         popUpView.layoutIfNeeded()
       }
     }
-
-    popUpView.layoutIfNeeded()
   }
   
   func close(_ sender: Any) {
@@ -100,9 +67,34 @@ class PositionSelectionViewController: UIViewController {
   
   func updateUI() {
     var buttonX: CGFloat = 15
+    let margins = popUpView.layoutMarginsGuide
+    
+    popUpView.frame = CGRect(x: 0, y: 0,
+                             width: self.view.frame.width / 1.5,
+                             height: self.view.frame.height - 400)
+    popUpView.backgroundColor = PopUpViewProps.blueGray
+    popUpView.layer.cornerRadius = PopUpViewProps.radius
+    popUpView.center = CGPoint(x: self.view.center.x, y: self.view.center.y)
+    
+    closeButton.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+    closeButton.addTarget(self, action: #selector(close), for: .touchUpInside)
+    if let closeImage = UIImage(named: "clear_btn") {
+      closeButton.setImage(closeImage, for: [])
+    }
+    
+    playerNameLabel.frame = CGRect(x: 0,
+                                   y: 0,
+                                   width: 10,
+                                   height: 10)
     playerNameLabel.text = selectedPlayer.name
+    playerNameLabel.textColor = .white
     playerNameLabel.sizeToFit()
     
+    promptLabel.frame = CGRect(x: 15,
+                               y: 40,
+                               width: 300,
+                               height: 30)
+    promptLabel.preferredMaxLayoutWidth = popUpView.bounds.width - 20
     promptLabel.text = NSLocalizedString("What position would you like to add this player to?",
                                     comment: "Position Pop Up Prompt")
     promptLabel.lineBreakMode = .byWordWrapping
@@ -116,6 +108,15 @@ class PositionSelectionViewController: UIViewController {
       popUpView.addSubview(button)
     }
     
+    playerNameLabel.translatesAutoresizingMaskIntoConstraints = false
+    playerNameLabel.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 5).isActive = true
+    playerNameLabel.topAnchor.constraint(equalTo: margins.topAnchor, constant: 10).isActive = true
+    dump(popUpView.topAnchor)
+    
+    closeButton.translatesAutoresizingMaskIntoConstraints = false
+    closeButton.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: 0).isActive = true
+    closeButton.topAnchor.constraint(equalTo: margins.topAnchor, constant: -5).isActive = true
+    
   }
   
   func addPositionButtonsToPopUp(_ positions: [String]) -> [UIButton] {
@@ -126,9 +127,9 @@ class PositionSelectionViewController: UIViewController {
       newButton.setTitle(position, for: .normal)
       positionButtons.append(newButton)
     }
-    
     return positionButtons
   }
+  
 
   // MARK: - Navigation
   override func didReceiveMemoryWarning() {
