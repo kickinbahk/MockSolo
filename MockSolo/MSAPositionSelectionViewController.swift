@@ -44,9 +44,6 @@ class PositionSelectionViewController: UIViewController {
     super.viewDidLoad()
     view.backgroundColor = UIColor.clear
     view.addSubview(popUpView)
-    popUpView.addSubview(playerNameLabel)
-    popUpView.addSubview(promptLabel)
-    popUpView.addSubview(closeButton)
     
     if isPopUp {
       let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(close))
@@ -67,7 +64,9 @@ class PositionSelectionViewController: UIViewController {
   
   func updateUI() {
     var buttonX: CGFloat = 15
+    let positions = selectedPlayer.position
     let margins = popUpView.layoutMarginsGuide
+    let positionSegmentedControl = UISegmentedControl(items: positions)
     
     popUpView.frame = CGRect(x: 0, y: 0,
                              width: self.view.frame.width / 1.5,
@@ -88,6 +87,7 @@ class PositionSelectionViewController: UIViewController {
                                    height: 10)
     playerNameLabel.text = selectedPlayer.name
     playerNameLabel.textColor = .white
+    playerNameLabel.font = UIFont.boldSystemFont(ofSize: 17)
     playerNameLabel.sizeToFit()
     
     promptLabel.frame = CGRect(x: 15,
@@ -97,16 +97,25 @@ class PositionSelectionViewController: UIViewController {
     promptLabel.preferredMaxLayoutWidth = popUpView.bounds.width - 20
     promptLabel.text = NSLocalizedString("What position would you like to add this player to?",
                                     comment: "Position Pop Up Prompt")
+    promptLabel.textColor = .white
     promptLabel.lineBreakMode = .byWordWrapping
     promptLabel.numberOfLines = 2
     
-    let positionButtons = addPositionButtonsToPopUp(selectedPlayer.position)
+    positionSegmentedControl.frame = CGRect(x: 0,
+                                            y: popUpView.bounds.height -46,
+                                            width: popUpView.bounds.width - 10,
+                                            height: 44)
     print(selectedPlayer.position)
-    for button in positionButtons {
-      button.frame = CGRect(x: buttonX, y: 75, width: 40, height: 40)
-      buttonX += 20.0
-      popUpView.addSubview(button)
-    }
+//    for button in positionButtons {
+//      button.frame = CGRect(x: buttonX, y: 75, width: 40, height: 40)
+//      buttonX += 20.0
+//      popUpView.addSubview(button)
+//    }
+    
+    popUpView.addSubview(playerNameLabel)
+    popUpView.addSubview(promptLabel)
+    popUpView.addSubview(closeButton)
+    popUpView.addSubview(positionSegmentedControl)
     
     closeButton.translatesAutoresizingMaskIntoConstraints = false
     closeButton.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: 0).isActive = true
@@ -122,7 +131,6 @@ class PositionSelectionViewController: UIViewController {
     promptLabel.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: 0).isActive = true
     
 
-    
   }
   
   func addPositionButtonsToPopUp(_ positions: [String]) -> [UIButton] {
