@@ -63,13 +63,12 @@ class PositionSelectionViewController: UIViewController {
   }
   
   func updateUI() {
-    var buttonX: CGFloat = 15
-    let positions = selectedPlayer.positions
+    let positions = selectedPlayer.eligiblePositions
     let margins = popUpView.layoutMarginsGuide
     let positionSegmentedControl = UISegmentedControl(items: positions)
     
     popUpView.frame = CGRect(x: 0, y: 0,
-                             width: self.view.frame.width / 1.5,
+                             width: self.view.frame.width / 1.2,
                              height: self.view.frame.height - 400)
     popUpView.backgroundColor = PopUpViewProps.blueGray
     popUpView.layer.cornerRadius = PopUpViewProps.radius
@@ -105,12 +104,7 @@ class PositionSelectionViewController: UIViewController {
                                             y: popUpView.bounds.height - 46,
                                             width: popUpView.bounds.width - 10,
                                             height: 44)
-    print(selectedPlayer.positions)
-//    for button in positionButtons {
-//      button.frame = CGRect(x: buttonX, y: 75, width: 40, height: 40)
-//      buttonX += 20.0
-//      popUpView.addSubview(button)
-//    }
+    positionSegmentedControl.tintColor = .white
     
     popUpView.addSubview(playerNameLabel)
     popUpView.addSubview(promptLabel)
