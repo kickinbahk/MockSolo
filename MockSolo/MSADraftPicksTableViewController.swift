@@ -9,10 +9,33 @@
 import UIKit
 
 class DraftPicksTableViewController: UITableViewController {
+  var positions = Roster([["C": ""],
+                          ["1B": ""],
+                          ["2B": ""],
+                          ["SS": ""],
+                          ["2B/SS": ""],
+                          ["3B": ""],
+                          ["1B/3B": ""],
+                          ["OF1": ""],
+                          ["OF2": ""],
+                          ["OF3": ""],
+                          ["OF4": ""],
+                          ["OF5": ""],
+                          ["Util": ""],
+                          ["P1": ""],
+                          ["P2": ""],
+                          ["P3": ""],
+                          ["P4": ""],
+                          ["P5": ""],
+                          ["P6": ""],
+                          ["P7": ""],
+                          ["P8": ""],
+                          ["P9": ""],
+                          ["Bench1": ""],
+                          ["Bench2": ""],
+                          ["Bench3": ""]])
   
-  var positionsArr = ["C", "1B", "2B", "SS", "2B/SS", "3B", "1B/3B", "OF", "OF", "OF", "OF", "OF", "Util",
-                   "P", "P", "P", "P", "P", "P", "P", "P", "P",
-                   "Bench", "Bench", "Bench"]
+  var tempPositions = [String: String]()
 
   // TODO: Need way to add picked players to correct cell
   
@@ -39,17 +62,20 @@ class DraftPicksTableViewController: UITableViewController {
   // MARK: - Table view data source
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return positionsArr.count
+    print(positions.availablePositions.count)
+    return positions.availablePositions.count
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cellReuseIdentifier = "DraftPickCell"
     let cell: DraftPickCell = DraftPickCell(style: .default, reuseIdentifier: cellReuseIdentifier)
     
-    let position = positionsArr[Int(indexPath[1])]
-    
-    cell.draftPicksPositionLabel?.text = position
-    cell.draftPicksPositionLabel?.sizeToFit()
+    let position = positions.availablePositions[Int(indexPath.row)]
+    for (key, value) in position {
+      print(value)
+      cell.draftPicksPositionLabel?.text = key
+      cell.draftPicksPositionLabel?.sizeToFit()
+    }
 
     return cell
   }

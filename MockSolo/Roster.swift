@@ -9,10 +9,10 @@
 import Foundation
 
 class Roster {
-  var rosterPositions: [String: String]
+  var availablePositions: [[String: String]]
 
-  init(_ roster: [String: String]) {
-    self.rosterPositions = roster
+  init(_ availablePositions: [[String: String]]) {
+    self.availablePositions = availablePositions
   }
   
   func checkPosition(isOpen position: String, roster: [String: String]) -> Bool {
