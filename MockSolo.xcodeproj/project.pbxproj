@@ -13,6 +13,7 @@
 		EB5C02A91DFB03880078253C /* MSADraftPicksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5C02A81DFB03880078253C /* MSADraftPicksTableViewController.swift */; };
 		EB5C02AB1DFB05280078253C /* MSADraftPickCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5C02AA1DFB05280078253C /* MSADraftPickCell.swift */; };
 		EB9D35951DF876820087BBCB /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9D35941DF876820087BBCB /* Player.swift */; };
+		EBE458521E08C9ED00EABD91 /* Roster.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE458511E08C9EC00EABD91 /* Roster.swift */; };
 		EBF304801DF62A8E00AD50D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3047F1DF62A8E00AD50D0 /* AppDelegate.swift */; };
 		EBF304851DF62A8E00AD50D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBF304831DF62A8E00AD50D0 /* Main.storyboard */; };
 		EBF304871DF62A8E00AD50D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBF304861DF62A8E00AD50D0 /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 		EB5C02A81DFB03880078253C /* MSADraftPicksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSADraftPicksTableViewController.swift; sourceTree = "<group>"; };
 		EB5C02AA1DFB05280078253C /* MSADraftPickCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSADraftPickCell.swift; sourceTree = "<group>"; };
 		EB9D35941DF876820087BBCB /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		EBE458511E08C9EC00EABD91 /* Roster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Roster.swift; sourceTree = "<group>"; };
 		EBF3047C1DF62A8E00AD50D0 /* MockSolo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MockSolo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBF3047F1DF62A8E00AD50D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBF304841DF62A8E00AD50D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				EB013BA01DFF6713006A8A29 /* MSAPositionSelectionViewController.swift */,
 				EB013BA21E004638006A8A29 /* MSADimmingPresentationController.swift */,
 				EB013BA41E004693006A8A29 /* MSAGradientView.swift */,
+				EBE458511E08C9EC00EABD91 /* Roster.swift */,
 			);
 			path = MockSolo;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 			files = (
 				EB013BA51E004693006A8A29 /* MSAGradientView.swift in Sources */,
 				EB9D35951DF876820087BBCB /* Player.swift in Sources */,
+				EBE458521E08C9ED00EABD91 /* Roster.swift in Sources */,
 				EB5C02A91DFB03880078253C /* MSADraftPicksTableViewController.swift in Sources */,
 				EBF304B21DF6385500AD50D0 /* MSAPlayerCell.swift in Sources */,
 				EBF304801DF62A8E00AD50D0 /* AppDelegate.swift in Sources */,
