@@ -102,7 +102,7 @@ class PositionSelectionViewController: UIViewController {
     promptLabel.numberOfLines = 2
     
     positionSegmentedControl.frame = CGRect(x: 0,
-                                            y: popUpView.bounds.height -46,
+                                            y: popUpView.bounds.height - 46,
                                             width: popUpView.bounds.width - 10,
                                             height: 44)
     print(selectedPlayer.position)
@@ -130,6 +130,9 @@ class PositionSelectionViewController: UIViewController {
     promptLabel.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 5).isActive = true
     promptLabel.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: 0).isActive = true
     
+    positionSegmentedControl.translatesAutoresizingMaskIntoConstraints = false
+    positionSegmentedControl.centerXAnchor.constraint(equalTo: margins.centerXAnchor).isActive = true
+    positionSegmentedControl.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -5).isActive = true
 
   }
   
