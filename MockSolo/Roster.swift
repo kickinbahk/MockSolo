@@ -14,4 +14,15 @@ class Roster {
   init(_ roster: [String: String]) {
     self.rosterPositions = roster
   }
+  
+  func checkPosition(isOpen position: String, roster: [String: String]) -> Bool {
+    let checkedPosition = roster[position]
+    if checkedPosition == "" {
+      print("\(position)'s value is \(checkedPosition): true")
+      return true
+    } else {
+      print("\(position)'s value is \(checkedPosition): false")
+      return false
+    }
+  }
 }
