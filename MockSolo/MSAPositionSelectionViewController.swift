@@ -64,7 +64,7 @@ class PositionSelectionViewController: UIViewController {
   
   func updateUI() {
     var buttonX: CGFloat = 15
-    let positions = selectedPlayer.position
+    let positions = selectedPlayer.positions
     let margins = popUpView.layoutMarginsGuide
     let positionSegmentedControl = UISegmentedControl(items: positions)
     
@@ -105,7 +105,7 @@ class PositionSelectionViewController: UIViewController {
                                             y: popUpView.bounds.height - 46,
                                             width: popUpView.bounds.width - 10,
                                             height: 44)
-    print(selectedPlayer.position)
+    print(selectedPlayer.positions)
 //    for button in positionButtons {
 //      button.frame = CGRect(x: buttonX, y: 75, width: 40, height: 40)
 //      buttonX += 20.0

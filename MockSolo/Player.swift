@@ -11,14 +11,17 @@ import Foundation
 class Player {
   var rank: Int
   var name: String
-  var position: [String]
+  var positions: [String]
   var team: String
+  var eligiblePositions: [String]
+  
     
-  init(rank: Int, name: String, position: [String], team: String) {
+  init(rank: Int, name: String, positions: [String], team: String, eligiblePositions: [String]) {
     self.rank = rank
     self.name = name
-    self.position = position
+    self.positions = positions
     self.team = team
+    self.eligiblePositions = eligiblePositions
   }
     
   
