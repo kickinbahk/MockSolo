@@ -35,7 +35,6 @@ class DraftPicksTableViewController: UITableViewController {
                           ["Bench2": ""],
                           ["Bench3": ""]])
   
-  var tempPositions = [String: String]()
 
   // TODO: Need way to add picked players to correct cell
   
@@ -62,7 +61,6 @@ class DraftPicksTableViewController: UITableViewController {
   // MARK: - Table view data source
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    print(positions.availablePositions.count)
     return positions.availablePositions.count
   }
 
@@ -72,9 +70,12 @@ class DraftPicksTableViewController: UITableViewController {
     
     let position = positions.availablePositions[Int(indexPath.row)]
     for (key, value) in position {
-      print(value)
       cell.draftPicksPositionLabel?.text = key
       cell.draftPicksPositionLabel?.sizeToFit()
+      print(value)
+      cell.draftPicksPlayerNameLabel?.text = value
+      cell.draftPicksPlayerNameLabel?.sizeToFit()
+      
     }
 
     return cell

@@ -66,7 +66,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <segue destination="BIM-Ty-Cnc" kind="show" identifier="DraftPlayers" id="FSk-tm-KEO"/>
+                        <segue destination="BIM-Ty-Cnc" kind="show" identifier="DraftPlayer" id="FSk-tm-KEO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mRJ-HH-XUi" userLabel="First Responder" sceneMemberID="firstResponder"/>

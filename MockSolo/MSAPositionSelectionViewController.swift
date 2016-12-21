@@ -10,6 +10,7 @@ import UIKit
 
 class PositionSelectionViewController: UIViewController {
   var isPopUp = false
+  var selectedIndex: Int = 0
   var selectedPlayer: Player! {
     didSet {
       if isViewLoaded {
@@ -60,11 +61,20 @@ class PositionSelectionViewController: UIViewController {
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == "DraftPlayers" {
-      let draftPlayersController = segue.destination as! DraftPlayersViewController
-      let indexPath  = sender as! IndexPath
+    if segue.identifier == "DraftPlayer" {
+      let draftPicksController = segue.destination as! DraftPicksTableViewController
+      let positionToBeAdded = selectedPlayer.eligiblePositions[selectedIndex]
+      print(positionToBeAdded)
+      let positions = draftPicksController.positions.availablePositions
       
-      
+      for position in positions {
+        var positionToUpdate = position.index(forKey: positionToBeAdded)
+        if positionToUpdate != nil {
+          for (_, var value ) in position {
+            value = selectedPlayer.name
+          }
+        }
+      }
     }
   }
   
@@ -144,9 +154,8 @@ class PositionSelectionViewController: UIViewController {
   }
   
   func positionSelected(_ sender: UISegmentedControl) {
-    var index = sender.selectedSegmentIndex
-    print(index)
-    let positionToBeAdded = selectedPlayer.eligiblePositions[index]
+    selectedIndex = sender.selectedSegmentIndex
+    performSegue(withIdentifier: "DraftPlayer", sender: sender)
     
   }
   
