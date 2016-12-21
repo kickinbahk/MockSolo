@@ -58,6 +58,14 @@ class PositionSelectionViewController: UIViewController {
     }
   }
   
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "DraftPlayers" {
+      let draftPlayersController = segue.destination as! DraftPlayersViewController
+      let indexPath  = sender as! IndexPath
+      
+    }
+  }
+  
   func close(_ sender: Any) {
     dismiss(animated: true, completion: nil)
   }
