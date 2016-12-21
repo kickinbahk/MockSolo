@@ -10,7 +10,6 @@ import UIKit
 
 class PositionSelectionViewController: UIViewController {
   var isPopUp = false
-  var selectedIndex = 0
   var selectedPlayer: Player! {
     didSet {
       if isViewLoaded {
@@ -142,11 +141,10 @@ class PositionSelectionViewController: UIViewController {
     positionSegmentedControl.centerXAnchor.constraint(equalTo: margins.centerXAnchor).isActive = true
     positionSegmentedControl.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -5).isActive = true
 
-    selectedIndex = positionSegmentedControl.selectedSegmentIndex
   }
   
-  func positionSelected() {
-    let index = selectedIndex
+  func positionSelected(_ sender: UISegmentedControl) {
+    var index = sender.selectedSegmentIndex
     print(index)
     let positionToBeAdded = selectedPlayer.eligiblePositions[index]
     
