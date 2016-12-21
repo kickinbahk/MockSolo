@@ -10,6 +10,7 @@ import UIKit
 
 class PositionSelectionViewController: UIViewController {
   var isPopUp = false
+  var selectedIndex = 0
   var selectedPlayer: Player! {
     didSet {
       if isViewLoaded {
@@ -22,6 +23,7 @@ class PositionSelectionViewController: UIViewController {
   let promptLabel = UILabel()
   let popUpView = UIView()
   let closeButton = UIButton(type: .custom) as UIButton
+  
   
   struct PopUpViewProps {
     static let radius: CGFloat = 10
@@ -62,6 +64,7 @@ class PositionSelectionViewController: UIViewController {
     if segue.identifier == "DraftPlayers" {
       let draftPlayersController = segue.destination as! DraftPlayersViewController
       let indexPath  = sender as! IndexPath
+      
       
     }
   }
@@ -113,6 +116,9 @@ class PositionSelectionViewController: UIViewController {
                                             width: popUpView.bounds.width - 10,
                                             height: 44)
     positionSegmentedControl.tintColor = .white
+    positionSegmentedControl.addTarget(self,
+                                       action: #selector(PositionSelectionViewController.positionSelected),
+                                       for: .valueChanged)
     
     popUpView.addSubview(playerNameLabel)
     popUpView.addSubview(promptLabel)
@@ -136,12 +142,19 @@ class PositionSelectionViewController: UIViewController {
     positionSegmentedControl.centerXAnchor.constraint(equalTo: margins.centerXAnchor).isActive = true
     positionSegmentedControl.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -5).isActive = true
 
+    selectedIndex = positionSegmentedControl.selectedSegmentIndex
+  }
+  
+  func positionSelected() {
+    let index = selectedIndex
+    print(index)
+    let positionToBeAdded = selectedPlayer.eligiblePositions[index]
+    
   }
   
   func addPositionButtonsToPopUp(_ positions: [String]) -> [UIButton] {
     var positionButtons = [UIButton]()
     for position in positions {
-      print(position)
       let newButton = UIButton()
       newButton.setTitle(position, for: .normal)
       positionButtons.append(newButton)
