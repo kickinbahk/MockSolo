@@ -31,7 +31,7 @@ class DraftPicksTableViewController: UITableViewController {
                           ["P7": ""],
                           ["P8": ""],
                           ["P9": ""],
-                          ["Bench1": ""],
+                          ["Bench1": "Fred"],
                           ["Bench2": ""],
                           ["Bench3": ""]])
   
