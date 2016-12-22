@@ -54,6 +54,8 @@ class DraftPicksTableViewController: UITableViewController {
     self.tableView.rowHeight = DraftPicksTableViewProps.cellHeight
     self.tableView.allowsSelection = false
     
+    print(positions.availablePositions)
+    
   }
 
 
