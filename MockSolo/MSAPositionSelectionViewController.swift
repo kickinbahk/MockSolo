@@ -64,17 +64,20 @@ class PositionSelectionViewController: UIViewController {
     if segue.identifier == "DraftPlayer" {
       let draftPicksController = segue.destination as! DraftPicksTableViewController
       let positionToBeAdded = selectedPlayer.eligiblePositions[selectedIndex]
+      var counter = 0
+      var finishedCounter = 0
       print(positionToBeAdded)
-      let positions = draftPicksController.positions.availablePositions
+      var roster = draftPicksController.positions.availablePositions
       
-      for position in positions {
-        var positionToUpdate = position.index(forKey: positionToBeAdded)
-        if positionToUpdate != nil {
-          for (_, var value ) in position {
-            value = selectedPlayer.name
-          }
+      for position in roster {
+        counter += 1
+        if position[positionToBeAdded] == positionToBeAdded {
+          finishedCounter = counter
         }
       }
+      
+      roster[finishedCounter].updateValue(selectedPlayer.name, forKey: positionToBeAdded)
+      draftPicksController.positions.availablePositions = roster
     }
   }
   
