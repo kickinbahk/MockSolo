@@ -70,14 +70,15 @@ class PositionSelectionViewController: UIViewController {
       var roster = draftPicksController.positions.availablePositions
     
       for position in roster {
-        counter += 1
         for key in position.keys {
           if key == positionToBeAdded {
             finishedCounter += counter
  
           }
         }
+        counter += 1
       }
+      print(finishedCounter)
       roster[finishedCounter].updateValue(selectedPlayer.name, forKey: positionToBeAdded)
       draftPicksController.positions.availablePositions = roster
     }
