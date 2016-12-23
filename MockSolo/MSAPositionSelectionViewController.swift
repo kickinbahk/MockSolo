@@ -69,6 +69,7 @@ class PositionSelectionViewController: UIViewController {
       var finishedCounter: Int?
       print(positionToBeAdded)
       var roster = draftPicksController.positions.availablePositions
+      
       print("Recieved: \(roster)")
       for position in roster {
         for (key, value) in position {

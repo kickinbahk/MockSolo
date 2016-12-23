@@ -9,6 +9,7 @@
 import UIKit
 
 class DraftPicksTableViewController: UITableViewController {
+
   var positions = Roster([["C": ""],
                           ["1B": ""],
                           ["2B": ""],
@@ -50,7 +51,6 @@ class DraftPicksTableViewController: UITableViewController {
                                                    DraftPicksTableViewProps.sideContentInset)
     self.tableView.rowHeight = DraftPicksTableViewProps.cellHeight
     self.tableView.allowsSelection = false
-    
   }
 
 
