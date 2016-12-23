@@ -62,7 +62,8 @@ class PositionSelectionViewController: UIViewController {
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "DraftPlayer" {
-      let draftPicksController = segue.destination as! DraftPicksTableViewController
+      let tabBarController = segue.destination as! UITabBarController
+      let draftPicksController = tabBarController.viewControllers?[1] as! DraftPicksTableViewController
       let positionToBeAdded = selectedPlayer.eligiblePositions[selectedIndex]
       var counter = 0
       var finishedCounter: Int?
@@ -71,7 +72,6 @@ class PositionSelectionViewController: UIViewController {
     
       for position in roster {
         for (key, value) in position {
-          print(value)
           if key == positionToBeAdded && value.isEmpty {
             finishedCounter = counter
           }

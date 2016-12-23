@@ -66,12 +66,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <segue destination="BIM-Ty-Cnc" kind="show" identifier="DraftPlayer" id="FSk-tm-KEO"/>
+                        <segue destination="UO8-YB-OIP" kind="show" identifier="DraftPlayer" id="khm-10-UFI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mRJ-HH-XUi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4448" y="-101"/>
+            <point key="canvasLocation" x="4841" y="198"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="3vt-zd-gEG">
@@ -112,7 +112,4 @@
             <point key="canvasLocation" x="3628" y="523"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="FSk-tm-KEO"/>
-    </inferredMetricsTieBreakers>
 </document>
