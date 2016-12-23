@@ -31,12 +31,9 @@ class DraftPicksTableViewController: UITableViewController {
                           ["P": ""],
                           ["P": ""],
                           ["P": ""],
-                          ["Bench": "Fred"],
+                          ["Bench": ""],
                           ["Bench": ""],
                           ["Bench": ""]])
-  
-
-  // TODO: Need way to add picked players to correct cell
   
   struct DraftPicksTableViewProps {
     static let topContentInset: CGFloat = 10
@@ -53,8 +50,6 @@ class DraftPicksTableViewController: UITableViewController {
                                                    DraftPicksTableViewProps.sideContentInset)
     self.tableView.rowHeight = DraftPicksTableViewProps.cellHeight
     self.tableView.allowsSelection = false
-    
-    print(positions.availablePositions)
     
   }
 
@@ -74,7 +69,6 @@ class DraftPicksTableViewController: UITableViewController {
     for (key, value) in position {
       cell.draftPicksPositionLabel?.text = key
       cell.draftPicksPositionLabel?.sizeToFit()
-      print(value)
       cell.draftPicksPlayerNameLabel?.text = value
       cell.draftPicksPlayerNameLabel?.sizeToFit()
       

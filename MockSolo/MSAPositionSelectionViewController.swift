@@ -69,7 +69,7 @@ class PositionSelectionViewController: UIViewController {
       var finishedCounter: Int?
       print(positionToBeAdded)
       var roster = draftPicksController.positions.availablePositions
-    
+      print("Recieved: \(roster)")
       for position in roster {
         for (key, value) in position {
           if key == positionToBeAdded && value.isEmpty {
@@ -82,7 +82,7 @@ class PositionSelectionViewController: UIViewController {
       if let count = finishedCounter {
         print(count)
         roster[count].updateValue(selectedPlayer.name, forKey: positionToBeAdded)
-
+        print(" Sent: \(roster)")
       }
         draftPicksController.positions.availablePositions = roster
     }

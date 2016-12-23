@@ -22,7 +22,7 @@ class DraftPickCell: UITableViewCell {
   struct DraftPicksPlayerNameLabelProps {
     static let labelWidth: CGFloat = 15
     static let labelHeight: CGFloat = 30
-    static let labelX: CGFloat = 70
+    static let labelX: CGFloat = 90
     static let labelY: CGFloat = 18
   }
   
