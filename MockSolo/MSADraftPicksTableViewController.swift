@@ -10,31 +10,8 @@ import UIKit
 
 class DraftPicksTableViewController: UITableViewController {
 
-  var positions = Roster([["C": ""],
-                          ["1B": ""],
-                          ["2B": ""],
-                          ["SS": ""],
-                          ["2B/SS": ""],
-                          ["3B": ""],
-                          ["1B/3B": ""],
-                          ["OF": ""],
-                          ["OF": ""],
-                          ["OF": ""],
-                          ["OF": ""],
-                          ["OF": ""],
-                          ["Util": ""],
-                          ["P": ""],
-                          ["P": ""],
-                          ["P": ""],
-                          ["P": ""],
-                          ["P": ""],
-                          ["P": ""],
-                          ["P": ""],
-                          ["P": ""],
-                          ["P": ""],
-                          ["Bench": ""],
-                          ["Bench": ""],
-                          ["Bench": ""]])
+  var positions: Roster = AppDelegate.newDraft.roster
+
   
   struct DraftPicksTableViewProps {
     static let topContentInset: CGFloat = 10
