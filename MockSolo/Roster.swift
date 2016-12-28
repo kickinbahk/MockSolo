@@ -18,8 +18,8 @@ class Roster {
   func checkPosition(isOpen positionToCheck: String) -> Bool {
     var checkedPosition = [[String: String]]()
     for position in availablePositions {
-      for (key, _) in position {
-        if key == positionToCheck {
+      for (key, value) in position {
+        if key == positionToCheck && value.isEmpty {
           checkedPosition.append(position)
         }
       }
