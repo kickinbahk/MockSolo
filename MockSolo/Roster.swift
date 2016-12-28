@@ -15,14 +15,22 @@ class Roster {
     self.availablePositions = availablePositions
   }
   
-  func checkPosition(isOpen position: String, roster: [String: String]) -> Bool {
-    let checkedPosition = roster[position]
-    if checkedPosition == "" {
-      print("\(position)'s value is \(checkedPosition): true")
-      return true
-    } else {
-      print("\(position)'s value is \(checkedPosition): false")
+  func checkPosition(isOpen positionToCheck: String) -> Bool {
+    var checkedPosition = [[String: String]]()
+    for position in availablePositions {
+      for (key, _) in position {
+        if key == positionToCheck {
+          checkedPosition.append(position)
+        }
+      }
+    }
+
+    if checkedPosition.isEmpty {
+      print("\(positionToCheck) has no available spots")
       return false
+    } else {
+      print("\(positionToCheck) there are available positions")
+      return true
     }
   }
 }

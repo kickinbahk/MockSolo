@@ -69,23 +69,28 @@ class PositionSelectionViewController: UIViewController {
       var finishedCounter: Int?
       print(positionToBeAdded)
       var roster = draftPicksController.positions.availablePositions
+      let positionCheck = draftPicksController.positions.checkPosition(isOpen: positionToBeAdded)
       
-      print("Recieved: \(roster)")
-      for position in roster {
-        for (key, value) in position {
-          if key == positionToBeAdded && value.isEmpty {
-            finishedCounter = counter
+      if !positionCheck {
+        print("no available positions")
+      } else {
+        print("Recieved: \(roster)")
+        for position in roster {
+          for (key, value) in position {
+            if key == positionToBeAdded && value.isEmpty {
+              finishedCounter = counter
+            }
           }
+          counter += 1
         }
-        counter += 1
-      }
-      
-      if let count = finishedCounter {
-        print(count)
-        roster[count].updateValue(selectedPlayer.name, forKey: positionToBeAdded)
-        print(" Sent: \(roster)")
-      }
+        
+        if let count = finishedCounter {
+          print(count)
+          roster[count].updateValue(selectedPlayer.name, forKey: positionToBeAdded)
+          print(" Sent: \(roster)")
+        }
         draftPicksController.positions.availablePositions = roster
+      }
     }
   }
   
