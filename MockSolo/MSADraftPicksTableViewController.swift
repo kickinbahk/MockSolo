@@ -10,8 +10,12 @@ import UIKit
 
 class DraftPicksTableViewController: UITableViewController {
 
-  var positions: Roster = AppDelegate.newDraft.roster
 
+  var positions: Roster {
+    get {
+      return newDraft.roster
+    }
+  }
   
   struct DraftPicksTableViewProps {
     static let topContentInset: CGFloat = 10

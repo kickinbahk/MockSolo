@@ -8,13 +8,17 @@
 
 import UIKit
 
+let newDraft = Draft()
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
-  var newDraft = Draft()
+
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+//    let draft = Draft()
+//    newDraft.append(draft)
     return true
   }
 

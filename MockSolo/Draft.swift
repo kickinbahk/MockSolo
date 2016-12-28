@@ -12,7 +12,7 @@ class Draft {
   var roster: Roster
   
   init() {
-    roster = Roster([["C": ""],
+    self.roster = Roster([["C": ""],
                     ["1B": ""],
                     ["2B": ""],
                     ["SS": ""],
