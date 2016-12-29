@@ -110,7 +110,7 @@ class PositionSelectionViewController: UIViewController {
     let positionSegmentedControl = UISegmentedControl(items: positions)
     
     popUpView.frame = CGRect(x: 0, y: 0,
-                             width: self.view.frame.width / 1.2,
+                             width: self.view.frame.width / 1.1,
                              height: self.view.frame.height - 400)
     popUpView.backgroundColor = PopUpViewProps.blueGray
     popUpView.layer.cornerRadius = PopUpViewProps.radius
