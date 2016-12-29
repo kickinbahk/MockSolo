@@ -73,6 +73,12 @@ class PositionSelectionViewController: UIViewController {
       
       if !positionCheck {
         print("no available positions")
+        let alertController = UIAlertController(title: "Position Filled",
+                                                message: "You have already drafted a player for all available \(positionToBeAdded) positions", preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(defaultAction)
+        
+        present(alertController, animated: true, completion: nil)
       } else {
         print("Recieved: \(roster)")
         for position in roster {
