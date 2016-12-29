@@ -13,7 +13,7 @@ class DraftPicksTableViewController: UITableViewController {
 
   var positions: Roster {
     get {
-      return newDraft.roster
+      return DraftManager.sharedInstance.roster
     }
   }
   
