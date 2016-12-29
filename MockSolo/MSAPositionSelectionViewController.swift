@@ -140,6 +140,7 @@ class PositionSelectionViewController: UIViewController {
                                     comment: "Position Pop Up Prompt")
     promptLabel.textColor = .white
     promptLabel.lineBreakMode = .byWordWrapping
+    promptLabel.font = UIFont(name: promptLabel.font.fontName, size: 15)
     promptLabel.numberOfLines = 2
     
     positionSegmentedControl.frame = CGRect(x: 0,
