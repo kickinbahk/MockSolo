@@ -11,7 +11,8 @@ import XCTest
 
 class MockSoloTests: XCTestCase {
   
-  let playerList = Players()
+  let playerList = DraftManager.sharedInstance.players
+  let roster = DraftManager.sharedInstance.roster
   
   override func setUp() {
       super.setUp()
@@ -24,6 +25,12 @@ class MockSoloTests: XCTestCase {
   }
   
   func testPlayerListHasValues() {
-    XCTAssertNotNil(playerList.espnTopPlayerList)
+    XCTAssertNotNil(playerList)
   }
+  
+  func testRosterHasValues() {
+    XCTAssertNotNil(roster)
+  }
+  
+  
 }
