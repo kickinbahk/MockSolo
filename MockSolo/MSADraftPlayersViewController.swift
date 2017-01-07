@@ -9,7 +9,7 @@
 import UIKit
 
 class DraftPlayersViewController: UIViewController {
-  var playerList = DraftManager.sharedInstance.players
+  var playerList = [Player]()
   
   var filteredPlayers = [Player]()
   var searchIsActive = false
@@ -27,6 +27,7 @@ class DraftPlayersViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    playerList = DraftManager.sharedInstance.players
     
     draftPlayersSearchBar.delegate = self
     draftPlayersTableView.delegate = self
