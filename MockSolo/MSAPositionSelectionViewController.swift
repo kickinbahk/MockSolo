@@ -95,6 +95,7 @@ class PositionSelectionViewController: UIViewController {
           roster[count].updateValue(selectedPlayer.name, forKey: positionToBeAdded)
           print(" Sent: \(roster)")
         }
+        DraftManager.sharedInstance.removePreviousPlayers()
         draftPicksController.positions.availablePositions = roster
       }
     }

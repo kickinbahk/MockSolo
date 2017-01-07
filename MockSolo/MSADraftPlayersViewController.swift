@@ -9,8 +9,7 @@
 import UIKit
 
 class DraftPlayersViewController: UIViewController {
-  let playerList = DraftManager.sharedInstance.players
-  let draftPickNumber = DraftManager.sharedInstance.draftPickNumber
+  var playerList = DraftManager.sharedInstance.players
   
   var filteredPlayers = [Player]()
   var searchIsActive = false
@@ -67,6 +66,8 @@ class DraftPlayersViewController: UIViewController {
     }
     draftPlayersTableView.reloadData()
   }
+  
+
 
   // MARK: - Memory Warning
   override func didReceiveMemoryWarning() {

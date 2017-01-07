@@ -175,4 +175,15 @@ class Draft {
     
   }
   
+  func removePreviousPlayers() {
+    let amountToRemove = draftPickNumber - 1
+    
+    for num in 0...amountToRemove {
+      print(num)
+      players.remove(at: num)
+    }
+    
+    print(players)
+  }
+  
 }
