@@ -175,6 +175,8 @@ class Draft {
                           Player(rank: 65, name: "Craig Kimbrel", positions: ["RP"],
                           team: "BOS", eligiblePositions: ["RP", "P", "Bench"])]
     
+    self.startDraft()
+    
   }
   
   func removePreviousPlayers() {
@@ -186,6 +188,15 @@ class Draft {
     }
     
     print(players)
+  }
+  
+  func startDraft() {
+    let amountToRemove = draftPickNumber - 1
+    
+    for num in 0...amountToRemove {
+      print(num)
+      players.remove(at: 0)
+    }
   }
   
 }

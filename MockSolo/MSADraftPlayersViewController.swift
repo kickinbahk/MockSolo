@@ -66,8 +66,6 @@ class DraftPlayersViewController: UIViewController {
     }
     draftPlayersTableView.reloadData()
   }
-  
-
 
   // MARK: - Memory Warning
   override func didReceiveMemoryWarning() {
