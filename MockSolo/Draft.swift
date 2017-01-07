@@ -9,10 +9,13 @@
 import Foundation
 
 class Draft {
+  var draftPickNumber: Int
   var roster: Roster
   var players: [Player]
+
   
   init() {
+    self.draftPickNumber = 5 
     self.roster = Roster([["C": ""],
                     ["1B": ""],
                     ["2B": ""],

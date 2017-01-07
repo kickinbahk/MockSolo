@@ -10,6 +10,7 @@ import UIKit
 
 class DraftPlayersViewController: UIViewController {
   let playerList = DraftManager.sharedInstance.players
+  let draftPickNumber = DraftManager.sharedInstance.draftPickNumber
   
   var filteredPlayers = [Player]()
   var searchIsActive = false
