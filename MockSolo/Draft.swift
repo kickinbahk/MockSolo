@@ -180,7 +180,7 @@ class Draft {
     
     for num in 0...amountToRemove {
       print(num)
-      players.remove(at: num)
+      players.remove(at: 0)
     }
     
     print(players)
