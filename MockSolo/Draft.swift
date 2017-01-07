@@ -12,10 +12,12 @@ class Draft {
   var draftPickNumber: Int
   var roster: Roster
   var players: [Player]
+  var numberOfDrafters: Int
 
   
   init() {
-    self.draftPickNumber = 5 
+    self.draftPickNumber = 5
+    self.numberOfDrafters = 10
     self.roster = Roster([["C": ""],
                     ["1B": ""],
                     ["2B": ""],
@@ -176,7 +178,7 @@ class Draft {
   }
   
   func removePreviousPlayers() {
-    let amountToRemove = draftPickNumber - 1
+    let amountToRemove = numberOfDrafters - 1
     
     for num in 0...amountToRemove {
       print(num)
