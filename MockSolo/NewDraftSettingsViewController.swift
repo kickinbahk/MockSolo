@@ -10,8 +10,14 @@ import UIKit
 
 class NewDraftSettingsViewController: UIViewController {
 
+  let playerDraftPositionLabel = UILabel()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    playerDraftPositionLabel.frame = CGRect(x: 60, y: 100, width: 100, height: 40)
+    playerDraftPositionLabel.text = "What Position Are You Drafting From?"
+    
+    view.addSubview(playerDraftPositionLabel)
 
     // Do any additional setup after loading the view.
   }
