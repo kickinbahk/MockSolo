@@ -12,17 +12,36 @@ class NewDraftSettingsViewController: UIViewController {
 
   let playerDraftPositionLabel = UILabel()
   
+  struct PlayerDraftPositionLabelProps {
+    static let x: CGFloat = 60
+    static let y: CGFloat = 100
+    static let width: CGFloat = 150
+    static let height: CGFloat = 40
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    playerDraftPositionLabel.frame = CGRect(x: 60, y: 100, width: 100, height: 40)
-    playerDraftPositionLabel.text = "What Position Are You Drafting From?"
-    
-    view.addSubview(playerDraftPositionLabel)
 
+    updateUI()
     // Do any additional setup after loading the view.
   }
 
+  func updateUI() {
+    playerDraftPositionLabel.frame = CGRect(x: PlayerDraftPositionLabelProps.x,
+                                            y: PlayerDraftPositionLabelProps.y,
+                                            width: PlayerDraftPositionLabelProps.width,
+                                            height: PlayerDraftPositionLabelProps.height)
+    playerDraftPositionLabel.text = "What Position Are You Drafting From?"
+    playerDraftPositionLabel.lineBreakMode = .byWordWrapping
+    playerDraftPositionLabel.numberOfLines = 2
+    playerDraftPositionLabel.preferredMaxLayoutWidth = view.bounds.width - 20
+    playerDraftPositionLabel.sizeToFit()
+    
+    
 
+    view.addSubview(playerDraftPositionLabel)
+  }
+  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
