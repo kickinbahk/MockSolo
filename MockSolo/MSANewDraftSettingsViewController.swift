@@ -11,10 +11,18 @@ import UIKit
 class NewDraftSettingsViewController: UIViewController {
 
   let playerDraftPositionLabel = UILabel()
+  let startDraftButton = UIButton()
   
   struct PlayerDraftPositionLabelProps {
     static let x: CGFloat = 60
     static let y: CGFloat = 100
+    static let width: CGFloat = 150
+    static let height: CGFloat = 40
+  }
+  
+  struct StartDraftButtonProps {
+    static let x: CGFloat = 60
+    static let y: CGFloat = 200
     static let width: CGFloat = 150
     static let height: CGFloat = 40
   }
@@ -37,9 +45,16 @@ class NewDraftSettingsViewController: UIViewController {
     playerDraftPositionLabel.preferredMaxLayoutWidth = view.bounds.width - 20
     playerDraftPositionLabel.sizeToFit()
     
+    startDraftButton.frame = CGRect(x: StartDraftButtonProps.x,
+                                    y: StartDraftButtonProps.y,
+                                    width: StartDraftButtonProps.width,
+                                    height: StartDraftButtonProps.height)
+    startDraftButton.setTitle("Start Draft", for: .normal)
+    startDraftButton.tintColor = UIColor.black
     
 
     view.addSubview(playerDraftPositionLabel)
+    view.addSubview(startDraftButton)
   }
   
   override func didReceiveMemoryWarning() {
