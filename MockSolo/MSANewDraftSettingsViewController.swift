@@ -22,7 +22,7 @@ class NewDraftSettingsViewController: UIViewController {
   
   struct StartDraftButtonProps {
     static let x: CGFloat = 60
-    static let y: CGFloat = 200
+    static let y: CGFloat = 100
     static let width: CGFloat = 150
     static let height: CGFloat = 40
   }
@@ -51,10 +51,15 @@ class NewDraftSettingsViewController: UIViewController {
                                     height: StartDraftButtonProps.height)
     startDraftButton.setTitle("Start Draft", for: .normal)
     startDraftButton.tintColor = UIColor.black
+    startDraftButton.backgroundColor = UIColor.black
     
 
     view.addSubview(playerDraftPositionLabel)
     view.addSubview(startDraftButton)
+    
+    startDraftButton.translatesAutoresizingMaskIntoConstraints = false
+    startDraftButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    startDraftButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -25).isActive = true
   }
   
   override func didReceiveMemoryWarning() {
