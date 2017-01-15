@@ -1,0 +1,102 @@
+{
+  "1": {
+    "name": "Mike Trout",
+    "positions": ["OF"],
+    "team": "LAA",
+    "eligiblePositions": ["OF", "Util", "Bench"]
+  },
+  "2": {
+    "name": "Jose Altuve",
+    "positions": ["2B"],
+    "team": "HOU",
+    "eligiblePositions": ["2B", "Util", "Bench"]
+  },
+  "3": {
+    "name": "Mookie Betts",
+    "positions": ["OF"],
+    "team": "BOS",
+    "eligiblePositions": ["OF", "Util", "Bench"]
+  },
+  "4": {
+    "name": "Kris Bryant",
+    "positions": ["3B", "OF"],
+    "team": "CHC",
+    "eligiblePositions": ["3B", "OF", "Util", "Bench"]
+  },
+  "5": {
+    "name": "Paul Goldschmidt",
+    "positions": ["1B"],
+    "team": "ARI",
+    "eligiblePositions": ["1B", "Util", "Bench"]
+  },
+  "6": {
+    "name": "Nolan Arenado",
+    "positions": ["3B"],
+    "team": "COL",
+    "eligiblePositions": ["3B", "Util", "Bench"]
+  },
+  "7": {
+    "name": "Manny Machado",
+    "positions": ["3B", "SS"],
+    "team": "BAL",
+    "eligiblePositions": ["3B", "SS", "Util", "Bench"]
+  },
+  "8": {
+    "name": "Anthony Rizzo",
+    "positions": ["1B"],
+    "team": "CHC",
+    "eligiblePositions": ["1B", "Util", "Bench"],
+  },
+  "9": {
+    "name": "Josh Donaldson",
+    "positions": ["3B"],
+    "team": "TOR",
+    "eligiblePositions": ["3B", "Util", "Bench"]
+  },
+  "10": {
+    "name": "Bryce Harper",
+    "positions": ["OF"],
+    "team": "WAS",
+    "eligiblePositions": ["OF", "Util", "Bench"]
+  },
+  "11": {
+    "name": "Clayton Kershaw",
+    "positions": ["P", "SP"],
+    "team": "LAD",
+    "eligiblePositions": ["P", "SP", "Bench"]
+  },
+  "12": {
+    "name": "Charlie Blackmon",
+    "positions": ["OF"],
+    "team": "COL",
+    "eligiblePositions": ["OF", "Util", "Bench"]
+  },
+  "13": {
+    "name": "Max Scherzer",
+    "positions": ["P", "SP"],
+    "team": "WAS",
+    "eligiblePositions": ["P", "SP", "Bench"]
+  },
+  "14": {
+    "name": "Miguel Cabrera",
+    "positions": ["1B"],
+    "team": "DET",
+    "eligiblePositions": ["1B", "Util", "Bench"]
+  },
+  "15": {
+    "name": "Madison Bumgarner",
+    "positions": ["P", "SP"],
+    "team": "SF",
+    "eligiblePositions": ["P", "SP", "Bench"]
+  },
+
+
+
+
+
+
+
+
+
+
+}
