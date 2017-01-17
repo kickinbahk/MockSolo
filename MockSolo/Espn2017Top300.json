@@ -89,7 +89,36 @@
     "team": "SF",
     "eligiblePositions": ["P", "SP", "Bench"]
   },
-
+  "16": {
+    "name": "Trea Turner",
+    "positions": ["OF", "2B"],
+    "team": "WAS",
+    "eligiblePositions": ["OF", "2B", "Util", "Bench"]
+  },
+  "17": {
+    "name": "Carlos Correa",
+    "positions": ["SS"],
+    "team": "HOU",
+    "eligiblePositions": ["SS", "Util", "Bench"]
+  },
+  "18": {
+    "name": "Chris Sale",
+    "positions": ["P", "SP"],
+    "team": "BOS",
+    "eligiblePositions": ["P", "SP", "Bench"]
+  },
+  "19": {
+    "name": "Corey Seager",
+    "positions": ["SS"],
+    "team": "LAD",
+    "eligiblePositions": ["SS", "Util", "Bench"]
+  },
+  "20": {
+    "name": "Starling Marte",
+    "positions": ["OF"],
+    "team": "PIT",
+    "eligiblePositions": ["OF", "Util", "Bench"]
+  },
 
 
 
