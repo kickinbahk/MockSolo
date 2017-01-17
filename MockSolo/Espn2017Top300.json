@@ -119,6 +119,240 @@
     "team": "PIT",
     "eligiblePositions": ["OF", "Util", "Bench"]
   },
+  "21": {
+    "name": "Joey Votto",
+    "positions": ["1B"],
+    "team": "CIN",
+    "eligiblePositions": ["1B", "Util", "Bench"]
+  },
+  "22": {
+    "name": "Francisco Lindor",
+    "positions": ["SS"],
+    "team": "CLE",
+    "eligiblePositions": ["SS", "Util", "Bench"]
+  },
+  "23": {
+    "name": "Corey Kluber",
+    "positions": ["P", "SP"],
+    "team": "CLE",
+    "eligiblePositions": ["P", "SP", "Bench"]
+  },
+  "24": {
+    "name": "Freddie Freeman",
+    "positions": ["1B"],
+    "team": "ATL",
+    "eligiblePositions": ["1B", "Util", "Bench"]
+  },
+  "25": {
+    "name": "Xander Bogaerts",
+    "positions": ["SS"],
+    "team": "BOS",
+    "eligiblePositions": ["SS", "Util", "Bench"]
+  },
+  "26": {
+    "name": "Jake Arrieta",
+    "positions": ["P", "SP"],
+    "team": "CHC",
+    "eligiblePositions": ["P", "SP", "Bench"]
+  },
+  "27": {
+    "name": "Brian Dozier",
+    "positions": ["2B"],
+    "team": "MIN",
+    "eligiblePositions": ["2B", "Util", "Bench"]
+  },
+  "28": {
+    "name": "Daniel Murphy",
+    "positions": ["2B", "1B"],
+    "team": "WAS",
+    "eligiblePositions": ["2B", "1B", "Util", "Bench"]
+  },
+  "29": {
+    "name": "Carlos Gonzalez",
+    "positions": ["OF"],
+    "team": "COL",
+    "eligiblePositions": ["OF", "Util", "Bench"]
+  },
+  "30": {
+    "name": "Noah Syndergaard",
+    "positions": ["P", "SP"],
+    "team": "NYM",
+    "eligiblePositions": ["P", "SP", "Bench"]
+  },
+  "31": {
+    "name": "Edwin Encarnacion",
+    "positions": ["1B"],
+    "team": "CLE",
+    "eligiblePositions": ["1B", "Util", "Bench"]
+  },
+  "32": {
+    "name": "David Price",
+    "positions": ["P", "SP"],
+    "team": "BOS",
+    "eligiblePositions": ["P", "SP", "Bench"]
+  },
+  "33": {
+    "name": "Christian Yelich",
+    "positions": ["OF"],
+    "team": "MIA",
+    "eligiblePositions": ["OF", "Util", "Bench"]
+  },
+  "34": {
+    "name": "Robinson Cano",
+    "positions": ["2B"],
+    "team": "SEA",
+    "eligiblePositions": ["2B", "Util", "Bench"]
+  },
+  "35": {
+    "name": "Ryan Braun",
+    "positions": ["OF"],
+    "team": "MIL",
+    "eligiblePositions": ["OF", "Util", "Bench"]
+  },
+  "36": {
+    "name": "Giancarlo Stanton",
+    "positions": ["OF"],
+    "team": "MIA",
+    "eligiblePositions": ["OF", "Util", "Bench"]
+  },
+  "37": {
+    "name": "J.D. Martinez",
+    "positions": ["OF"],
+    "team": "DET",
+    "eligiblePositions": ["OF", "Util", "Bench"]
+  },
+  "38": {
+    "name": "Justin Verlander",
+    "positions": ["P", "SP"],
+    "team": "DET",
+    "eligiblePositions": ["P", "SP", "Bench"]
+  },
+  "39": {
+    "name": "Jose Abreu",
+    "positions": ["1B"],
+    "team": "CWS",
+    "eligiblePositions": ["1B", "Util", "Bench"]
+  },
+  "40": {
+    "name": "George Springer",
+    "positions": ["OF"],
+    "team": "HOU",
+    "eligiblePositions": ["OF", "Util", "Bench"]
+  },
+  "41": {
+    "name": "Jon Lester",
+    "positions": ["P", "SP"],
+    "team": "CHC",
+    "eligiblePositions": ["P", "SP", "Bench"]
+  },
+  "42": {
+    "name": "Andrew McCutchen",
+    "positions": ["OF"],
+    "team": "PIT",
+    "eligiblePositions": ["OF", "Util", "Bench"]
+  },
+  "43": {
+    "name": "Jonathan Villar",
+    "positions": ["SS", "3B"],
+    "team": "MIL",
+    "eligiblePositions": ["SS", "3B", "Util", "Bench"]
+  },
+  "45": {
+    "name": "Gregory Polanco",
+    "positions": ["OF"],
+    "team": "PIT",
+    "eligiblePositions": ["OF", "Util", "Bench"]
+  },
+  "46": {
+    "name": "Yoenis Cespedes",
+    "positions": ["OF"],
+    "team": "NYM",
+    "eligiblePositions": ["OF", "Util", "Bench"]
+  },
+  "47": {
+    "name": "Trevor Story",
+    "positions": ["SS"],
+    "team": "COL",
+    "eligiblePositions": ["SS", "Util", "Bench"]
+  },
+  "48": {
+    "name": "Johnny Cueto",
+    "positions": ["P", "SP"],
+    "team": "SF",
+    "eligiblePositions": ["P", "SP", "Bench"]
+  },
+  "49": {
+    "name": "Nelson Cruz",
+    "positions": ["OF"],
+    "team": "SEA",
+    "eligiblePositions": ["OF", "Util", "Bench"]
+  },
+  "50": {
+    "name": "Ian Desmond",
+    "positions": ["OF"],
+    "team": "COL",
+    "eligiblePositions": ["OF", "Util", "Bench"]
+  },
+  "51": {
+    "name": "Wil Myers",
+    "positions": ["1B"],
+    "team": "SD",
+    "eligiblePositions": ["1B", "Util", "Bench"]
+  },
+  "52": {
+    "name": "Adrian Beltre",
+    "positions": ["3B"],
+    "team": "TEX",
+    "eligiblePositions": ["3B", "Util", "Bench"]
+  },
+  "53": {
+    "name": "Ian Kinsler",
+    "positions": ["2B"],
+    "team": "DET",
+    "eligiblePositions": ["2B", "Util", "Bench"]
+  },
+  "54": {
+    "name": "Chris Archer",
+    "positions": ["P", "SP"],
+    "team": "TB",
+    "eligiblePositions": ["P", "SP", "Bench"]
+  },
+  "55": {
+    "name": "Rougned Odor",
+    "positions": ["2B"],
+    "team": "TEX",
+    "eligiblePositions": ["2B", "Util", "Bench"]
+  },
+  "56": {
+    "name": "Eric Hosmer",
+    "positions": ["1B"],
+    "team": "KC",
+    "eligiblePositions": ["1B", "Util", "Bench"]
+  },
+  "57": {
+    "name": "Carlos Carrasco",
+    "positions": ["P", "SP"],
+    "team": "CLE",
+    "eligiblePositions": ["P", "Util", "Bench"]
+  },
+  "58": {
+    "name": "A.J. Pollock",
+    "positions": ["OF"],
+    "team": "ARI",
+    "eligiblePositions": ["OF", "Util", "Bench"]
+  },
+  "15": {
+  "name": "",
+  "positions": [],
+  "team": "",
+  "eligiblePositions": [""]
+},
+
+
+
+
+
+
 
 
 
