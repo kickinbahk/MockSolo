@@ -341,12 +341,78 @@
     "team": "ARI",
     "eligiblePositions": ["OF", "Util", "Bench"]
   },
-  "15": {
-  "name": "",
-  "positions": [],
-  "team": "",
-  "eligiblePositions": [""]
-},
+  "59": {
+  "name": "Dee Gordon",
+  "positions": ["2B"],
+  "team": "MIA",
+  "eligiblePositions": ["2B", "Util", "Bench"]
+  },
+  "60": {
+  "name": "Yu Darvish",
+  "positions": ["P", "SP"],
+  "team": "TEX",
+  "eligiblePositions": ["P", "SP", "Bench"]
+  },
+  "61": {
+    "name": "Jose Bautista",
+    "positions": ["OF"],
+    "team": "FA",
+    "eligiblePositions": ["OF", "Util", "Bench"]
+  },
+  "62": {
+  "name": "Stephen Strasburg",
+  "positions": ["P", "SP"],
+  "team": "WAS",
+  "eligiblePositions": ["P", "SP", "Bench"]
+  },
+  "63": {
+  "name": "Billy Hamilton",
+  "positions": ["OF"],
+  "team": "CIN",
+  "eligiblePositions": ["OF", "Util", "Bench"]
+  },
+  "64": {
+  "name": "Jacob DeGrom",
+  "positions": ["P", "SP"],
+  "team": "NYM",
+  "eligiblePositions": ["P", "SP", "Bench"]
+  },
+  "65": {
+  "name": "Justin Upton",
+  "positions": ["OF"],
+  "team": "DET",
+  "eligiblePositions": ["OF", "Util", "Bench"]
+  },
+  "66": {
+  "name": "Todd Frazier",
+  "positions": ["3B"],
+  "team": "CWS",
+  "eligiblePositions": ["3B", "Util", "Bench"]
+  },
+  "67": {
+  "name": "Kenley Jansen",
+  "positions": ["P", "SP"],
+  "team": "LAD",
+  "eligiblePositions": ["P", "RP", "Bench"]
+  },
+  "68": {
+  "name": "Carlos Martinez",
+  "positions": ["P", "SP"],
+  "team": "STL",
+  "eligiblePositions": ["P", "SP", "Bench"]
+  },
+  "69": {
+    "name": "Hanley Ramirez",
+    "positions": ["1B"],
+    "team": "BOS",
+    "eligiblePositions": ["1B", "Util", "Bench"]
+  },
+  "70": {
+  "name": "Kyle Schwarber",
+  "positions": ["OF"],
+  "team": "CHC",
+  "eligiblePositions": ["OF", "Util", "Bench"]
+  },
 
 
 
