@@ -11,11 +11,36 @@ import UIKit
 class NewDraftSettingsViewController: UIViewController {
 
   let playerDraftPositionLabel = UILabel()
+  let playerDraftPositionTextField = UITextField()
+  let playerNumberOfTeamsLabel = UILabel()
+  let playerNumberOfTeamsTextField = UITextField()
   let startDraftButton = UIButton()
+  
   
   struct PlayerDraftPositionLabelProps {
     static let x: CGFloat = 60
     static let y: CGFloat = 100
+    static let width: CGFloat = 150
+    static let height: CGFloat = 40
+  }
+  
+  struct PlayerDraftPositionTextFieldProps {
+    static let x: CGFloat = 60
+    static let y: CGFloat = 150
+    static let width: CGFloat = 150
+    static let height: CGFloat = 40
+  }
+  
+  struct PlayerNumberOfTeamsLabelProps {
+    static let x: CGFloat = 60
+    static let y: CGFloat = 200
+    static let width: CGFloat = 150
+    static let height: CGFloat = 40
+  }
+  
+  struct PlayerNumberOfTeamsTextFieldProps {
+    static let x: CGFloat = 60
+    static let y: CGFloat = 250
     static let width: CGFloat = 150
     static let height: CGFloat = 40
   }
@@ -45,6 +70,17 @@ class NewDraftSettingsViewController: UIViewController {
     playerDraftPositionLabel.preferredMaxLayoutWidth = view.bounds.width - 20
     playerDraftPositionLabel.sizeToFit()
     
+    playerNumberOfTeamsLabel.frame = CGRect(x: PlayerNumberOfTeamsLabelProps.x,
+                                            y: PlayerNumberOfTeamsLabelProps.y,
+                                            width: PlayerNumberOfTeamsLabelProps.width,
+                                            height: PlayerNumberOfTeamsLabelProps.height)
+    playerNumberOfTeamsLabel.text = "How Many Teams Are In Your League?"
+    playerNumberOfTeamsLabel.lineBreakMode = .byWordWrapping
+    playerNumberOfTeamsLabel.numberOfLines = 2
+    playerNumberOfTeamsLabel.preferredMaxLayoutWidth = view.bounds.width - 20
+    playerNumberOfTeamsLabel.sizeToFit()
+    
+    
     startDraftButton.frame = CGRect(x: StartDraftButtonProps.x,
                                     y: StartDraftButtonProps.y,
                                     width: StartDraftButtonProps.width,
@@ -56,6 +92,7 @@ class NewDraftSettingsViewController: UIViewController {
     
 
     view.addSubview(playerDraftPositionLabel)
+    view.addSubview(playerNumberOfTeamsLabel)
     view.addSubview(startDraftButton)
     
     startDraftButton.translatesAutoresizingMaskIntoConstraints = false
