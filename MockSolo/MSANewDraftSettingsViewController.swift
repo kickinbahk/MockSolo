@@ -126,7 +126,9 @@ class NewDraftSettingsViewController: UIViewController {
     startDraftButton.setTitle("Start Draft", for: .normal)
     startDraftButton.tintColor = UIColor.black
     startDraftButton.setTitleColor(UIColor.blue, for: .normal)
+    startDraftButton.setTitleColor(UIColor.gray, for: .disabled)
     startDraftButton.addTarget(self, action: #selector(startDraft), for: .touchUpInside)
+    startDraftButton.isEnabled = false
     
 
     view.addSubview(playerDraftPositionLabel)
@@ -149,4 +151,17 @@ class NewDraftSettingsViewController: UIViewController {
     // Dispose of any resources that can be recreated.
   }
 
+}
+
+extension NewDraftSettingsViewController: UITextFieldDelegate {
+  func textFieldDidEndEditing(_ textField: UITextField) {
+    if Int(textField.text!) != nil {
+      startDraftButton.isEnabled = true
+      textField.resignFirstResponder()
+    }
+  }
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    textField.resignFirstResponder()
+    return true
+  }
 }
