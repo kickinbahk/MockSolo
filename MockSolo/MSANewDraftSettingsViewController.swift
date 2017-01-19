@@ -16,6 +16,9 @@ class NewDraftSettingsViewController: UIViewController {
   let playerNumberOfTeamsTextField = UITextField()
   let startDraftButton = UIButton()
   
+  let playerDraftPosition = DraftManager.sharedInstance.draftPickNumber
+  let playerNumberOfTeams = DraftManager.sharedInstance.numberOfDrafters
+  
   
   struct PlayerDraftPositionLabelProps {
     static let x: CGFloat = 60
@@ -75,6 +78,7 @@ class NewDraftSettingsViewController: UIViewController {
                                                 width: PlayerDraftPositionTextFieldProps.width,
                                                 height: PlayerDraftPositionTextFieldProps.height)
     playerDraftPositionTextField.borderStyle = .line
+    playerDraftPositionTextField.placeholder = String(playerDraftPosition)
     
     playerNumberOfTeamsLabel.frame = CGRect(x: PlayerNumberOfTeamsLabelProps.x,
                                             y: PlayerNumberOfTeamsLabelProps.y,
@@ -91,6 +95,7 @@ class NewDraftSettingsViewController: UIViewController {
                                                 width: PlayerNumberOfTeamsTextFieldProps.width,
                                                 height: PlayerNumberOfTeamsTextFieldProps.height)
     playerNumberOfTeamsTextField.borderStyle = .line
+    playerNumberOfTeamsTextField.placeholder = String(playerNumberOfTeams)
     
     
     startDraftButton.frame = CGRect(x: StartDraftButtonProps.x,
