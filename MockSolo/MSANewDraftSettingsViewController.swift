@@ -61,6 +61,27 @@ class NewDraftSettingsViewController: UIViewController {
     updateUI()
     // Do any additional setup after loading the view.
   }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "StartDraft" {
+      guard let draftPosition = playerDraftPositionTextField.text else {
+        print("Invalid Draft Position: \(playerDraftPositionTextField.text)")
+        return
+      }
+      
+      guard let numberOfDrafters = playerNumberOfTeamsTextField.text else {
+        print("Invalid Number of Drafters: \(playerNumberOfTeamsTextField.text)")
+        return
+      }
+      
+      if let draftPositionInt = Int(draftPosition) {
+        DraftManager.sharedInstance.draftPickNumber = draftPositionInt
+      }
+      if let numberOfDraftersInt = Int(numberOfDrafters) {
+        DraftManager.sharedInstance.numberOfDrafters = numberOfDraftersInt
+      }
+    }
+  }
 
   func updateUI() {
     playerDraftPositionLabel.frame = CGRect(x: PlayerDraftPositionLabelProps.x,
