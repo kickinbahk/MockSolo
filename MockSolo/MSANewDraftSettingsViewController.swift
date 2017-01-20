@@ -16,8 +16,8 @@ class NewDraftSettingsViewController: UIViewController {
   let playerNumberOfTeamsTextField = UITextField()
   let startDraftButton = UIButton()
   
-  let playerDraftPosition = DraftManager.sharedInstance.draftPickNumber
-  let playerNumberOfTeams = DraftManager.sharedInstance.numberOfDrafters
+  let playerDraftPosition: Int = 0
+  let playerNumberOfTeams: Int = 0
   
   
   struct PlayerDraftPositionLabelProps {
@@ -57,6 +57,9 @@ class NewDraftSettingsViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    playerDraftPositionTextField.delegate = self
+    playerNumberOfTeamsTextField.delegate = self
 
     updateUI()
     // Do any additional setup after loading the view.
@@ -99,7 +102,7 @@ class NewDraftSettingsViewController: UIViewController {
                                                 width: PlayerDraftPositionTextFieldProps.width,
                                                 height: PlayerDraftPositionTextFieldProps.height)
     playerDraftPositionTextField.borderStyle = .line
-    playerDraftPositionTextField.placeholder = String(playerDraftPosition)
+    playerDraftPositionTextField.placeholder = "5"
     
     playerNumberOfTeamsLabel.frame = CGRect(x: PlayerNumberOfTeamsLabelProps.x,
                                             y: PlayerNumberOfTeamsLabelProps.y,
@@ -116,7 +119,7 @@ class NewDraftSettingsViewController: UIViewController {
                                                 width: PlayerNumberOfTeamsTextFieldProps.width,
                                                 height: PlayerNumberOfTeamsTextFieldProps.height)
     playerNumberOfTeamsTextField.borderStyle = .line
-    playerNumberOfTeamsTextField.placeholder = String(playerNumberOfTeams)
+    playerNumberOfTeamsTextField.placeholder = "10"
     
     
     startDraftButton.frame = CGRect(x: StartDraftButtonProps.x,
@@ -156,9 +159,25 @@ class NewDraftSettingsViewController: UIViewController {
 extension NewDraftSettingsViewController: UITextFieldDelegate {
   func textFieldDidEndEditing(_ textField: UITextField) {
     if Int(textField.text!) != nil {
-      startDraftButton.isEnabled = true
       textField.resignFirstResponder()
+      if textField = playerDraftPositionTextField {
+        playerDraftPosition = Int(textField.text!)
+      } else if textField = playerNumberOfTeamsTextField {
+        playerNumberOfTeams = Int(textField.text!)
+      }
+      
+      if playerDraftPosition != 0 && playerNumberOfTeams != 0  {
+        startDraftButton.isEnabled = true
+      }
+    } else {
+      let alertController = UIAlertController(title: "Invalid Input",
+                                              message: "You must enter a Number", preferredStyle: .alert)
+      let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+      alertController.addAction(defaultAction)
+      
+      present(alertController, animated: true, completion: nil)
     }
+    
   }
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     textField.resignFirstResponder()
