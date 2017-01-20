@@ -16,8 +16,8 @@ class NewDraftSettingsViewController: UIViewController {
   let playerNumberOfTeamsTextField = UITextField()
   let startDraftButton = UIButton()
   
-  let playerDraftPosition: Int = 0
-  let playerNumberOfTeams: Int = 0
+  var playerDraftPosition: Int = 0
+  var playerNumberOfTeams: Int = 0
   
   
   struct PlayerDraftPositionLabelProps {
@@ -160,10 +160,10 @@ extension NewDraftSettingsViewController: UITextFieldDelegate {
   func textFieldDidEndEditing(_ textField: UITextField) {
     if Int(textField.text!) != nil {
       textField.resignFirstResponder()
-      if textField = playerDraftPositionTextField {
-        playerDraftPosition = Int(textField.text!)
-      } else if textField = playerNumberOfTeamsTextField {
-        playerNumberOfTeams = Int(textField.text!)
+      if textField == playerDraftPositionTextField {
+        playerDraftPosition = Int(textField.text!)!
+      } else if textField == playerNumberOfTeamsTextField {
+        playerNumberOfTeams = Int(textField.text!)!
       }
       
       if playerDraftPosition != 0 && playerNumberOfTeams != 0  {
