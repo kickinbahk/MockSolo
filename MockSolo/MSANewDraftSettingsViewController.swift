@@ -58,6 +58,11 @@ class NewDraftSettingsViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.tap))
+    gestureRecognizer.cancelsTouchesInView = false
+//    gestureRecognizer.delegate = self
+    view.addGestureRecognizer(gestureRecognizer)
+    
     playerDraftPositionTextField.delegate = self
     playerNumberOfTeamsTextField.delegate = self
 
@@ -148,6 +153,11 @@ class NewDraftSettingsViewController: UIViewController {
     startDraftButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -35).isActive = true
   }
   
+  func tap() {
+    playerDraftPositionTextField.resignFirstResponder()
+    playerNumberOfTeamsTextField.resignFirstResponder()
+  }
+  
   func startDraft(_ sender: UIButton) {
     performSegue(withIdentifier: "StartDraft", sender: sender)
   }
@@ -161,7 +171,7 @@ class NewDraftSettingsViewController: UIViewController {
 
 extension NewDraftSettingsViewController: UITextFieldDelegate {
   func textFieldDidEndEditing(_ textField: UITextField) {
-    if Int(textField.text!) != nil {
+    if Int(textField.text!) != nil && Int(textField.text!) != 0 {
       textField.resignFirstResponder()
       if textField == playerDraftPositionTextField {
         playerDraftPosition = Int(textField.text!)!
@@ -171,13 +181,14 @@ extension NewDraftSettingsViewController: UITextFieldDelegate {
         print("Number of Teams \(playerNumberOfTeams)")
         
       }
+      textField.resignFirstResponder()
       
       if playerDraftPosition != 0 && playerNumberOfTeams != 0  {
         startDraftButton.isEnabled = true
       }
     } else {
       let alertController = UIAlertController(title: "Invalid Input",
-                                              message: "You must enter a Number", preferredStyle: .alert)
+                                              message: "You must enter a Non-Zero Number", preferredStyle: .alert)
       let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
       alertController.addAction(defaultAction)
       
@@ -185,8 +196,10 @@ extension NewDraftSettingsViewController: UITextFieldDelegate {
     }
     
   }
+  
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     textField.resignFirstResponder()
     return true
   }
+  
 }
