@@ -67,6 +67,7 @@ class NewDraftSettingsViewController: UIViewController {
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "StartDraft" {
+      
       guard let draftPosition = playerDraftPositionTextField.text else {
         print("Invalid Draft Position: \(playerDraftPositionTextField.text)")
         return
@@ -83,6 +84,8 @@ class NewDraftSettingsViewController: UIViewController {
       if let numberOfDraftersInt = Int(numberOfDrafters) {
         DraftManager.sharedInstance.numberOfDrafters = numberOfDraftersInt
       }
+      
+      DraftManager.sharedInstance.startDraft()
     }
   }
 
@@ -162,8 +165,11 @@ extension NewDraftSettingsViewController: UITextFieldDelegate {
       textField.resignFirstResponder()
       if textField == playerDraftPositionTextField {
         playerDraftPosition = Int(textField.text!)!
+        print("Draft Position \(playerDraftPosition)")
       } else if textField == playerNumberOfTeamsTextField {
         playerNumberOfTeams = Int(textField.text!)!
+        print("Number of Teams \(playerNumberOfTeams)")
+        
       }
       
       if playerDraftPosition != 0 && playerNumberOfTeams != 0  {

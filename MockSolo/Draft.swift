@@ -175,8 +175,6 @@ class Draft {
                           Player(rank: 65, name: "Craig Kimbrel", positions: ["RP"],
                           team: "BOS", eligiblePositions: ["RP", "P", "Bench"])]
     
-    self.startDraft()
-    
   }
   
   func removePreviousPlayers() {
