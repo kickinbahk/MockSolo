@@ -32,7 +32,7 @@ class MockSoloTests: XCTestCase {
   }
   
   func testStartDraftRemovesCorrectNumberOfPlayers() {
-    let draft = DraftManager.sharedInstance
+    let draft = Draft()
     let position = draft.draftPickNumber
     draft.startDraft()
     let startingPlayer = draft.players[0]
@@ -41,7 +41,7 @@ class MockSoloTests: XCTestCase {
   }
   
   func testGivenNonDefaultNumberStartDraftRemovesCorrectNumberOfPlayers() {
-    let draft = DraftManager.sharedInstance
+    let draft = Draft()
     draft.draftPickNumber = 2
     let position = draft.draftPickNumber
     draft.startDraft()
@@ -51,26 +51,50 @@ class MockSoloTests: XCTestCase {
   }
   
   func testCorrectNumberofPlayersAreRemovedFrom5SpotWith10Teams() {
-    DraftManager.sharedInstance.draftPickNumber = 5
-    DraftManager.sharedInstance.numberOfDrafters = 10
+    let draft = Draft()
+    draft.draftPickNumber = 5
+    draft.numberOfDrafters = 10
     let secondPickPosition = 16
-    DraftManager.sharedInstance.startDraft()
-    DraftManager.sharedInstance.removePreviousPlayers()
-    let secondPick = DraftManager.sharedInstance.players[0]
+    draft.startDraft()
+    draft.removePreviousPlayers()
+    let secondPick = draft.players[0]
     
     XCTAssertEqual(secondPickPosition, secondPick.rank)
   }
   
   func testCorrectNumberofPlayersAreRemovedFrom1SpotWith10Teams() {
-    DraftManager.sharedInstance.draftPickNumber = 1
-    DraftManager.sharedInstance.numberOfDrafters = 10
+    let draft = Draft()
+    draft.draftPickNumber = 1
+    draft.numberOfDrafters = 10
     let secondPickPosition = 20
-    DraftManager.sharedInstance.startDraft()
-    DraftManager.sharedInstance.removePreviousPlayers()
-    let secondPick = DraftManager.sharedInstance.players[0]
+    draft.startDraft()
+    draft.removePreviousPlayers()
+    let secondPick = draft.players[0]
     
     XCTAssertEqual(secondPickPosition, secondPick.rank)
-    
   }
   
+  func testCorrectNumberofPlayersAreRemovedFrom8SpotWith10Teams() {
+    let draft = Draft()
+    draft.draftPickNumber = 8
+    draft.numberOfDrafters = 10
+    let secondPickPosition = 13
+    draft.startDraft()
+    draft.removePreviousPlayers()
+    let secondPick = draft.players[0]
+    
+    XCTAssertEqual(secondPickPosition, secondPick.rank)
+  }
+  
+  func testCorrectNumberofPlayersAreRemovedFrom6SpotWith12Teams() {
+    let draft = Draft()
+    draft.draftPickNumber = 6
+    draft.numberOfDrafters = 12
+    let secondPickPosition = 19
+    draft.startDraft()
+    draft.removePreviousPlayers()
+    let secondPick = draft.players[0]
+    
+    XCTAssertEqual(secondPickPosition, secondPick.rank)
+  }
 }
