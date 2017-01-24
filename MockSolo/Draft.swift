@@ -13,7 +13,7 @@ class Draft {
   var roster: Roster
   var players: [Player]
   var numberOfDrafters: Int
-
+  var count = 1
   
   init() {
     self.draftPickNumber = 5
@@ -178,20 +178,30 @@ class Draft {
   }
   
   func removePreviousPlayers() {
-    let amountToRemove = numberOfDrafters - 1
     
-    for num in 0...amountToRemove {
-      print(num)
-      players.remove(at: 0)
+    if count % 2 == 0 {
+      let amountToRemove = (draftPickNumber * 2) - 1
+      print("number to remove: \(amountToRemove)")
+      for num in 0...amountToRemove {
+        players.remove(at: 0)
+      }
+    } else if count % 2 != 0 {
+      let amountToRemove = ((numberOfDrafters - draftPickNumber) * 2) - 1
+      print(amountToRemove)
+      for num in 0...amountToRemove {
+        players.remove(at: 0)
+      }
     }
     
+
+    count += 1
     print(players)
   }
   
   func startDraft() {
     let amountToRemove = draftPickNumber - 1
     
-    for num in 0...amountToRemove {
+    for num in 0..<amountToRemove {
       print(num)
       players.remove(at: 0)
     }
