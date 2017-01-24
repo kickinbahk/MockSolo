@@ -97,4 +97,16 @@ class MockSoloTests: XCTestCase {
     
     XCTAssertEqual(secondPickPosition, secondPick.rank)
   }
+  
+  func testCorrectNumberofPlayersAreRemovedFrom1SpotWith12Teams() {
+    let draft = Draft()
+    draft.draftPickNumber = 1
+    draft.numberOfDrafters = 12
+    let secondPickPosition = 24
+    draft.startDraft()
+    draft.removePreviousPlayers()
+    let secondPick = draft.players[0]
+    
+    XCTAssertEqual(secondPickPosition, secondPick.rank)
+  }
 }
