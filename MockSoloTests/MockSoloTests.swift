@@ -50,6 +50,8 @@ class MockSoloTests: XCTestCase {
     XCTAssertEqual(position, startingPlayer.rank)
   }
   
+  // - MARK: Tests for 10 Teams
+  
   func testCorrectNumberofPlayersAreRemovedFrom5SpotWith10Teams() {
     let draft = Draft()
     draft.draftPickNumber = 5
@@ -86,6 +88,8 @@ class MockSoloTests: XCTestCase {
     XCTAssertEqual(secondPickPosition, secondPick.rank)
   }
   
+  // - MARK: Tests for 12 Teams
+  
   func testCorrectNumberofPlayersAreRemovedFrom6SpotWith12Teams() {
     let draft = Draft()
     draft.draftPickNumber = 6
@@ -109,4 +113,23 @@ class MockSoloTests: XCTestCase {
     
     XCTAssertEqual(secondPickPosition, secondPick.rank)
   }
+  
+  func testCorrectNumberofPlayersAreRemovedFrom12SpotWith12Teams() {
+    let draft = Draft()
+    draft.draftPickNumber = 12
+    draft.numberOfDrafters = 12
+    let secondPickPosition = 13
+    draft.startDraft()
+    draft.removePreviousPlayers()
+    let secondPick = draft.players[0]
+    
+    XCTAssertEqual(secondPickPosition, secondPick.rank)
+  }
+  
+
+  
+  
+  
+  
+  
 }
