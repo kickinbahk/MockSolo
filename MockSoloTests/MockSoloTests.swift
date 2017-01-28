@@ -52,16 +52,27 @@ class MockSoloTests: XCTestCase {
   
   // - MARK: Tests for 8 Teams
   
-  func testCorrectNumberofPlayersAreRemovedFrom4SpotWith8Teams() {
+  func testFirst3PicksAreCorrectFrom4SpotWith8Teams() {
     let draft = Draft()
     draft.draftPickNumber = 4
     draft.numberOfDrafters = 8
+    
+    let firstPickPosition = 4
     let secondPickPosition = 13
+    let thirdPickPosition = 20
+    
     draft.startDraft()
+    
+    let firstPick = draft.players[0]
+    XCTAssertEqual(firstPickPosition, firstPick.rank)
+    
     draft.removePreviousPlayers()
     let secondPick = draft.players[0]
-    
     XCTAssertEqual(secondPickPosition, secondPick.rank)
+    
+    draft.removePreviousPlayers()
+    let thirdPick = draft.players[0]
+    XCTAssertEqual(thirdPickPosition, thirdPick.rank)
   }
   
   func testCorrectNumberofPlayersAreRemovedFrom1SpotWith8Teams() {
