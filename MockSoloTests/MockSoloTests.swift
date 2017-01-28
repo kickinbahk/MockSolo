@@ -75,28 +75,50 @@ class MockSoloTests: XCTestCase {
     XCTAssertEqual(thirdPickPosition, thirdPick.rank)
   }
   
-  func testCorrectNumberofPlayersAreRemovedFrom1SpotWith8Teams() {
+  func testFirst3PicksAreCorrectFrom1SpotWith8Teams() {
     let draft = Draft()
     draft.draftPickNumber = 1
     draft.numberOfDrafters = 8
+    
+    let firstPickPosition = 1
     let secondPickPosition = 16
+    let thirdPickPosition = 17
+    
     draft.startDraft()
+    
+    let firstPick = draft.players[0]
+    XCTAssertEqual(firstPickPosition, firstPick.rank)
+    
     draft.removePreviousPlayers()
     let secondPick = draft.players[0]
-    
     XCTAssertEqual(secondPickPosition, secondPick.rank)
+    
+    draft.removePreviousPlayers()
+    let thirdPick = draft.players[0]
+    XCTAssertEqual(thirdPickPosition, thirdPick.rank)
   }
   
-  func testCorrectNumberofPlayersAreRemovedFrom8SpotWith8Teams() {
+  func testFirst3PicksAreCorrectFrom8SpotWith8Teams() {
     let draft = Draft()
     draft.draftPickNumber = 8
     draft.numberOfDrafters = 8
+    
+    let firstPickPosition = 8
     let secondPickPosition = 9
+    let thirdPickPosition = 24
+    
     draft.startDraft()
+    
+    let firstPick = draft.players[0]
+    XCTAssertEqual(firstPickPosition, firstPick.rank)
+    
     draft.removePreviousPlayers()
     let secondPick = draft.players[0]
-    
     XCTAssertEqual(secondPickPosition, secondPick.rank)
+    
+    draft.removePreviousPlayers()
+    let thirdPick = draft.players[0]
+    XCTAssertEqual(thirdPickPosition, thirdPick.rank)
   }
 
   
