@@ -14,6 +14,7 @@
 		EB5C02A91DFB03880078253C /* MSADraftPicksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5C02A81DFB03880078253C /* MSADraftPicksTableViewController.swift */; };
 		EB5C02AB1DFB05280078253C /* MSADraftPickCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5C02AA1DFB05280078253C /* MSADraftPickCell.swift */; };
 		EB8BD2EA1E15581E000D576A /* DraftManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8BD2E91E15581E000D576A /* DraftManager.swift */; };
+		EB9748E41E3D6BF500ADC802 /* Espn2017Top300.json in Resources */ = {isa = PBXBuildFile; fileRef = EB9748E31E3D6BF400ADC802 /* Espn2017Top300.json */; };
 		EB9D35951DF876820087BBCB /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9D35941DF876820087BBCB /* Player.swift */; };
 		EBC0B26B1E27DC8B00566D07 /* MSANewDraftSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC0B26A1E27DC8B00566D07 /* MSANewDraftSettingsViewController.swift */; };
 		EBE458521E08C9ED00EABD91 /* Roster.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE458511E08C9EC00EABD91 /* Roster.swift */; };
@@ -52,6 +53,7 @@
 		EB5C02A81DFB03880078253C /* MSADraftPicksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSADraftPicksTableViewController.swift; sourceTree = "<group>"; };
 		EB5C02AA1DFB05280078253C /* MSADraftPickCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSADraftPickCell.swift; sourceTree = "<group>"; };
 		EB8BD2E91E15581E000D576A /* DraftManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraftManager.swift; sourceTree = "<group>"; };
+		EB9748E31E3D6BF400ADC802 /* Espn2017Top300.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Espn2017Top300.json; sourceTree = "<group>"; };
 		EB9D35941DF876820087BBCB /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		EBC0B26A1E27DC8B00566D07 /* MSANewDraftSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSANewDraftSettingsViewController.swift; sourceTree = "<group>"; };
 		EBE458511E08C9EC00EABD91 /* Roster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Roster.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 		EBF3047E1DF62A8E00AD50D0 /* MockSolo */ = {
 			isa = PBXGroup;
 			children = (
+				EB9748E31E3D6BF400ADC802 /* Espn2017Top300.json */,
 				EBF3047F1DF62A8E00AD50D0 /* AppDelegate.swift */,
 				EBF304831DF62A8E00AD50D0 /* Main.storyboard */,
 				EBF304861DF62A8E00AD50D0 /* Assets.xcassets */,
@@ -269,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBF3048A1DF62A8E00AD50D0 /* LaunchScreen.storyboard in Resources */,
+				EB9748E41E3D6BF500ADC802 /* Espn2017Top300.json in Resources */,
 				EBF304871DF62A8E00AD50D0 /* Assets.xcassets in Resources */,
 				EBF304851DF62A8E00AD50D0 /* Main.storyboard in Resources */,
 			);

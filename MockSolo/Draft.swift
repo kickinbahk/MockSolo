@@ -14,6 +14,8 @@ class Draft {
   var players: [Player]
   var numberOfDrafters: Int
   var count = 1
+  var json = "Espn2017Top300"
+  var loadedPlayers = [String: AnyObject]()
   
   init() {
     self.draftPickNumber = 5
@@ -174,6 +176,7 @@ class Draft {
                           team: "LAD", eligiblePositions: ["RP", "P", "Bench"]),
                           Player(rank: 65, name: "Craig Kimbrel", positions: ["RP"],
                           team: "BOS", eligiblePositions: ["RP", "P", "Bench"])]
+    dump(loadJson(filename: json))
     
   }
   
@@ -207,4 +210,23 @@ class Draft {
     }
   }
   
+  
+  func loadJson(filename fileName: String) -> [String: AnyObject]? {
+    if let url = Bundle.main.url(forResource: fileName, withExtension: "json") {
+      print(url)
+      if let data = NSData(contentsOf: url) {
+        do {
+          let object = try JSONSerialization.jsonObject(with: data as Data, options: .allowFragments)
+          if let dictionary = object as? [String: AnyObject] {
+            return dictionary
+          }
+        } catch {
+          print("Error!! Unable to parse  \(fileName).json")
+        }
+      }
+      print("Error!! Unable to load  \(fileName).json")
+    }
+    return nil
+  }
+
 }
