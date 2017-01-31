@@ -419,7 +419,12 @@
   "team": "CHC",
   "eligiblePositions": ["OF", "Util", "Bench"]
   },
-
+  "71": {
+  "name": "Zach Britton",
+  "positions": ["P", "RP"],
+  "team": "BAL",
+  "eligiblePositions": ["P", "RP", "Bench"]
+  },
 
 
 
