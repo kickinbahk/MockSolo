@@ -42,16 +42,16 @@
     "eligiblePositions": ["3B", "SS", "Util", "Bench"]
   },
   "8": {
-    "name": "Anthony Rizzo",
-    "positions": ["1B"],
-    "team": "CHC",
-    "eligiblePositions": ["1B", "Util", "Bench"],
-  },
-  "9": {
     "name": "Josh Donaldson",
     "positions": ["3B"],
     "team": "TOR",
     "eligiblePositions": ["3B", "Util", "Bench"]
+  },
+  "9": {
+    "name": "Anthony Rizzo",
+    "positions": ["1B"],
+    "team": "CHC",
+    "eligiblePositions": ["1B", "Util", "Bench"],
   },
   "10": {
     "name": "Bryce Harper",
@@ -156,16 +156,16 @@
     "eligiblePositions": ["P", "SP", "Bench"]
   },
   "27": {
-    "name": "Brian Dozier",
-    "positions": ["2B"],
-    "team": "MIN",
-    "eligiblePositions": ["2B", "Util", "Bench"]
-  },
-  "28": {
     "name": "Daniel Murphy",
     "positions": ["2B", "1B"],
     "team": "WAS",
     "eligiblePositions": ["2B", "1B", "Util", "Bench"]
+  },
+  "28": {
+    "name": "Brian Dozier",
+    "positions": ["2B"],
+    "team": "MIN",
+    "eligiblePositions": ["2B", "Util", "Bench"]
   },
   "29": {
     "name": "Carlos Gonzalez",
@@ -257,23 +257,29 @@
     "team": "MIL",
     "eligiblePositions": ["SS", "3B", "Util", "Bench"]
   },
-  "45": {
+  "44": {
     "name": "Gregory Polanco",
     "positions": ["OF"],
     "team": "PIT",
     "eligiblePositions": ["OF", "Util", "Bench"]
   },
-  "46": {
-    "name": "Yoenis Cespedes",
-    "positions": ["OF"],
-    "team": "NYM",
-    "eligiblePositions": ["OF", "Util", "Bench"]
+  "45": {
+    "name": "Kyle Seager",
+    "positions": ["3B"],
+    "team": "SEA",
+    "eligiblePositions": ["3B", "Util", "Bench"]
   },
-  "47": {
+  "46": {
     "name": "Trevor Story",
     "positions": ["SS"],
     "team": "COL",
     "eligiblePositions": ["SS", "Util", "Bench"]
+  },
+  "47": {
+    "name": "Yoenis Cespedes",
+    "positions": ["OF"],
+    "team": "NYM",
+    "eligiblePositions": ["OF", "Util", "Bench"]
   },
   "48": {
     "name": "Johnny Cueto",
