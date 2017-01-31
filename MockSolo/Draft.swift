@@ -178,7 +178,8 @@ class Draft {
                           Player(rank: 65, name: "Craig Kimbrel", positions: ["RP"],
                           team: "BOS", eligiblePositions: ["RP", "P", "Bench"])]
     if let jsonDictionary = parse(json: performLoad(with: fileToLoad)!) {
-      print(jsonDictionary)
+      let array = parse(dictionary: jsonDictionary)
+      print(array)
     }
   }
   
@@ -256,6 +257,15 @@ class Draft {
       print("JSON Error: \(error)")
       return nil
     }
+  }
+  
+  func parse(dictionary: [String: Any]) -> [Any] {
+    var array = [Any]()
+    let numberOfItems = dictionary.count + 1
+    for rank in 1..<numberOfItems {
+      array.append(dictionary.first(where: { Int($0.key) == rank }))
+    }
+    return array
   }
 
 }
