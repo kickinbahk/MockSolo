@@ -13,7 +13,7 @@ class Draft {
   
   var draftPickNumber: Int
   var roster: Roster
-  var players: [Player]
+  var players = [Player]()
   var numberOfDrafters: Int
   var count = 1
   var fileToLoad = "Espn2017Top300"
@@ -47,8 +47,6 @@ class Draft {
                     ["Bench": ""],
                     ["Bench": ""],
                     ["Bench": ""]])
-    
-    self.players = playerArray
 
     if let jsonDictionary = self.parse(json: self.performLoad(with: fileToLoad)!) {
      playerArray = parse(dictionary: jsonDictionary)
@@ -133,12 +131,10 @@ class Draft {
         playerEligiblePositions = eligiblePositions as! [String]
       }
       
-      
-      print(playerName)
-      print(playerPositions)
       array.append(Player(rank: rank, name: playerName, positions: playerPositions,
                           team: playerTeam, eligiblePositions: playerEligiblePositions))
     }
+    
     return array
   }
 
