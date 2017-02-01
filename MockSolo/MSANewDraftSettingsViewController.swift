@@ -15,11 +15,18 @@ class NewDraftSettingsViewController: UIViewController {
   let playerNumberOfTeamsLabel = UILabel()
   let playerNumberOfTeamsTextField = UITextField()
   let startDraftButton = UIButton()
-  var startDraftImage = UIImageView()
   
+  var dimmedView = UIView()
+  var startDraftImage = UIImageView()
   var playerDraftPosition: Int = 0
   var playerNumberOfTeams: Int = 0
   
+  struct DimmedViewProps {
+    static let x: CGFloat = 60
+    static let y: CGFloat = 100
+    static let width: CGFloat = 200
+    static let height: CGFloat = 40
+  }
   
   struct PlayerDraftPositionLabelProps {
     static let x: CGFloat = 60
@@ -97,6 +104,12 @@ class NewDraftSettingsViewController: UIViewController {
 
   func updateUI() {
     let image = UIImage(named: "baseball")
+    dimmedView.frame = CGRect(x: DimmedViewProps.x,
+                        y: DimmedViewProps.y,
+                        width: DimmedViewProps.width,
+                        height: DimmedViewProps.height)
+    dimmedView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+    
     startDraftImage = UIImageView(image: image!)
     startDraftImage.frame = CGRect(x: 0,
                                    y: 0,
@@ -150,11 +163,18 @@ class NewDraftSettingsViewController: UIViewController {
     startDraftButton.isEnabled = false
     
     view.addSubview(startDraftImage)
+    view.addSubview(dimmedView)
     view.addSubview(playerDraftPositionLabel)
     view.addSubview(playerDraftPositionTextField)
     view.addSubview(playerNumberOfTeamsLabel)
     view.addSubview(playerNumberOfTeamsTextField)
     view.addSubview(startDraftButton)
+    
+    let margins = view.layoutMarginsGuide
+    
+    dimmedView.translatesAutoresizingMaskIntoConstraints = false
+    dimmedView.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 20).isActive = true
+    dimmedView.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: 20).isActive = true
     
     startDraftButton.translatesAutoresizingMaskIntoConstraints = false
     startDraftButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
