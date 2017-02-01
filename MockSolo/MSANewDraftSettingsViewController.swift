@@ -159,6 +159,10 @@ class NewDraftSettingsViewController: UIViewController {
     startDraftButton.translatesAutoresizingMaskIntoConstraints = false
     startDraftButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     startDraftButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -35).isActive = true
+    
+    startDraftImage.translatesAutoresizingMaskIntoConstraints = false
+    startDraftImage.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    startDraftImage.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
   }
   
   func tap() {
