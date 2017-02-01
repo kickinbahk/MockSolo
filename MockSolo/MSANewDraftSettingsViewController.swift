@@ -15,6 +15,7 @@ class NewDraftSettingsViewController: UIViewController {
   let playerNumberOfTeamsLabel = UILabel()
   let playerNumberOfTeamsTextField = UITextField()
   let startDraftButton = UIButton()
+  var startDraftImage = UIImageView()
   
   var playerDraftPosition: Int = 0
   var playerNumberOfTeams: Int = 0
@@ -95,6 +96,13 @@ class NewDraftSettingsViewController: UIViewController {
   }
 
   func updateUI() {
+    let image = UIImage(named: "baseball")
+    startDraftImage = UIImageView(image: image!)
+    startDraftImage.frame = CGRect(x: 0,
+                                   y: 0,
+                                   width: 200,
+                                   height: 200)
+    
     playerDraftPositionLabel.frame = CGRect(x: PlayerDraftPositionLabelProps.x,
                                             y: PlayerDraftPositionLabelProps.y,
                                             width: PlayerDraftPositionLabelProps.width,
@@ -141,7 +149,7 @@ class NewDraftSettingsViewController: UIViewController {
     startDraftButton.addTarget(self, action: #selector(startDraft), for: .touchUpInside)
     startDraftButton.isEnabled = false
     
-
+    view.addSubview(startDraftImage)
     view.addSubview(playerDraftPositionLabel)
     view.addSubview(playerDraftPositionTextField)
     view.addSubview(playerNumberOfTeamsLabel)
