@@ -109,6 +109,7 @@ class PositionSelectionViewController: UIViewController {
     let positions = selectedPlayer.eligiblePositions
     let margins = popUpView.layoutMarginsGuide
     let positionSegmentedControl = UISegmentedControl(items: positions)
+   
     
     popUpView.frame = CGRect(x: 0, y: 0,
                              width: self.view.frame.width / 1.1,
@@ -152,6 +153,7 @@ class PositionSelectionViewController: UIViewController {
     positionSegmentedControl.addTarget(self,
                                        action: #selector(PositionSelectionViewController.positionSelected),
                                        for: .valueChanged)
+     positionSegmentedControl.sizeToFit()
     
     popUpView.addSubview(playerNameLabel)
     popUpView.addSubview(promptLabel)
@@ -172,7 +174,7 @@ class PositionSelectionViewController: UIViewController {
     promptLabel.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: 0).isActive = true
     
     positionSegmentedControl.translatesAutoresizingMaskIntoConstraints = false
-    positionSegmentedControl.centerXAnchor.constraint(equalTo: margins.centerXAnchor).isActive = true
+    positionSegmentedControl.centerXAnchor.constraint(equalTo: margins.centerXAnchor, constant: -5).isActive = true
     positionSegmentedControl.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -5).isActive = true
 
   }
