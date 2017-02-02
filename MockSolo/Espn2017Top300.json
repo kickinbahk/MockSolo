@@ -513,7 +513,7 @@
   "name": "Matt Carpenter",
   "positions": ["3B", "1B", "2B"],
   "team": "BAL",
-  "eligiblePositions": ["3B", "1B", "1B/3B", "2B", "2B/SS", "U", "B"]
+  "eligiblePositions": ["3B", "1B", "1B/3B", "2B", "2B/SS", "Util", "Bench"]
   },
   "87": {
   "name": "Gerrit Cole",
