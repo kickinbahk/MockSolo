@@ -185,7 +185,6 @@ class NewDraftSettingsViewController: UIViewController {
     startDraftImage.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     startDraftImage.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
     startDraftImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
-    // startDraftImage.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     startDraftImage.contentMode = .scaleAspectFill
     
     
@@ -213,11 +212,8 @@ extension NewDraftSettingsViewController: UITextFieldDelegate {
       textField.resignFirstResponder()
       if textField == playerDraftPositionTextField {
         playerDraftPosition = Int(textField.text!)!
-        print("Draft Position \(playerDraftPosition)")
       } else if textField == playerNumberOfTeamsTextField {
         playerNumberOfTeams = Int(textField.text!)!
-        print("Number of Teams \(playerNumberOfTeams)")
-        
       }
       textField.resignFirstResponder()
       
