@@ -121,6 +121,7 @@ class NewDraftSettingsViewController: UIViewController {
                                             y: PlayerDraftPositionLabelProps.y,
                                             width: PlayerDraftPositionLabelProps.width,
                                             height: PlayerDraftPositionLabelProps.height)
+    playerDraftPositionLabel.textColor = UIColor.white
     playerDraftPositionLabel.text = "What Position Are You Drafting From?"
     playerDraftPositionLabel.lineBreakMode = .byWordWrapping
     playerDraftPositionLabel.numberOfLines = 2
@@ -131,6 +132,10 @@ class NewDraftSettingsViewController: UIViewController {
                                                 y: PlayerDraftPositionTextFieldProps.y,
                                                 width: PlayerDraftPositionTextFieldProps.width,
                                                 height: PlayerDraftPositionTextFieldProps.height)
+    playerDraftPositionTextField.layer.masksToBounds = true
+    playerDraftPositionTextField.layer.borderWidth = 1.0
+    playerDraftPositionTextField.layer.borderColor = UIColor.white.cgColor
+    playerDraftPositionTextField.textColor = UIColor.white
     playerDraftPositionTextField.borderStyle = .line
     playerDraftPositionTextField.placeholder = "5"
     
@@ -138,6 +143,7 @@ class NewDraftSettingsViewController: UIViewController {
                                             y: PlayerNumberOfTeamsLabelProps.y,
                                             width: PlayerNumberOfTeamsLabelProps.width,
                                             height: PlayerNumberOfTeamsLabelProps.height)
+    playerNumberOfTeamsLabel.textColor = UIColor.white
     playerNumberOfTeamsLabel.text = "How Many Teams Are In Your League?"
     playerNumberOfTeamsLabel.lineBreakMode = .byWordWrapping
     playerNumberOfTeamsLabel.numberOfLines = 3
@@ -148,6 +154,9 @@ class NewDraftSettingsViewController: UIViewController {
                                                 y: PlayerNumberOfTeamsTextFieldProps.y,
                                                 width: PlayerNumberOfTeamsTextFieldProps.width,
                                                 height: PlayerNumberOfTeamsTextFieldProps.height)
+    playerNumberOfTeamsTextField.layer.masksToBounds = true
+    playerNumberOfTeamsTextField.layer.borderWidth = 1.0
+    playerNumberOfTeamsTextField.layer.borderColor = UIColor.white.cgColor
     playerNumberOfTeamsTextField.borderStyle = .line
     playerNumberOfTeamsTextField.placeholder = "10"
     
