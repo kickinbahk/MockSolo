@@ -61,7 +61,7 @@
   },
   "11": {
     "name": "Clayton Kershaw",
-    "positions": ["P", "SP"],
+    "positions": ["SP"],
     "team": "LAD",
     "eligiblePositions": ["P", "SP", "Bench"]
   },
@@ -73,7 +73,7 @@
   },
   "13": {
     "name": "Max Scherzer",
-    "positions": ["P", "SP"],
+    "positions": ["SP"],
     "team": "WAS",
     "eligiblePositions": ["P", "SP", "Bench"]
   },
@@ -85,7 +85,7 @@
   },
   "15": {
     "name": "Madison Bumgarner",
-    "positions": ["P", "SP"],
+    "positions": ["SP"],
     "team": "SF",
     "eligiblePositions": ["P", "SP", "Bench"]
   },
@@ -103,7 +103,7 @@
   },
   "18": {
     "name": "Chris Sale",
-    "positions": ["P", "SP"],
+    "positions": ["SP"],
     "team": "BOS",
     "eligiblePositions": ["P", "SP", "Bench"]
   },
@@ -133,7 +133,7 @@
   },
   "23": {
     "name": "Corey Kluber",
-    "positions": ["P", "SP"],
+    "positions": ["SP"],
     "team": "CLE",
     "eligiblePositions": ["P", "SP", "Bench"]
   },
@@ -151,7 +151,7 @@
   },
   "26": {
     "name": "Jake Arrieta",
-    "positions": ["P", "SP"],
+    "positions": ["SP"],
     "team": "CHC",
     "eligiblePositions": ["P", "SP", "Bench"]
   },
@@ -175,7 +175,7 @@
   },
   "30": {
     "name": "Noah Syndergaard",
-    "positions": ["P", "SP"],
+    "positions": ["SP"],
     "team": "NYM",
     "eligiblePositions": ["P", "SP", "Bench"]
   },
@@ -187,7 +187,7 @@
   },
   "32": {
     "name": "David Price",
-    "positions": ["P", "SP"],
+    "positions": ["SP"],
     "team": "BOS",
     "eligiblePositions": ["P", "SP", "Bench"]
   },
@@ -223,7 +223,7 @@
   },
   "38": {
     "name": "Justin Verlander",
-    "positions": ["P", "SP"],
+    "positions": ["SP"],
     "team": "DET",
     "eligiblePositions": ["P", "SP", "Bench"]
   },
@@ -241,7 +241,7 @@
   },
   "41": {
     "name": "Jon Lester",
-    "positions": ["P", "SP"],
+    "positions": ["SP"],
     "team": "CHC",
     "eligiblePositions": ["P", "SP", "Bench"]
   },
@@ -283,7 +283,7 @@
   },
   "48": {
     "name": "Johnny Cueto",
-    "positions": ["P", "SP"],
+    "positions": ["SP"],
     "team": "SF",
     "eligiblePositions": ["P", "SP", "Bench"]
   },
@@ -319,7 +319,7 @@
   },
   "54": {
     "name": "Chris Archer",
-    "positions": ["P", "SP"],
+    "positions": ["SP"],
     "team": "TB",
     "eligiblePositions": ["P", "SP", "Bench"]
   },
@@ -337,7 +337,7 @@
   },
   "57": {
     "name": "Carlos Carrasco",
-    "positions": ["P", "SP"],
+    "positions": ["SP"],
     "team": "CLE",
     "eligiblePositions": ["P", "Util", "Bench"]
   },
@@ -355,7 +355,7 @@
   },
   "60": {
   "name": "Yu Darvish",
-  "positions": ["P", "SP"],
+  "positions": ["SP"],
   "team": "TEX",
   "eligiblePositions": ["P", "SP", "Bench"]
   },
@@ -367,7 +367,7 @@
   },
   "62": {
   "name": "Stephen Strasburg",
-  "positions": ["P", "SP"],
+  "positions": ["SP"],
   "team": "WAS",
   "eligiblePositions": ["P", "SP", "Bench"]
   },
@@ -379,7 +379,7 @@
   },
   "64": {
   "name": "Jacob DeGrom",
-  "positions": ["P", "SP"],
+  "positions": ["SP"],
   "team": "NYM",
   "eligiblePositions": ["P", "SP", "Bench"]
   },
@@ -397,13 +397,13 @@
   },
   "67": {
   "name": "Kenley Jansen",
-  "positions": ["P", "SP"],
+  "positions": ["RP"],
   "team": "LAD",
   "eligiblePositions": ["P", "RP", "Bench"]
   },
   "68": {
   "name": "Carlos Martinez",
-  "positions": ["P", "SP"],
+  "positions": ["SP"],
   "team": "STL",
   "eligiblePositions": ["P", "SP", "Bench"]
   },
@@ -421,7 +421,7 @@
   },
   "71": {
   "name": "Zach Britton",
-  "positions": ["P", "RP"],
+  "positions": ["RP"],
   "team": "BAL",
   "eligiblePositions": ["P", "RP", "Bench"]
   },
@@ -433,7 +433,7 @@
   },
   "73": {
   "name": "Aroldis Chapman",
-  "positions": ["P", "RP"],
+  "positions": ["RP"],
   "team": "NYY",
   "eligiblePositions": ["P", "RP", "Bench"]
   },
@@ -445,7 +445,7 @@
   },
   "75": {
   "name": "Kyle Hendricks",
-  "positions": ["P", "SP"],
+  "positions": ["SP"],
   "team": "CHC",
   "eligiblePositions": ["P", "SP", "Bench"]
   },
@@ -457,7 +457,7 @@
   },
   "77": {
   "name": "Mark Melancon",
-  "positions": ["P", "RP"],
+  "positions": ["RP"],
   "team": "SF",
   "eligiblePositions": ["P", "RP", "Bench"]
   },
@@ -469,7 +469,7 @@
   },
   "79": {
   "name": "Zach Grienke",
-  "positions": ["P", "SP"],
+  "positions": ["SP"],
   "team": "ARI",
   "eligiblePositions": ["P", "SP", "Bench"]
   },
@@ -481,7 +481,7 @@
   },
   "81": {
   "name": "Masahiro Tanaka",
-  "positions": ["P", "SP"],
+  "positions": ["SP"],
   "team": "NYY",
   "eligiblePositions": ["P", "SP", "Bench"]
   },
@@ -517,7 +517,7 @@
   },
   "87": {
   "name": "Gerrit Cole",
-  "positions": ["P", "SP"],
+  "positions": ["SP"],
   "team": "PIT",
   "eligiblePositions": ["P", "SP", "Bench"]
   },
@@ -535,7 +535,7 @@
   },
   "90": {
   "name": "Jose Quintana",
-  "positions": ["P", "SP"],
+  "positions": ["SP"],
   "team": "CWS",
   "eligiblePositions": ["P", "SP", "Bench"]
   },
@@ -553,7 +553,7 @@
   },
   "93": {
   "name": "Kenta Maeda",
-  "positions": ["P", "SP"],
+  "positions": ["SP"],
   "team": "LAD",
   "eligiblePositions": ["P", "SP", "Bench"]
   },
@@ -565,13 +565,13 @@
   },
   "95": {
   "name": "Cole Hamels",
-  "positions": ["P", "SP"],
+  "positions": ["SP"],
   "team": "TEX",
   "eligiblePositions": ["P", "SP", "Bench"]
   },
   "96": {
   "name": "Kevin Gausman",
-  "positions": ["P", "SP"],
+  "positions": ["SP"],
   "team": "BAL",
   "eligiblePositions": ["P", "SP", "Bench"]
   },
@@ -583,7 +583,7 @@
   },
   "98": {
   "name": "Craig Kimbrel",
-  "positions": ["P", "RP"],
+  "positions": ["RP"],
   "team": "BOS",
   "eligiblePositions": ["P", "RP", "Bench"]
   },
@@ -595,7 +595,7 @@
   },
   "100": {
   "name": "Edwin Davis",
-  "positions": ["P", "RP"],
+  "positions": ["RP"],
   "team": "SEA",
   "eligiblePositions": ["P", "RP", "Bench"]
   },
