@@ -171,11 +171,11 @@ class NewDraftSettingsViewController: UIViewController {
     view.addSubview(playerNumberOfTeamsTextField)
     view.addSubview(startDraftButton)
     
-    let margins = view.layoutMarginsGuide
-    
     dimmedView.translatesAutoresizingMaskIntoConstraints = false
-    dimmedView.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 20).isActive = true
-    dimmedView.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: 20).isActive = true
+    dimmedView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
+    dimmedView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+    dimmedView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+    dimmedView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
     
     startDraftButton.translatesAutoresizingMaskIntoConstraints = false
     startDraftButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
