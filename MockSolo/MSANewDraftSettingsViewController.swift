@@ -109,7 +109,7 @@ class NewDraftSettingsViewController: UIViewController {
                         y: DimmedViewProps.y,
                         width: DimmedViewProps.width,
                         height: DimmedViewProps.height)
-    dimmedView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+    dimmedView.backgroundColor = UIColor.black.withAlphaComponent(0.65)
     
     startDraftImage = UIImageView(image: image!)
     startDraftImage.frame = CGRect(x: 0,
