@@ -175,27 +175,15 @@ class PositionSelectionViewController: UIViewController {
     promptLabel.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: 0).isActive = true
     
     positionSegmentedControl.translatesAutoresizingMaskIntoConstraints = false
-    positionSegmentedControl.centerXAnchor.constraint(equalTo: margins.centerXAnchor).isActive = true
     positionSegmentedControl.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -5).isActive = true
-
+    positionSegmentedControl.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 0).isActive = true
+    positionSegmentedControl.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: 1).isActive = true
   }
   
   func positionSelected(_ sender: UISegmentedControl) {
     selectedIndex = sender.selectedSegmentIndex
     performSegue(withIdentifier: "DraftPlayer", sender: sender)
-    
   }
-  
-  func addPositionButtonsToPopUp(_ positions: [String]) -> [UIButton] {
-    var positionButtons = [UIButton]()
-    for position in positions {
-      let newButton = UIButton()
-      newButton.setTitle(position, for: .normal)
-      positionButtons.append(newButton)
-    }
-    return positionButtons
-  }
-  
 
   // MARK: - Navigation
   override func didReceiveMemoryWarning() {
