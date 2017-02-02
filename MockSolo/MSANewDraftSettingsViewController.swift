@@ -75,6 +75,7 @@ class NewDraftSettingsViewController: UIViewController {
     playerNumberOfTeamsTextField.delegate = self
 
     updateUI()
+    view.layoutIfNeeded()
     // Do any additional setup after loading the view.
   }
   
@@ -182,7 +183,12 @@ class NewDraftSettingsViewController: UIViewController {
     
     startDraftImage.translatesAutoresizingMaskIntoConstraints = false
     startDraftImage.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-    startDraftImage.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+    startDraftImage.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+    startDraftImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+    // startDraftImage.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+    startDraftImage.contentMode = .scaleAspectFill
+    
+    
   }
   
   func tap() {
