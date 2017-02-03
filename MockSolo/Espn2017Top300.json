@@ -839,8 +839,67 @@
   "team": "LAD",
   "eligiblePositions": ["P", "SP", "Bench"]
   },
-
-
+  "141": {
+  "name": "David Robertson",
+  "positions": ["RP"],
+  "team": "CWS",
+  "eligiblePositions": ["P", "RP", "Bench"]
+  },
+  "142": {
+  "name": "Elvis Andrus",
+  "positions": ["SS"],
+  "team": "TEX",
+  "eligiblePositions": ["SS", "2B/SS", "Util", "Bench"]
+  },
+  "143": {
+  "name": "Odubel Herrera",
+  "positions": ["OF"],
+  "team": "PHI",
+  "eligiblePositions": ["OF", "Util", "Bench"]
+  },
+  "144": {
+  "name": "Mike Napoli",
+  "positions": ["1B"],
+  "team": "FA",
+  "eligiblePositions": ["1B", "1B/3B", "Util", "Bench"]
+  },
+  "145": {
+  "name": "Kelvin Herrera",
+  "positions": ["RP"],
+  "team": "KC",
+  "eligiblePositions": ["P", "RP", "Bench"]
+  },
+  "146": {
+  "name": "Kole Calhoun",
+  "positions": ["OF"],
+  "team": "LAA",
+  "eligiblePositions": ["OF", "Util", "Bench"]
+  },
+  "147": {
+  "name": "Logan Forsyth",
+  "positions": ["2B"],
+  "team": "LAD",
+  "eligiblePositions": ["2B", "2B/SS", "Util", "Bench"]
+  },
+  "148": {
+  "name": "Hisashi Iwakuma",
+  "positions": ["SP"],
+  "team": "SEA",
+  "eligiblePositions": ["P", "SP", "Bench"]
+  },
+  "149": {
+  "name": "Troy Tulowitzki",
+  "positions": ["SS"],
+  "team": "TOR",
+  "eligiblePositions": ["SS", "2B/SS", "Util", "Bench"]
+  },
+  "150": {
+  "name": "J.T. Realmuto",
+  "positions": ["C"],
+  "team": "MIA",
+  "eligiblePositions": ["C", "Util", "Bench"]
+  },
+  
 
 
 
