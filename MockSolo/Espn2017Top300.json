@@ -1079,9 +1079,67 @@
     "team": "NYY",
     "eligiblePositions": ["OF", "Util", "Bench"]
   },
-
-
-
+  "181": {
+    "name": "Starlin Castro",
+    "positions": ["2B"],
+    "team": "NYY",
+    "eligiblePositions": ["2B", "2B/SS", "Util", "Bench"]
+  },
+  "182": {
+    "name": "Maikel Franco",
+    "positions": ["3B"],
+    "team": "PHI",
+    "eligiblePositions": ["3B", "1B/3B", "Util", "Bench"]
+  },
+  "183": {
+    "name": "Jon Gray",
+    "positions": ["SP"],
+    "team": "COL",
+    "eligiblePositions": ["P", "SP", "Bench"]
+  },
+  "184": {
+    "name": "Brandon Crawford",
+    "positions": ["SS"],
+    "team": "SF",
+    "eligiblePositions": ["SS", "2B/SS", "Util", "Bench"]
+  },
+  "185": {
+    "name": "Michael Conforto",
+    "positions": ["OF"],
+    "team": "NYM",
+    "eligiblePositions": ["OF", "Util", "Bench"]
+  },
+  "186": {
+    "name": "Alex Reyes",
+    "positions": ["SP"],
+    "team": "CLE",
+    "eligiblePositions": ["P", "SP", "Bench"]
+  },
+  "187": {
+    "name": "Cody Allen",
+    "positions": ["RP"],
+    "team": "CLE",
+    "eligiblePositions": ["P", "RP", "Bench"]
+  },
+  "188": {
+    "name": "Steven Matz",
+    "positions": ["SP"],
+    "team": "NYM",
+    "eligiblePositions": ["P", "SP", "Bench"]
+  },
+  "189": {
+    "name": "Francisco Rodriguez",
+    "positions": ["RP"],
+    "team": "DET",
+    "eligiblePositions": ["P", "RP", "Bench"]
+  },
+  "190": {
+    "name": "Carlos Rondon",
+    "positions": ["SP"],
+    "team": "CWS",
+    "eligiblePositions": ["P", "SP", "Bench"]
+  },
+  
 
 
 
