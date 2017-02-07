@@ -1139,11 +1139,246 @@
     "team": "CWS",
     "eligiblePositions": ["P", "SP", "Bench"]
   },
-  
-
-
-
-
+  "191": {
+    "name": "Ender Inciarte",
+    "positions": ["OF"],
+    "team": "ATL",
+    "eligiblePositions": ["OF", "Util", "Bench"]
+  },
+  "192": {
+    "name": "Jonathan Schoop",
+    "positions": ["2B"],
+    "team": "BAL",
+    "eligiblePositions": ["2B", "2B/SS", "Util", "Bench"]
+  },
+  "193": {
+    "name": "Brian McCann",
+    "positions": ["C"],
+    "team": "HOU",
+    "eligiblePositions": ["C", "Util", "Bench"]
+  },
+  "194": {
+    "name": "Raisel Iglesias",
+    "positions": ["RP", "SP"],
+    "team": "CIN",
+    "eligiblePositions": ["P", "RP", "SP", "Bench"]
+  },
+  "195": {
+    "name": "J. A. Happ",
+    "positions": ["SP"],
+    "team": "TOR",
+    "eligiblePositions": ["P", "SP", "Bench"]
+  },
+  "196": {
+    "name": "Brett Gardner",
+    "positions": ["OF"],
+    "team": "NYY",
+    "eligiblePositions": ["OF", "Util", "Bench"]
+  },
+  "197": {
+    "name": "Rajai Davis",
+    "positions": ["OF"],
+    "team": "OAK",
+    "eligiblePositions": ["OF", "Util", "Bench"]
+  },
+  "198": {
+    "name": "Sean Manaea",
+    "positions": ["SP"],
+    "team": "OAK",
+    "eligiblePositions": ["P", "SP", "Bench"]
+  },
+  "199": {
+    "name": "Yasmany Tomas",
+    "positions": ["OF"],
+    "team": "ARI",
+    "eligiblePositions": ["OF", "Util", "Bench"]
+  },
+  "200": {
+    "name": "Yulieski Gurriel",
+    "positions": ["3B"],
+    "team": "HOU",
+    "eligiblePositions": ["3B", "1B/3B", "Util", "Bench"]
+  },
+  "201": {
+    "name": "Gio Gonzalez",
+    "positions": ["SP"],
+    "team": "WAS",
+    "eligiblePositions": ["P", "SP", "Bench"]
+  },
+  "202": {
+    "name": "Javier Baez",
+    "positions": ["3B", "2B", "SS"],
+    "team": "CHC",
+    "eligiblePositions": ["3B", "1B/3B", "2B", "SS", "2B/SS", "Util", "Bench"]
+  },
+  "203": {
+    "name": "Matt Wieters",
+    "positions": ["C"],
+    "team": "FA",
+    "eligiblePositions": ["C", "Util", "Bench"]
+  },
+  "204": {
+    "name": "Sam Dyson",
+    "positions": ["RP"],
+    "team": "TEX",
+    "eligiblePositions": ["P", "RP", "Bench"]
+  },
+  "205": {
+    "name": "Mike Moustakas",
+    "positions": ["3B"],
+    "team": "KC",
+    "eligiblePositions": ["3B", "1B/3B", "Util", "Bench"]
+  },
+  "206": {
+    "name": "Taijuan Walker",
+    "positions": ["SP"],
+    "team": "ARI",
+    "eligiblePositions": ["P", "SP", "Bench"]
+  },
+  "207": {
+    "name": "Carlos Gomez",
+    "positions": ["OF"],
+    "team": "TEX",
+    "eligiblePositions": ["OF", "Util", "Bench"]
+  },
+  "208": {
+    "name": "C.J. Cron",
+    "positions": ["1B"],
+    "team": "LAA",
+    "eligiblePositions": ["1B", "1B/3B", "Util", "Bench"]
+  },
+  "209": {
+    "name": "Eugenio Suarez",
+    "positions": ["3B"],
+    "team": "CIN",
+    "eligiblePositions": ["3B", "1B/3B", "Util", "Bench"]
+  },
+  "210": {
+    "name": "Chris Tillman",
+    "positions": ["SP"],
+    "team": "BAL",
+    "eligiblePositions": ["P", "SP", "Bench"]
+  },
+  "211": {
+    "name": "Marcus Semien",
+    "positions": ["SS"],
+    "team": "OAK",
+    "eligiblePositions": ["SS", "2B/SS", "Util", "Bench"]
+  },
+  "212": {
+    "name": "Nomar Mazara",
+    "positions": ["OF"],
+    "team": "TEX",
+    "eligiblePositions": ["OF", "Util", "Bench"]
+  },
+  "213": {
+    "name": "Ryon Healy",
+    "positions": ["3B"],
+    "team": "OAK",
+    "eligiblePositions": ["3B", "1B/3B", "Util", "Bench"]
+  },
+  "214": {
+    "name": "Vince Velasquez",
+    "positions": ["SP"],
+    "team": "PHI",
+    "eligiblePositions": ["P", "SP", "Bench"]
+  },
+  "215": {
+    "name": "A.J. Ramos",
+    "positions": ["RP"],
+    "team": "MIA",
+    "eligiblePositions": ["P", "RP", "Bench"]
+  },
+  "216": {
+    "name": "Brandon Phillips",
+    "positions": ["2B"],
+    "team": "CIN",
+    "eligiblePositions": ["P", "SP", "Bench"]
+  },
+  "217": {
+    "name": "Chris Carter",
+    "positions": ["1B"],
+    "team": "SP",
+    "eligiblePositions": ["1B", "1B/3B", "Util", "Bench"]
+  },
+  "218": {
+    "name": "Jameson Taillon",
+    "positions": ["SP"],
+    "team": "PIT",
+    "eligiblePositions": ["P", "SP", "Bench"]
+  },
+  "219": {
+    "name": "Didi Gregorius",
+    "positions": ["SS"],
+    "team": "NYY",
+    "eligiblePositions": ["SS", "2B/SS", "Util", "Bench"]
+  },
+  "220": {
+    "name": "Yasiel Puig",
+    "positions": ["OF"],
+    "team": "LAD",
+    "eligiblePositions": ["OF", "Util", "Bench"]
+  },
+  "221": {
+    "name": "Byron Buxton",
+    "positions": ["OF"],
+    "team": "MIN",
+    "eligiblePositions": ["OF", "Util", "Bench"]
+  },
+  "222": {
+    "name": "Matt Shoemaker",
+    "positions": ["SP"],
+    "team": "LAA",
+    "eligiblePositions": ["P", "SP", "Bench"]
+  },
+  "223": {
+    "name": "Keon Broxton",
+    "positions": ["OF"],
+    "team": "MIL",
+    "eligiblePositions": ["OF", "Util", "Bench"]
+  },
+  "224": {
+    "name": "Eric Thames",
+    "positions": ["1B"],
+    "team": "MIL",
+    "eligiblePositions": ["1B", "1B/3B", "Util", "Bench"]
+  },
+  "225": {
+    "name": "Jason Heyward",
+    "positions": ["OF"],
+    "team": "CHC",
+    "eligiblePositions": ["OF", "Util", "Bench"]
+  },
+  "226": {
+    "name": "Robbie Ray",
+    "positions": ["SP"],
+    "team": "ARI",
+    "eligiblePositions": ["P", "SP", "Bench"]
+  },
+  "227": {
+    "name": "Devon Travis",
+    "positions": ["2B"],
+    "team": "TOR",
+    "eligiblePositions": ["2B", "2B/SS", "Util", "Bench"]
+  },
+  "228": {
+    "name": "Russell Martin",
+    "positions": ["C"],
+    "team": "TOR",
+    "eligiblePositions": ["C", "Util", "Bench"]
+  },
+  "229": {
+    "name": "Jose Peraza",
+    "positions": ["SS", "OF"],
+    "team": "CIN",
+    "eligiblePositions": ["SS", "2B/SS", "OF", "Util", "Bench"]
+  },
+  "230": {
+    "name": "Ivan Nova",
+    "positions": ["SP"],
+    "team": "PIT",
+    "eligiblePositions": ["P", "SP", "Bench"]
+  },
 
 
 
