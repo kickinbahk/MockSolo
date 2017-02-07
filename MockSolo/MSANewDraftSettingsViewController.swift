@@ -128,6 +128,10 @@ class NewDraftSettingsViewController: UIViewController {
     dimmedView.addSubview(playerNumberOfTeamsTextField)
     dimmedView.addSubview(startDraftButton)
     
+    addConstraints()
+  }
+  
+  func addConstraints() {
     dimmedView.translatesAutoresizingMaskIntoConstraints = false
     dimmedView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
     dimmedView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
@@ -148,7 +152,7 @@ class NewDraftSettingsViewController: UIViewController {
     playerNumberOfTeamsLabel.translatesAutoresizingMaskIntoConstraints = false
     playerNumberOfTeamsLabel.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
     playerNumberOfTeamsLabel.bottomAnchor.constraint(equalTo: playerNumberOfTeamsTextField.topAnchor,
-                                                         constant: -20).isActive = true
+                                                     constant: -20).isActive = true
     
     playerNumberOfTeamsTextField.translatesAutoresizingMaskIntoConstraints = false
     playerNumberOfTeamsTextField.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
@@ -165,7 +169,6 @@ class NewDraftSettingsViewController: UIViewController {
     startDraftButton.translatesAutoresizingMaskIntoConstraints = false
     startDraftButton.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
     startDraftButton.bottomAnchor.constraint(equalTo: dimmedView.bottomAnchor, constant: -35).isActive = true
-    
   }
   
   func tap() {
