@@ -68,7 +68,6 @@ class NewDraftSettingsViewController: UIViewController {
     
     let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.tap))
     gestureRecognizer.cancelsTouchesInView = false
-//    gestureRecognizer.delegate = self
     view.addGestureRecognizer(gestureRecognizer)
     
     playerDraftPositionTextField.delegate = self
@@ -76,7 +75,14 @@ class NewDraftSettingsViewController: UIViewController {
 
     updateUI()
     view.layoutIfNeeded()
-    // Do any additional setup after loading the view.
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    UIApplication.shared.statusBarStyle = .lightContent
+  }
+  
+  override var preferredStatusBarStyle : UIStatusBarStyle {
+    return .lightContent
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -199,7 +205,6 @@ class NewDraftSettingsViewController: UIViewController {
     startDraftImage.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
     startDraftImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
     startDraftImage.contentMode = .scaleAspectFill
-    
     
     startDraftButton.translatesAutoresizingMaskIntoConstraints = false
     startDraftButton.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
