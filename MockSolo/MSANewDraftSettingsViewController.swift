@@ -149,11 +149,8 @@ class NewDraftSettingsViewController: UIViewController {
     playerNumberOfTeamsLabel.numberOfLines = 3
     playerNumberOfTeamsLabel.preferredMaxLayoutWidth = view.bounds.width - 10
     playerNumberOfTeamsLabel.sizeToFit()
+  
     
-    playerNumberOfTeamsTextField.frame = CGRect(x: PlayerNumberOfTeamsTextFieldProps.x,
-                                                y: PlayerNumberOfTeamsTextFieldProps.y,
-                                                width: PlayerNumberOfTeamsTextFieldProps.width,
-                                                height: PlayerNumberOfTeamsTextFieldProps.height)
     playerNumberOfTeamsTextField.layer.masksToBounds = true
     playerNumberOfTeamsTextField.layer.borderWidth = 1.0
     playerNumberOfTeamsTextField.layer.borderColor = UIColor.white.cgColor
@@ -197,6 +194,7 @@ class NewDraftSettingsViewController: UIViewController {
     playerDraftPositionTextField.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
     playerDraftPositionTextField.bottomAnchor.constraint(equalTo: playerNumberOfTeamsLabel.topAnchor,
                                                          constant: -20).isActive = true
+    playerDraftPositionTextField.widthAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true
     
     playerNumberOfTeamsLabel.translatesAutoresizingMaskIntoConstraints = false
     playerNumberOfTeamsLabel.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
@@ -207,6 +205,7 @@ class NewDraftSettingsViewController: UIViewController {
     playerNumberOfTeamsTextField.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
     playerNumberOfTeamsTextField.bottomAnchor.constraint(equalTo: startDraftButton.topAnchor,
                                                          constant: -20).isActive = true
+    playerNumberOfTeamsTextField.widthAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true
     
     startDraftImage.translatesAutoresizingMaskIntoConstraints = false
     startDraftImage.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
