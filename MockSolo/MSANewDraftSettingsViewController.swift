@@ -85,6 +85,7 @@ class NewDraftSettingsViewController: UIViewController {
     playerDraftPositionTextField.layer.borderWidth = 1.0
     playerDraftPositionTextField.layer.borderColor = UIColor.white.cgColor
     playerDraftPositionTextField.textColor = UIColor.white
+    playerDraftPositionTextField.tintColor = UIColor.white
     playerDraftPositionTextField.borderStyle = .line
     playerDraftPositionTextField.textAlignment = .center
     playerDraftPositionTextField.attributedPlaceholder = NSAttributedString(string:"5",
@@ -102,6 +103,7 @@ class NewDraftSettingsViewController: UIViewController {
     playerNumberOfTeamsTextField.layer.borderWidth = 1.0
     playerNumberOfTeamsTextField.layer.borderColor = UIColor.white.cgColor
     playerNumberOfTeamsTextField.textColor = UIColor.white
+    playerNumberOfTeamsTextField.tintColor = UIColor.white
     playerNumberOfTeamsTextField.borderStyle = .line
     playerNumberOfTeamsTextField.textAlignment = .center
     playerNumberOfTeamsTextField.attributedPlaceholder = NSAttributedString(string:"10",
@@ -140,7 +142,7 @@ class NewDraftSettingsViewController: UIViewController {
     playerDraftPositionTextField.translatesAutoresizingMaskIntoConstraints = false
     playerDraftPositionTextField.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
     playerDraftPositionTextField.bottomAnchor.constraint(equalTo: playerNumberOfTeamsLabel.topAnchor,
-                                                         constant: -20).isActive = true
+                                                         constant: -30).isActive = true
     playerDraftPositionTextField.widthAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true
     
     playerNumberOfTeamsLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -151,7 +153,7 @@ class NewDraftSettingsViewController: UIViewController {
     playerNumberOfTeamsTextField.translatesAutoresizingMaskIntoConstraints = false
     playerNumberOfTeamsTextField.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
     playerNumberOfTeamsTextField.bottomAnchor.constraint(equalTo: startDraftButton.topAnchor,
-                                                         constant: -20).isActive = true
+                                                         constant: -40).isActive = true
     playerNumberOfTeamsTextField.widthAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true
     
     startDraftImage.translatesAutoresizingMaskIntoConstraints = false
