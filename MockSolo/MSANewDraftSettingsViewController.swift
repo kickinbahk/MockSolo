@@ -192,11 +192,21 @@ class NewDraftSettingsViewController: UIViewController {
     playerDraftPositionLabel.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
     playerDraftPositionLabel.bottomAnchor.constraint(equalTo: playerDraftPositionTextField.topAnchor,
                                                      constant: -20).isActive = true
+    
     playerDraftPositionTextField.translatesAutoresizingMaskIntoConstraints = false
     playerDraftPositionTextField.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
     playerDraftPositionTextField.bottomAnchor.constraint(equalTo: playerNumberOfTeamsLabel.topAnchor,
                                                          constant: -20).isActive = true
     
+    playerNumberOfTeamsLabel.translatesAutoresizingMaskIntoConstraints = false
+    playerNumberOfTeamsLabel.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
+    playerNumberOfTeamsLabel.bottomAnchor.constraint(equalTo: playerNumberOfTeamsTextField.topAnchor,
+                                                         constant: -20).isActive = true
+    
+    playerNumberOfTeamsTextField.translatesAutoresizingMaskIntoConstraints = false
+    playerNumberOfTeamsTextField.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
+    playerNumberOfTeamsTextField.bottomAnchor.constraint(equalTo: startDraftButton.topAnchor,
+                                                         constant: -20).isActive = true
     
     startDraftImage.translatesAutoresizingMaskIntoConstraints = false
     startDraftImage.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
