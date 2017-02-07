@@ -21,47 +21,6 @@ class NewDraftSettingsViewController: UIViewController {
   var playerDraftPosition: Int = 0
   var playerNumberOfTeams: Int = 0
   
-  struct DimmedViewProps {
-    static let x: CGFloat = 60
-    static let y: CGFloat = 100
-    static let width: CGFloat = 200
-    static let height: CGFloat = 40
-  }
-  
-  struct PlayerDraftPositionLabelProps {
-    static let x: CGFloat = 60
-    static let y: CGFloat = 100
-    static let width: CGFloat = 200
-    static let height: CGFloat = 40
-  }
-  
-  struct PlayerDraftPositionTextFieldProps {
-    static let x: CGFloat = 60
-    static let y: CGFloat = 150
-    static let width: CGFloat = 150
-    static let height: CGFloat = 30
-  }
-  
-  struct PlayerNumberOfTeamsLabelProps {
-    static let x: CGFloat = 60
-    static let y: CGFloat = 200
-    static let width: CGFloat = 200
-    static let height: CGFloat = 40
-  }
-  
-  struct PlayerNumberOfTeamsTextFieldProps {
-    static let x: CGFloat = 60
-    static let y: CGFloat = 250
-    static let width: CGFloat = 150
-    static let height: CGFloat = 30
-  }
-  
-  struct StartDraftButtonProps {
-    static let x: CGFloat = 60
-    static let y: CGFloat = 100
-    static let width: CGFloat = 400
-    static let height: CGFloat = 80
-  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -111,10 +70,6 @@ class NewDraftSettingsViewController: UIViewController {
 
   func updateUI() {
     let image = UIImage(named: "baseball")
-    dimmedView.frame = CGRect(x: DimmedViewProps.x,
-                        y: DimmedViewProps.y,
-                        width: DimmedViewProps.width,
-                        height: DimmedViewProps.height)
     dimmedView.backgroundColor = UIColor.black.withAlphaComponent(0.65)
     
     startDraftImage = UIImageView(image: image!)
@@ -126,10 +81,6 @@ class NewDraftSettingsViewController: UIViewController {
     playerDraftPositionLabel.preferredMaxLayoutWidth = view.bounds.width - 10
     playerDraftPositionLabel.sizeToFit()
     
-    playerDraftPositionTextField.frame = CGRect(x: PlayerDraftPositionTextFieldProps.x,
-                                                y: PlayerDraftPositionTextFieldProps.y,
-                                                width: PlayerDraftPositionTextFieldProps.width,
-                                                height: PlayerDraftPositionTextFieldProps.height)
     playerDraftPositionTextField.layer.masksToBounds = true
     playerDraftPositionTextField.layer.borderWidth = 1.0
     playerDraftPositionTextField.layer.borderColor = UIColor.white.cgColor
@@ -139,10 +90,6 @@ class NewDraftSettingsViewController: UIViewController {
     playerDraftPositionTextField.attributedPlaceholder = NSAttributedString(string:"5",
                                                                              attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
     
-    playerNumberOfTeamsLabel.frame = CGRect(x: PlayerNumberOfTeamsLabelProps.x,
-                                            y: PlayerNumberOfTeamsLabelProps.y,
-                                            width: PlayerNumberOfTeamsLabelProps.width,
-                                            height: PlayerNumberOfTeamsLabelProps.height)
     playerNumberOfTeamsLabel.textColor = UIColor.white
     playerNumberOfTeamsLabel.text = "How Many Teams Are In Your League?"
     playerNumberOfTeamsLabel.lineBreakMode = .byWordWrapping
