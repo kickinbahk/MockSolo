@@ -118,15 +118,7 @@ class NewDraftSettingsViewController: UIViewController {
     dimmedView.backgroundColor = UIColor.black.withAlphaComponent(0.65)
     
     startDraftImage = UIImageView(image: image!)
-    startDraftImage.frame = CGRect(x: 0,
-                                   y: 0,
-                                   width: 200,
-                                   height: 200)
     
-    playerDraftPositionLabel.frame = CGRect(x: PlayerDraftPositionLabelProps.x,
-                                            y: PlayerDraftPositionLabelProps.y,
-                                            width: PlayerDraftPositionLabelProps.width,
-                                            height: PlayerDraftPositionLabelProps.height)
     playerDraftPositionLabel.textColor = UIColor.white
     playerDraftPositionLabel.text = "What Position Are You Drafting From?"
     playerDraftPositionLabel.lineBreakMode = .byWordWrapping
@@ -171,11 +163,7 @@ class NewDraftSettingsViewController: UIViewController {
     playerNumberOfTeamsTextField.attributedPlaceholder = NSAttributedString(string:"10",
                                                                             attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
     
-    
-    startDraftButton.frame = CGRect(x: StartDraftButtonProps.x,
-                                    y: StartDraftButtonProps.y,
-                                    width: StartDraftButtonProps.width,
-                                    height: StartDraftButtonProps.height)
+  
     startDraftButton.backgroundColor = UIColor(red: 46/255, green: 60/255, blue: 70/255, alpha: 1)
     startDraftButton.layer.cornerRadius = 5
     startDraftButton.contentEdgeInsets = UIEdgeInsetsMake(20, 20, 20, 20)
@@ -199,6 +187,10 @@ class NewDraftSettingsViewController: UIViewController {
     dimmedView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
     dimmedView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
     dimmedView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
+    
+    playerDraftPositionLabel.translatesAutoresizingMaskIntoConstraints = false
+    playerDraftPositionLabel.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
+    playerDraftPositionLabel.bottomAnchor.constraint(equalTo: playerDraftPositionTextField.topAnchor, constant: -20).isActive = true
     
     startDraftImage.translatesAutoresizingMaskIntoConstraints = false
     startDraftImage.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
