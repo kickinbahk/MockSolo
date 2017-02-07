@@ -59,8 +59,8 @@ class NewDraftSettingsViewController: UIViewController {
   struct StartDraftButtonProps {
     static let x: CGFloat = 60
     static let y: CGFloat = 100
-    static let width: CGFloat = 150
-    static let height: CGFloat = 40
+    static let width: CGFloat = 400
+    static let height: CGFloat = 80
   }
   
   override func viewDidLoad() {
@@ -137,7 +137,9 @@ class NewDraftSettingsViewController: UIViewController {
     playerDraftPositionTextField.layer.borderColor = UIColor.white.cgColor
     playerDraftPositionTextField.textColor = UIColor.white
     playerDraftPositionTextField.borderStyle = .line
-    playerDraftPositionTextField.placeholder = "5"
+    playerDraftPositionTextField.textAlignment = .center
+    playerDraftPositionTextField.attributedPlaceholder = NSAttributedString(string:"5",
+                                                                             attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
     
     playerNumberOfTeamsLabel.frame = CGRect(x: PlayerNumberOfTeamsLabelProps.x,
                                             y: PlayerNumberOfTeamsLabelProps.y,
@@ -157,17 +159,23 @@ class NewDraftSettingsViewController: UIViewController {
     playerNumberOfTeamsTextField.layer.masksToBounds = true
     playerNumberOfTeamsTextField.layer.borderWidth = 1.0
     playerNumberOfTeamsTextField.layer.borderColor = UIColor.white.cgColor
+    playerNumberOfTeamsTextField.textColor = UIColor.white
     playerNumberOfTeamsTextField.borderStyle = .line
-    playerNumberOfTeamsTextField.placeholder = "10"
+    playerNumberOfTeamsTextField.textAlignment = .center
+    playerNumberOfTeamsTextField.attributedPlaceholder = NSAttributedString(string:"10",
+                                                                            attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
     
     
     startDraftButton.frame = CGRect(x: StartDraftButtonProps.x,
                                     y: StartDraftButtonProps.y,
                                     width: StartDraftButtonProps.width,
                                     height: StartDraftButtonProps.height)
+    startDraftButton.backgroundColor = UIColor(red: 46/255, green: 60/255, blue: 70/255, alpha: 1)
+    startDraftButton.layer.cornerRadius = 5
+    startDraftButton.contentEdgeInsets = UIEdgeInsetsMake(20, 20, 20, 20)
     startDraftButton.setTitle("Start Draft", for: .normal)
     startDraftButton.tintColor = UIColor.black
-    startDraftButton.setTitleColor(UIColor.blue, for: .normal)
+    startDraftButton.setTitleColor(UIColor.white, for: .normal)
     startDraftButton.setTitleColor(UIColor.gray, for: .disabled)
     startDraftButton.addTarget(self, action: #selector(startDraft), for: .touchUpInside)
     startDraftButton.isEnabled = false
