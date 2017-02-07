@@ -182,11 +182,11 @@ class NewDraftSettingsViewController: UIViewController {
     
     view.addSubview(startDraftImage)
     view.addSubview(dimmedView)
-    view.addSubview(playerDraftPositionLabel)
-    view.addSubview(playerDraftPositionTextField)
-    view.addSubview(playerNumberOfTeamsLabel)
-    view.addSubview(playerNumberOfTeamsTextField)
-    view.addSubview(startDraftButton)
+    dimmedView.addSubview(playerDraftPositionLabel)
+    dimmedView.addSubview(playerDraftPositionTextField)
+    dimmedView.addSubview(playerNumberOfTeamsLabel)
+    dimmedView.addSubview(playerNumberOfTeamsTextField)
+    dimmedView.addSubview(startDraftButton)
     
     dimmedView.translatesAutoresizingMaskIntoConstraints = false
     dimmedView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
@@ -194,16 +194,16 @@ class NewDraftSettingsViewController: UIViewController {
     dimmedView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
     dimmedView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
     
-    startDraftButton.translatesAutoresizingMaskIntoConstraints = false
-    startDraftButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-    startDraftButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -35).isActive = true
-    
     startDraftImage.translatesAutoresizingMaskIntoConstraints = false
     startDraftImage.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     startDraftImage.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
     startDraftImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
     startDraftImage.contentMode = .scaleAspectFill
     
+    
+    startDraftButton.translatesAutoresizingMaskIntoConstraints = false
+    startDraftButton.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
+    startDraftButton.bottomAnchor.constraint(equalTo: dimmedView.bottomAnchor, constant: -35).isActive = true
     
   }
   
