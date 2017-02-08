@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="p04-SQ-k5a">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="p04-SQ-k5a">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,6 +9,24 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="93b-ey-Ecp">
+            <objects>
+                <viewController id="JB3-Oy-lxh" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2ee-Up-oI5"/>
+                        <viewControllerLayoutGuide type="bottom" id="wwy-aj-9Ou"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RMF-FA-ciE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DZc-tQ-vhB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2507" y="-252"/>
+        </scene>
         <!--Players-->
         <scene sceneID="OAu-vG-EEY">
             <objects>
@@ -71,7 +89,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mRJ-HH-XUi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4841" y="198"/>
+            <point key="canvasLocation" x="4622" y="198"/>
         </scene>
         <!--New Draft Settings View Controller-->
         <scene sceneID="qfL-0A-l1B">
@@ -88,6 +106,7 @@
                     </view>
                     <connections>
                         <segue destination="UO8-YB-OIP" kind="show" identifier="StartDraft" id="Lsv-mY-rkd"/>
+                        <segue destination="JB3-Oy-lxh" kind="show" identifier="HowToPlay" id="tU6-hp-ddt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DGX-ev-yqu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -111,7 +130,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pcu-hZ-5hw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2506.875" y="75"/>
+            <point key="canvasLocation" x="2507" y="523"/>
         </scene>
         <!--Draft Picks-->
         <scene sceneID="tTV-iN-dlh">
@@ -130,10 +149,10 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="biT-Td-0v5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3628" y="523"/>
+            <point key="canvasLocation" x="3566" y="523"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Lsv-mY-rkd"/>
+        <segue reference="khm-10-UFI"/>
     </inferredMetricsTieBreakers>
 </document>
