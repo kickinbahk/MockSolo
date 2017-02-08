@@ -43,11 +43,11 @@ class HowToPlayViewController: UIViewController {
     backgroundImage.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     backgroundImage.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
     backgroundImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
-    backgroundImage.contentMode = .scaleAspectFill
+    backgroundImage.contentMode = .scaleAspectFit
     
     closeButton.translatesAutoresizingMaskIntoConstraints = false
-    closeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-    closeButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -35)
+    closeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    closeButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -35).isActive = true
     
   }
 
