@@ -77,6 +77,7 @@ class NewDraftSettingsViewController: UIViewController {
     
     howToPlayButton.setTitle("How to use this App...", for: .normal)
     howToPlayButton.setTitleColor(UIColor.white, for: .normal)
+    howToPlayButton.addTarget(self, action: #selector(openHowToPlay), for: .touchUpInside)
     
     playerDraftPositionLabel.textColor = UIColor.white
     playerDraftPositionLabel.text = "What Position Are You Drafting From?"
@@ -183,6 +184,10 @@ class NewDraftSettingsViewController: UIViewController {
   func tap() {
     playerDraftPositionTextField.resignFirstResponder()
     playerNumberOfTeamsTextField.resignFirstResponder()
+  }
+
+  func openHowToPlay(_ sender: UIButton) {
+    performSegue(withIdentifier: "HowToPlay", sender: sender)
   }
   
   func startDraft(_ sender: UIButton) {
