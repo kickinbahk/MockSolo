@@ -9,9 +9,11 @@
 import UIKit
 
 class HowToPlayViewController: UIViewController {
-
-  var backgroundImage = UIImageView()
+  
   let closeButton = UIButton()
+  
+  var backgroundImage = UIImageView()
+  var dimmedView = UIView()
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -22,6 +24,7 @@ class HowToPlayViewController: UIViewController {
   
   func updateUI() {
     let image = UIImage(named: "stadium")
+    dimmedView.backgroundColor = UIColor.black.withAlphaComponent(0.65)
     backgroundImage = UIImageView(image: image!)
   
     closeButton.backgroundColor = UIColor(red: 46/255, green: 60/255, blue: 70/255, alpha: 1)
@@ -33,7 +36,8 @@ class HowToPlayViewController: UIViewController {
     
     
     view.addSubview(backgroundImage)
-    view.addSubview(closeButton)
+    view.addSubview(dimmedView)
+    dimmedView.addSubview(closeButton)
     
     addConstraints()
   }
@@ -45,9 +49,15 @@ class HowToPlayViewController: UIViewController {
     backgroundImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
     backgroundImage.contentMode = .scaleAspectFit
     
+    dimmedView.translatesAutoresizingMaskIntoConstraints = false
+    dimmedView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
+    dimmedView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+    dimmedView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+    dimmedView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
+    
     closeButton.translatesAutoresizingMaskIntoConstraints = false
-    closeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-    closeButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -35).isActive = true
+    closeButton.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
+    closeButton.bottomAnchor.constraint(equalTo: dimmedView.bottomAnchor, constant: -35).isActive = true
     
   }
 
