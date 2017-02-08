@@ -10,6 +10,7 @@ import UIKit
 
 class NewDraftSettingsViewController: UIViewController {
 
+  let howToPlayButton = UIButton()
   let playerDraftPositionLabel = UILabel()
   let playerDraftPositionTextField = UITextField()
   let playerNumberOfTeamsLabel = UILabel()
@@ -74,6 +75,9 @@ class NewDraftSettingsViewController: UIViewController {
     
     startDraftImage = UIImageView(image: image!)
     
+    howToPlayButton.setTitle("How to use this App...", for: .normal)
+    howToPlayButton.setTitleColor(UIColor.white, for: .normal)
+    
     playerDraftPositionLabel.textColor = UIColor.white
     playerDraftPositionLabel.text = "What Position Are You Drafting From?"
     playerDraftPositionLabel.lineBreakMode = .byWordWrapping
@@ -122,6 +126,7 @@ class NewDraftSettingsViewController: UIViewController {
     
     view.addSubview(startDraftImage)
     view.addSubview(dimmedView)
+    dimmedView.addSubview(howToPlayButton)
     dimmedView.addSubview(playerDraftPositionLabel)
     dimmedView.addSubview(playerDraftPositionTextField)
     dimmedView.addSubview(playerNumberOfTeamsLabel)
@@ -137,6 +142,10 @@ class NewDraftSettingsViewController: UIViewController {
     dimmedView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
     dimmedView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
     dimmedView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
+    
+    howToPlayButton.translatesAutoresizingMaskIntoConstraints = false
+    howToPlayButton.topAnchor.constraint(equalTo: dimmedView.topAnchor, constant: 75).isActive = true
+    howToPlayButton.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
     
     playerDraftPositionLabel.translatesAutoresizingMaskIntoConstraints = false
     playerDraftPositionLabel.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
