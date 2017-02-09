@@ -12,7 +12,7 @@ class InstructionsViewController: UIViewController {
   
   let instructionTitleLabel = UILabel()
   let instructionTextField = UITextView()
-  let instructions = "This app allows you to practice drafting on your own. Each pick you will only be able to select the available players below your current pick. \n\nIt will help you get a feel of where you should target certain positions and where you can wait on a player. \n\nAt the end of the draft you have constructed the team from the best available players with none falling to you. In the actual draft you should do even better as players will fall to you. \n\nYou will have the opportunity to pick any player ranked at or below your current pick. Once you choose the player, you will then choose the position to draft the player for. \n\nThe app will then move you to your next pick and remove any players above it."
+  let instructions = "1) Pick any player ranked at or below your current pick. \n\n2) Once you choose the player, you will then choose the position to draft the player for. \n\n3) The app will then move you to your next pick and remove any players above it. \n\nRepeat this process till you have filled all your roster. \n\nThe Draft Picks tab wil have the current players you have drafted."
   
   var backgroundImage = UIImageView()
   var dimmedView = UIView()
@@ -37,7 +37,7 @@ class InstructionsViewController: UIViewController {
     dimmedView.backgroundColor = UIColor.black.withAlphaComponent(0.65)
     backgroundImage = UIImageView(image: image!)
     
-    instructionTitleLabel.text = "How Use this App..."
+    instructionTitleLabel.text = "Instructions"
     instructionTitleLabel.textColor = UIColor.white
     
     instructionTextField.text = instructions
@@ -74,13 +74,13 @@ class InstructionsViewController: UIViewController {
     
     
     instructionTextField.translatesAutoresizingMaskIntoConstraints = false
-    instructionTextField.topAnchor.constraint(equalTo: instructionTitleLabel.topAnchor,
-                                              constant: 20).isActive = true
+    instructionTextField.topAnchor.constraint(equalTo: instructionTitleLabel.bottomAnchor,
+                                              constant: 15).isActive = true
     instructionTextField.leadingAnchor.constraint(equalTo: dimmedView.leadingAnchor, constant: 15).isActive = true
     instructionTextField.trailingAnchor.constraint(equalTo: dimmedView.trailingAnchor,
                                                    constant: -15).isActive = true
     instructionTextField.bottomAnchor.constraint(greaterThanOrEqualTo: dimmedView.bottomAnchor,
-                                                 constant: -15).isActive = true
+                                                 constant: -50).isActive = true
     
   }
   
