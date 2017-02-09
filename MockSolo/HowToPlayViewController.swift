@@ -69,12 +69,13 @@ class HowToPlayViewController: UIViewController {
     dimmedView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
     
     instructionTitleLabel.translatesAutoresizingMaskIntoConstraints = false
-    instructionTitleLabel.topAnchor.constraint(equalTo: dimmedView.topAnchor, constant: 20).isActive = true
+    instructionTitleLabel.topAnchor.constraint(equalTo: dimmedView.topAnchor, constant: 30).isActive = true
     instructionTitleLabel.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
+    instructionTitleLabel.font = UIFont.boldSystemFont(ofSize: 17)
     
     
     instructionTextLabel.translatesAutoresizingMaskIntoConstraints = false
-    instructionTextLabel.topAnchor.constraint(equalTo: instructionTitleLabel.bottomAnchor,
+    instructionTextLabel.topAnchor.constraint(equalTo: instructionTitleLabel.topAnchor,
                                               constant: 10).isActive = true
     instructionTextLabel.leadingAnchor.constraint(equalTo: dimmedView.leadingAnchor, constant: 15).isActive = true
     instructionTextLabel.trailingAnchor.constraint(equalTo: dimmedView.trailingAnchor,
