@@ -11,8 +11,8 @@ import UIKit
 class InstructionsViewController: UIViewController {
   
   let instructionTitleLabel = UILabel()
-  let instructionTextLabel = UILabel()
-  let instructions = "This app allows you to practice drafting on your own. Each pick you will only be able to select the available players below your current pick. \n\nIt will help you get a feel of where you should target certain positions and where you can wait on a player. \n\nAt the end of the draft you have constructed the team from the best available players with none falling to you. In the actual draft you should do even better as players will fall to you. \n\nEnter the position you are drafting from and how many teams are in your league to start..."
+  let instructionTextField = UITextView()
+  let instructions = "This app allows you to practice drafting on your own. Each pick you will only be able to select the available players below your current pick. \n\nIt will help you get a feel of where you should target certain positions and where you can wait on a player. \n\nAt the end of the draft you have constructed the team from the best available players with none falling to you. In the actual draft you should do even better as players will fall to you. \n\nYou will have the opportunity to pick any player ranked at or below your current pick. Once you choose the player, you will then choose the position to draft the player for. \n\nThe app will then move you to your next pick and remove any players above it."
   
   var backgroundImage = UIImageView()
   var dimmedView = UIView()
@@ -40,14 +40,16 @@ class InstructionsViewController: UIViewController {
     instructionTitleLabel.text = "How Use this App..."
     instructionTitleLabel.textColor = UIColor.white
     
-    instructionTextLabel.text = instructions
-    instructionTextLabel.numberOfLines = 0
-    instructionTextLabel.textColor = UIColor.white
+    instructionTextField.text = instructions
+    instructionTextField.isEditable = false
+    instructionTextField.backgroundColor = UIColor.clear
+    instructionTextField.textColor = UIColor.white
+    instructionTextField.font = .systemFont(ofSize: 17)
     
     view.addSubview(backgroundImage)
     view.addSubview(dimmedView)
     dimmedView.addSubview(instructionTitleLabel)
-    dimmedView.addSubview(instructionTextLabel)
+    dimmedView.addSubview(instructionTextField)
     
     addConstraints()
   }
@@ -71,14 +73,14 @@ class InstructionsViewController: UIViewController {
     instructionTitleLabel.font = UIFont.boldSystemFont(ofSize: 20)
     
     
-    instructionTextLabel.translatesAutoresizingMaskIntoConstraints = false
-    instructionTextLabel.topAnchor.constraint(equalTo: instructionTitleLabel.topAnchor,
+    instructionTextField.translatesAutoresizingMaskIntoConstraints = false
+    instructionTextField.topAnchor.constraint(equalTo: instructionTitleLabel.topAnchor,
                                               constant: 20).isActive = true
-    instructionTextLabel.leadingAnchor.constraint(equalTo: dimmedView.leadingAnchor, constant: 15).isActive = true
-    instructionTextLabel.trailingAnchor.constraint(equalTo: dimmedView.trailingAnchor,
+    instructionTextField.leadingAnchor.constraint(equalTo: dimmedView.leadingAnchor, constant: 15).isActive = true
+    instructionTextField.trailingAnchor.constraint(equalTo: dimmedView.trailingAnchor,
                                                    constant: -15).isActive = true
-    instructionTextLabel.bottomAnchor.constraint(equalTo: dimmedView.topAnchor, constant: -15).isActive = true
-    
+    instructionTextField.bottomAnchor.constraint(greaterThanOrEqualTo: dimmedView.bottomAnchor,
+                                                 constant: -15).isActive = true
     
   }
   
