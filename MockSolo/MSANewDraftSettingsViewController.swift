@@ -21,6 +21,9 @@ class NewDraftSettingsViewController: UIViewController {
   var startDraftImage = UIImageView()
   var playerDraftPosition: Int = 0
   var playerNumberOfTeams: Int = 0
+  override var preferredStatusBarStyle : UIStatusBarStyle {
+    return .lightContent
+  }
   
   
   override func viewDidLoad() {
@@ -40,10 +43,7 @@ class NewDraftSettingsViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     UIApplication.shared.statusBarStyle = .lightContent
   }
-  
-  override var preferredStatusBarStyle : UIStatusBarStyle {
-    return .lightContent
-  }
+
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "StartDraft" {
@@ -75,7 +75,7 @@ class NewDraftSettingsViewController: UIViewController {
     
     startDraftImage = UIImageView(image: image!)
     
-    howToPlayButton.setTitle("How to use this App...", for: .normal)
+    howToPlayButton.setTitle("Click Here for Instructions", for: .normal)
     howToPlayButton.setTitleColor(UIColor.white, for: .normal)
     howToPlayButton.addTarget(self, action: #selector(openHowToPlay), for: .touchUpInside)
     

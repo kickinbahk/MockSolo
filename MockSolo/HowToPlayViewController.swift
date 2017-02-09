@@ -13,17 +13,24 @@ class HowToPlayViewController: UIViewController {
   let closeButton = UIButton()
   let instructionTitleLabel = UILabel()
   let instructionTextLabel = UILabel()
+  let instructions = "This app allows you to practice drafting on your own. Each pick you will only be able to select the available players below your current pick. \n\nIt will help you get a feel of where you should target certain positions and where you can wait on a player. \n\nAt the end of the draft you have constructed the team from the best available players with none falling to you. In the actual draft you should do even better as players will fall to you."
   
   var backgroundImage = UIImageView()
   var dimmedView = UIView()
   
-  let instructions = "This app allows you to practice drafting on your own. Each pick you will only be able to select the available players below your current pick. \n\nIt will help you get a feel of where you should target certain positions and where you can wait on a player. \n\nAt the end of the draft you have constructed the team from the best available players with none falling to you. In the actual draft you should do even better as players will fall to you."
-
+  override var preferredStatusBarStyle : UIStatusBarStyle {
+    return .lightContent
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
 
     updateUI()
     view.layoutIfNeeded()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    UIApplication.shared.statusBarStyle = .lightContent
   }
   
   func updateUI() {
