@@ -11,12 +11,13 @@ import UIKit
 class HowToPlayViewController: UIViewController {
   
   let closeButton = UIButton()
-  let instructionLabel = UILabel()
+  let instructionTitleLabel = UILabel()
+  let instructionTextLabel = UILabel()
   
   var backgroundImage = UIImageView()
   var dimmedView = UIView()
   
-  let instructions = "This app allows you to practice drafting on your own. Each pick you will only be able to select the available players below your current pick. It will help you get a feel of where you should target certain positions and where you can wait on a player. At the end of the draft you have constructed the team from the best available players with none falling to you. In the actual draft you should do even better as players will fall to you."
+  let instructions = "This app allows you to practice drafting on your own. Each pick you will only be able to select the available players below your current pick. \n\nIt will help you get a feel of where you should target certain positions and where you can wait on a player. \n\nAt the end of the draft you have constructed the team from the best available players with none falling to you. In the actual draft you should do even better as players will fall to you."
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -30,9 +31,12 @@ class HowToPlayViewController: UIViewController {
     dimmedView.backgroundColor = UIColor.black.withAlphaComponent(0.65)
     backgroundImage = UIImageView(image: image!)
     
-    instructionLabel.backgroundColor = UIColor.yellow
-    instructionLabel.text = instructions
-    instructionLabel.textColor = UIColor.white
+    instructionTitleLabel.text = "How Use this App..."
+    instructionTitleLabel.textColor = UIColor.white
+    
+    instructionTextLabel.text = instructions
+    instructionTextLabel.numberOfLines = 0
+    instructionTextLabel.textColor = UIColor.white
   
     closeButton.backgroundColor = UIColor(red: 46/255, green: 60/255, blue: 70/255, alpha: 1)
     closeButton.layer.cornerRadius = 5
@@ -44,7 +48,8 @@ class HowToPlayViewController: UIViewController {
     
     view.addSubview(backgroundImage)
     view.addSubview(dimmedView)
-    dimmedView.addSubview(instructionLabel)
+    dimmedView.addSubview(instructionTitleLabel)
+    dimmedView.addSubview(instructionTextLabel)
     dimmedView.addSubview(closeButton)
     
     addConstraints()
@@ -63,12 +68,18 @@ class HowToPlayViewController: UIViewController {
     dimmedView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
     dimmedView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
     
-    instructionLabel.translatesAutoresizingMaskIntoConstraints = false
-    instructionLabel.topAnchor.constraint(equalTo: dimmedView.topAnchor, constant: 20).isActive = true
-    instructionLabel.leadingAnchor.constraint(equalTo: dimmedView.leadingAnchor, constant: 15).isActive = true
-    instructionLabel.trailingAnchor.constraint(equalTo: dimmedView.trailingAnchor, constant: -15).isActive = true
-    instructionLabel.bottomAnchor.constraint(equalTo: closeButton.topAnchor, constant: -20).isActive = true
-  
+    instructionTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+    instructionTitleLabel.topAnchor.constraint(equalTo: dimmedView.topAnchor, constant: 20).isActive = true
+    instructionTitleLabel.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
+    
+    
+    instructionTextLabel.translatesAutoresizingMaskIntoConstraints = false
+    instructionTextLabel.topAnchor.constraint(equalTo: instructionTitleLabel.bottomAnchor,
+                                              constant: 10).isActive = true
+    instructionTextLabel.leadingAnchor.constraint(equalTo: dimmedView.leadingAnchor, constant: 15).isActive = true
+    instructionTextLabel.trailingAnchor.constraint(equalTo: dimmedView.trailingAnchor,
+                                                   constant: -15).isActive = true
+    instructionTextLabel.bottomAnchor.constraint(equalTo: closeButton.topAnchor, constant: -20).isActive = true
     
     closeButton.translatesAutoresizingMaskIntoConstraints = false
     closeButton.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
