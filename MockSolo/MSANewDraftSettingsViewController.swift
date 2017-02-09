@@ -11,6 +11,7 @@ import UIKit
 class NewDraftSettingsViewController: UIViewController {
 
   let howToPlayButton = UIButton()
+  let pageTitle = UILabel()
   let playerDraftPositionLabel = UILabel()
   let playerDraftPositionTextField = UITextField()
   let playerNumberOfTeamsLabel = UILabel()
@@ -75,9 +76,16 @@ class NewDraftSettingsViewController: UIViewController {
     
     startDraftImage = UIImageView(image: image!)
     
+    pageTitle.text = "MockSolo"
+    pageTitle.textColor = UIColor.white
+    pageTitle.font = UIFont.boldSystemFont(ofSize: 20)
+    
     howToPlayButton.setTitle("Click Here for Instructions", for: .normal)
-    howToPlayButton.setTitleColor(UIColor.white, for: .normal)
+    howToPlayButton.setTitleColor(UIColor.cyan, for: .normal)
     howToPlayButton.addTarget(self, action: #selector(openHowToPlay), for: .touchUpInside)
+    howToPlayButton.contentEdgeInsets = UIEdgeInsetsMake(5, 10, 5, 10)
+    howToPlayButton.layer.cornerRadius = 5
+    
     
     playerDraftPositionLabel.textColor = UIColor.white
     playerDraftPositionLabel.text = "What Position Are You Drafting From?"
@@ -114,7 +122,6 @@ class NewDraftSettingsViewController: UIViewController {
     playerNumberOfTeamsTextField.attributedPlaceholder = NSAttributedString(string:"10",
                                                                             attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
     
-  
     startDraftButton.backgroundColor = UIColor(red: 46/255, green: 60/255, blue: 70/255, alpha: 1)
     startDraftButton.layer.cornerRadius = 5
     startDraftButton.contentEdgeInsets = UIEdgeInsetsMake(20, 20, 20, 20)
@@ -127,6 +134,7 @@ class NewDraftSettingsViewController: UIViewController {
     
     view.addSubview(startDraftImage)
     view.addSubview(dimmedView)
+    dimmedView.addSubview(pageTitle)
     dimmedView.addSubview(howToPlayButton)
     dimmedView.addSubview(playerDraftPositionLabel)
     dimmedView.addSubview(playerDraftPositionTextField)
@@ -144,8 +152,12 @@ class NewDraftSettingsViewController: UIViewController {
     dimmedView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
     dimmedView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
     
+    pageTitle.translatesAutoresizingMaskIntoConstraints = false
+    pageTitle.topAnchor.constraint(equalTo: dimmedView.topAnchor, constant: 40).isActive = true
+    pageTitle.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
+    
     howToPlayButton.translatesAutoresizingMaskIntoConstraints = false
-    howToPlayButton.topAnchor.constraint(equalTo: dimmedView.topAnchor, constant: 75).isActive = true
+    howToPlayButton.topAnchor.constraint(equalTo: pageTitle.topAnchor, constant: 75).isActive = true
     howToPlayButton.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
     
     playerDraftPositionLabel.translatesAutoresizingMaskIntoConstraints = false

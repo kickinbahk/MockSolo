@@ -13,7 +13,7 @@ class HowToPlayViewController: UIViewController {
   let closeButton = UIButton()
   let instructionTitleLabel = UILabel()
   let instructionTextLabel = UILabel()
-  let instructions = "This app allows you to practice drafting on your own. Each pick you will only be able to select the available players below your current pick. \n\nIt will help you get a feel of where you should target certain positions and where you can wait on a player. \n\nAt the end of the draft you have constructed the team from the best available players with none falling to you. In the actual draft you should do even better as players will fall to you."
+  let instructions = "This app allows you to practice drafting on your own. Each pick you will only be able to select the available players below your current pick. \n\nIt will help you get a feel of where you should target certain positions and where you can wait on a player. \n\nAt the end of the draft you have constructed the team from the best available players with none falling to you. In the actual draft you should do even better as players will fall to you. \n\nEnter the position you are drafting from and how many teams are in your league to start..."
   
   var backgroundImage = UIImageView()
   var dimmedView = UIView()
@@ -78,20 +78,20 @@ class HowToPlayViewController: UIViewController {
     instructionTitleLabel.translatesAutoresizingMaskIntoConstraints = false
     instructionTitleLabel.topAnchor.constraint(equalTo: dimmedView.topAnchor, constant: 30).isActive = true
     instructionTitleLabel.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
-    instructionTitleLabel.font = UIFont.boldSystemFont(ofSize: 17)
+    instructionTitleLabel.font = UIFont.boldSystemFont(ofSize: 20)
     
     
     instructionTextLabel.translatesAutoresizingMaskIntoConstraints = false
     instructionTextLabel.topAnchor.constraint(equalTo: instructionTitleLabel.topAnchor,
-                                              constant: 10).isActive = true
+                                              constant: 20).isActive = true
     instructionTextLabel.leadingAnchor.constraint(equalTo: dimmedView.leadingAnchor, constant: 15).isActive = true
     instructionTextLabel.trailingAnchor.constraint(equalTo: dimmedView.trailingAnchor,
                                                    constant: -15).isActive = true
-    instructionTextLabel.bottomAnchor.constraint(equalTo: closeButton.topAnchor, constant: -20).isActive = true
+    instructionTextLabel.bottomAnchor.constraint(equalTo: closeButton.topAnchor, constant: -15).isActive = true
     
     closeButton.translatesAutoresizingMaskIntoConstraints = false
     closeButton.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
-    closeButton.bottomAnchor.constraint(equalTo: dimmedView.bottomAnchor, constant: -25).isActive = true
+    closeButton.bottomAnchor.constraint(equalTo: dimmedView.bottomAnchor, constant: -20).isActive = true
     
   }
 
