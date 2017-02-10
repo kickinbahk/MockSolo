@@ -63,7 +63,7 @@ class DraftPickCell: UITableViewCell {
     
     draftPicksPlayerNameLabel.translatesAutoresizingMaskIntoConstraints = false
     draftPicksPlayerNameLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-    draftPicksPlayerNameLabel.leadingAnchor.constraint(equalTo: draftPicksPositionLabel.trailingAnchor,
-                                                       constant: 40).isActive = true
+    draftPicksPlayerNameLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor,
+                                                       constant: 90).isActive = true
   }
 }
