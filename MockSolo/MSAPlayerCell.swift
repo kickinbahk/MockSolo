@@ -12,36 +12,11 @@ class PlayerCell: UITableViewCell {
   var playerNameLabel: UILabel! = UILabel()
   var playerRankLabel: UILabel! = UILabel()
   var playerTeamLabel: UILabel! = UILabel()
-  var playerPositionLabel: UILabel! = UILabel ()
+  var playerPositionLabel: UILabel! = UILabel()
   
-  struct PlayerNameLabelProps {
-    static let labelWidth: CGFloat = 70
-    static let labelHeight: CGFloat = 30
-    static let labelX: CGFloat = 60
-    static let labelY: CGFloat = 12
-  }
-  
-  struct PlayerRankLabelProps {
-    static let labelWidth: CGFloat = 15
-    static let labelHeight: CGFloat = 30
-    static let labelX: CGFloat = 20
-    static let labelY: CGFloat = 18
-  }
-  
-  struct PlayerTeamLabelProps {
-    static let labelWidth: CGFloat = 70
-    static let labelHeight: CGFloat = 30
-    static let labelX: CGFloat = 60
-    static let labelY: CGFloat = 40
-    static let opacity: CGFloat = 0.5
-  }
-  
-  struct PlayerPositionLabelProps {
-    static let labelWidth: CGFloat = 70
-    static let labelHeight: CGFloat = 30
-    static let labelX: CGFloat = 120
-    static let labelY: CGFloat = 40
-    static let opacity: CGFloat = 0.5
+  struct PlayerCellLabelProps {
+    static let positionLabelOpacity: CGFloat = 0.5
+    static let teamLabelOpacity: CGFloat = 0.5
   }
   
 
@@ -59,34 +34,17 @@ class PlayerCell: UITableViewCell {
   override func setSelected(_ selected: Bool, animated: Bool) {
     super.setSelected(selected, animated: animated)
 
-    // Configure the view for the selected state
   }
 
   func updateUI() {
-    playerNameLabel.frame = CGRect(x: PlayerNameLabelProps.labelX,
-                                   y: PlayerNameLabelProps.labelY,
-                                   width: PlayerNameLabelProps.labelWidth,
-                                   height: PlayerNameLabelProps.labelHeight)
     playerNameLabel.textColor = UIColor.black
     
-    playerRankLabel.frame = CGRect(x: PlayerRankLabelProps.labelX,
-                                   y: PlayerRankLabelProps.labelY,
-                                   width: PlayerRankLabelProps.labelWidth,
-                                   height: PlayerRankLabelProps.labelHeight)
     playerRankLabel.textColor = UIColor.black
     playerRankLabel.font = UIFont.boldSystemFont(ofSize: 20)
     
-    playerTeamLabel.frame = CGRect(x: PlayerTeamLabelProps.labelX,
-                                   y: PlayerTeamLabelProps.labelY,
-                                   width: PlayerTeamLabelProps.labelWidth,
-                                   height: PlayerTeamLabelProps.labelHeight)
-    playerTeamLabel.textColor = UIColor.black.withAlphaComponent(PlayerTeamLabelProps.opacity)
+    playerTeamLabel.textColor = UIColor.black.withAlphaComponent(PlayerCellLabelProps.positionLabelOpacity)
     
-    playerPositionLabel.frame = CGRect(x: PlayerPositionLabelProps.labelX,
-                                       y: PlayerPositionLabelProps.labelY,
-                                       width: PlayerPositionLabelProps.labelWidth,
-                                       height: PlayerPositionLabelProps.labelHeight)
-    playerPositionLabel.textColor = UIColor.black.withAlphaComponent(PlayerPositionLabelProps.opacity)
+    playerPositionLabel.textColor = UIColor.black.withAlphaComponent(PlayerCellLabelProps.teamLabelOpacity)
     
     contentView.addSubview(playerNameLabel)
     contentView.addSubview(playerRankLabel)
