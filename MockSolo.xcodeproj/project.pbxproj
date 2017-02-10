@@ -132,7 +132,9 @@
 				EB4ACB3A1E12BB70007B44DB /* Draft.swift */,
 				EB8BD2E91E15581E000D576A /* DraftManager.swift */,
 				EB9748E31E3D6BF400ADC802 /* Espn2017Top300.json */,
+				EB5089C81E4B79E900DAE097 /* HowToPlayViewController.swift */,
 				EBF3048B1DF62A8F00AD50D0 /* Info.plist */,
+				EBF485591E4CC45200C2337B /* InstructionsViewController.swift */,
 				EBF304881DF62A8E00AD50D0 /* LaunchScreen.storyboard */,
 				EBF304831DF62A8E00AD50D0 /* Main.storyboard */,
 				EB013BA21E004638006A8A29 /* MSADimmingPresentationController.swift */,
@@ -144,10 +146,8 @@
 				EBF304B11DF6385500AD50D0 /* MSAPlayerCell.swift */,
 				EB013BA01DFF6713006A8A29 /* MSAPositionSelectionViewController.swift */,
 				EB9D35941DF876820087BBCB /* Player.swift */,
-				EBE458511E08C9EC00EABD91 /* Roster.swift */,
-				EB5089C81E4B79E900DAE097 /* HowToPlayViewController.swift */,
 				EBF485571E4CBE5B00C2337B /* RootTabBarViewController.swift */,
-				EBF485591E4CC45200C2337B /* InstructionsViewController.swift */,
+				EBE458511E08C9EC00EABD91 /* Roster.swift */,
 			);
 			path = MockSolo;
 			sourceTree = "<group>";

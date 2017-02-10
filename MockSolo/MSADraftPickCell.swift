@@ -33,6 +33,10 @@ class DraftPickCell: UITableViewCell {
   override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
     
+    updateUI()
+  }
+  
+  func updateUI() {
     draftPicksPositionLabel.frame = CGRect(x: DraftPicksPositionLabelProps.labelX,
                                            y: DraftPicksPositionLabelProps.labelY,
                                            width: DraftPicksPositionLabelProps.labelWidth,
@@ -47,5 +51,19 @@ class DraftPickCell: UITableViewCell {
     
     contentView.addSubview(draftPicksPositionLabel)
     contentView.addSubview(draftPicksPlayerNameLabel)
+    
+    addConstraints()
+  }
+  
+  func addConstraints() {
+    draftPicksPositionLabel.translatesAutoresizingMaskIntoConstraints = false
+    draftPicksPositionLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+    draftPicksPositionLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor,
+                                                     constant: 15).isActive = true
+    
+    draftPicksPlayerNameLabel.translatesAutoresizingMaskIntoConstraints = false
+    draftPicksPlayerNameLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+    draftPicksPlayerNameLabel.leadingAnchor.constraint(equalTo: draftPicksPositionLabel.trailingAnchor,
+                                                     constant: 40).isActive = true
   }
 }
