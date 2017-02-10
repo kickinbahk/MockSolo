@@ -52,12 +52,23 @@ class PlayerCell: UITableViewCell {
   override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
     
+    updateUI()
+  }
+  
+
+  override func setSelected(_ selected: Bool, animated: Bool) {
+    super.setSelected(selected, animated: animated)
+
+    // Configure the view for the selected state
+  }
+
+  func updateUI() {
     playerNameLabel.frame = CGRect(x: PlayerNameLabelProps.labelX,
                                    y: PlayerNameLabelProps.labelY,
                                    width: PlayerNameLabelProps.labelWidth,
                                    height: PlayerNameLabelProps.labelHeight)
     playerNameLabel.textColor = UIColor.black
-
+    
     playerRankLabel.frame = CGRect(x: PlayerRankLabelProps.labelX,
                                    y: PlayerRankLabelProps.labelY,
                                    width: PlayerRankLabelProps.labelWidth,
@@ -66,9 +77,9 @@ class PlayerCell: UITableViewCell {
     playerRankLabel.font = UIFont.boldSystemFont(ofSize: 20)
     
     playerTeamLabel.frame = CGRect(x: PlayerTeamLabelProps.labelX,
-                                       y: PlayerTeamLabelProps.labelY,
-                                       width: PlayerTeamLabelProps.labelWidth,
-                                       height: PlayerTeamLabelProps.labelHeight)
+                                   y: PlayerTeamLabelProps.labelY,
+                                   width: PlayerTeamLabelProps.labelWidth,
+                                   height: PlayerTeamLabelProps.labelHeight)
     playerTeamLabel.textColor = UIColor.black.withAlphaComponent(PlayerTeamLabelProps.opacity)
     
     playerPositionLabel.frame = CGRect(x: PlayerPositionLabelProps.labelX,
@@ -81,13 +92,21 @@ class PlayerCell: UITableViewCell {
     contentView.addSubview(playerRankLabel)
     contentView.addSubview(playerTeamLabel)
     contentView.addSubview(playerPositionLabel)
+    
+    addConstraints()
   }
   
-
-  override func setSelected(_ selected: Bool, animated: Bool) {
-    super.setSelected(selected, animated: animated)
-
-    // Configure the view for the selected state
+  func addConstraints() {
+    playerRankLabel.translatesAutoresizingMaskIntoConstraints = false
+    playerRankLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15).isActive = true
+    playerRankLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+    
+    playerNameLabel.translatesAutoresizingMaskIntoConstraints = false
+    playerNameLabel.leadingAnchor.constraint(equalTo: playerRankLabel.trailingAnchor, constant: 30).isActive = true
+    playerNameLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -10).isActive = true
+    
+    playerTeamLabel.translatesAutoresizingMaskIntoConstraints = false
+    playerTeamLabel.leadingAnchor.constraint(equalTo: playerRankLabel.trailingAnchor, constant: 30).isActive = true
+    playerTeamLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 10).isActive = true
   }
-
 }
