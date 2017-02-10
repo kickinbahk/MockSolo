@@ -102,11 +102,16 @@ class PlayerCell: UITableViewCell {
     playerRankLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
     
     playerNameLabel.translatesAutoresizingMaskIntoConstraints = false
-    playerNameLabel.leadingAnchor.constraint(equalTo: playerRankLabel.trailingAnchor, constant: 30).isActive = true
+    playerNameLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 80).isActive = true
     playerNameLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -10).isActive = true
     
     playerTeamLabel.translatesAutoresizingMaskIntoConstraints = false
-    playerTeamLabel.leadingAnchor.constraint(equalTo: playerRankLabel.trailingAnchor, constant: 30).isActive = true
-    playerTeamLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 10).isActive = true
+    playerTeamLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 80).isActive = true
+    playerTeamLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 15).isActive = true
+    
+    playerPositionLabel.translatesAutoresizingMaskIntoConstraints = false
+    playerPositionLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor,
+                                                 constant: 150).isActive = true
+    playerPositionLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 15).isActive = true
   }
 }
