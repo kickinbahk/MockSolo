@@ -175,7 +175,7 @@
         <!--Restart Draft View Controller-->
         <scene sceneID="bpw-BY-izr">
             <objects>
-                <viewController id="Jdh-Sb-ZoE" userLabel="Restart Draft View Controller" sceneMemberID="viewController">
+                <viewController id="Jdh-Sb-ZoE" userLabel="Restart Draft View Controller" customClass="RestartDraftViewController" customModule="MockSolo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="50g-ns-8IB"/>
                         <viewControllerLayoutGuide type="bottom" id="1e2-My-WQt"/>
