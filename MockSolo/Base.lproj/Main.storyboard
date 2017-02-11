@@ -186,6 +186,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Restart Draft" id="LBd-mR-10u" userLabel="Restart Draft"/>
+                    <connections>
+                        <segue destination="p04-SQ-k5a" kind="show" identifier="RestartDraft" id="wfE-ZH-28B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CIg-KT-PJD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
