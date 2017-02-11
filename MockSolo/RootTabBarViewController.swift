@@ -18,6 +18,7 @@ class RootTabBarViewController: UITabBarController {
     self.tabBar.items?[0].image = UIImage(named: "search_btn")
     self.tabBar.items?[1].image = UIImage(named: "username_icon")
     self.tabBar.items?[2].image = UIImage(named: "more_info_btn")
+    self.tabBar.items?[3].image = UIImage(named: "repeat_btn")
   }
 
 }

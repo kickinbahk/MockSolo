@@ -127,6 +127,7 @@
                         <segue destination="D7Z-nL-cQs" kind="relationship" relationship="viewControllers" id="w6A-5z-3xg"/>
                         <segue destination="BIM-Ty-Cnc" kind="relationship" relationship="viewControllers" id="naU-Rv-3rL"/>
                         <segue destination="pCh-dY-Rc5" kind="relationship" relationship="viewControllers" id="1fx-do-sA8"/>
+                        <segue destination="Jdh-Sb-ZoE" kind="relationship" relationship="viewControllers" id="23D-Xd-j8F"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pcu-hZ-5hw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -170,6 +171,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iXv-eT-blY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3566" y="1252"/>
+        </scene>
+        <!--Restart Draft View Controller-->
+        <scene sceneID="bpw-BY-izr">
+            <objects>
+                <viewController id="Jdh-Sb-ZoE" userLabel="Restart Draft View Controller" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="50g-ns-8IB"/>
+                        <viewControllerLayoutGuide type="bottom" id="1e2-My-WQt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2nL-7x-l4h">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Restart Draft" id="LBd-mR-10u" userLabel="Restart Draft"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CIg-KT-PJD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3566" y="2029"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
