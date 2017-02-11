@@ -68,7 +68,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HGB-2s-7Vp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3568" y="-252"/>
+            <point key="canvasLocation" x="3564" y="-566"/>
         </scene>
         <!--Position Selection-->
         <scene sceneID="WRL-02-uTo">
@@ -151,7 +151,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="biT-Td-0v5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3566" y="523"/>
+            <point key="canvasLocation" x="3564" y="198"/>
         </scene>
         <!--Instructions-->
         <scene sceneID="tTS-7j-PZd">
@@ -170,7 +170,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iXv-eT-blY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3566" y="1252"/>
+            <point key="canvasLocation" x="3563" y="937"/>
         </scene>
         <!--Restart Draft View Controller-->
         <scene sceneID="bpw-BY-izr">
@@ -189,7 +189,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CIg-KT-PJD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3566" y="2029"/>
+            <point key="canvasLocation" x="3563" y="1703"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

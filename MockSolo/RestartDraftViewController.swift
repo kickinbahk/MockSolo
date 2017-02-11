@@ -40,5 +40,11 @@ class RestartDraftViewController: UIViewController {
     backgroundImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
     backgroundImage.contentMode = .scaleAspectFit
     
+    dimmedView.translatesAutoresizingMaskIntoConstraints = false
+    dimmedView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
+    dimmedView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+    dimmedView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+    dimmedView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
+    
   }
 }
