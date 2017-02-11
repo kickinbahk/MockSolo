@@ -14,12 +14,20 @@ class RestartDraftViewController: UIViewController {
   
   var backgroundImage = UIImageView()
   var dimmedView = UIView()
+  
+  override var preferredStatusBarStyle: UIStatusBarStyle {
+    return .lightContent
+  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
     updateUI()
     view.layoutIfNeeded()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    UIApplication.shared.statusBarStyle =  .lightContent
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
