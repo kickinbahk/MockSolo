@@ -33,7 +33,13 @@ class RestartDraftViewController: UIViewController {
     dimmedView.backgroundColor = UIColor.black.withAlphaComponent(0.65)
     backgroundImage = UIImageView(image: image)
     
-    restartDraftButton.backgroundColor = UIColor(red: 46/255, green: 60/255, blue: 70/255, alpha: 1)
+    restartDraftLabel.text = "Do you really want to restart the draft?"
+    restartDraftLabel.textColor = UIColor.white
+    restartDraftLabel.font = UIFont.boldSystemFont(ofSize: 20)
+    restartDraftLabel.numberOfLines = 2
+    restartDraftLabel.textAlignment = .center
+    
+    restartDraftButton.backgroundColor = UIColor(red: 242/255, green: 43/255, blue: 41/255, alpha: 1)
     restartDraftButton.layer.cornerRadius = 5
     restartDraftButton.contentEdgeInsets = UIEdgeInsetsMake(20, 20, 20, 20)
     restartDraftButton.setTitle("Restart Draft", for: .normal)
@@ -43,6 +49,7 @@ class RestartDraftViewController: UIViewController {
     
     view.addSubview(backgroundImage)
     view.addSubview(dimmedView)
+    dimmedView.addSubview(restartDraftLabel)
     dimmedView.addSubview(restartDraftButton)
     
     addContstraints()
@@ -61,9 +68,14 @@ class RestartDraftViewController: UIViewController {
     dimmedView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
     dimmedView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
     
+    restartDraftLabel.translatesAutoresizingMaskIntoConstraints = false
+    restartDraftLabel.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
+    restartDraftLabel.widthAnchor.constraint(lessThanOrEqualToConstant: view.bounds.width - 40).isActive = true
+    restartDraftLabel.bottomAnchor.constraint(equalTo: restartDraftButton.topAnchor, constant: -60).isActive = true
+    
     restartDraftButton.translatesAutoresizingMaskIntoConstraints = false
     restartDraftButton.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
-    restartDraftButton.bottomAnchor.constraint(equalTo: dimmedView.bottomAnchor, constant: -95).isActive = true
+    restartDraftButton.centerYAnchor.constraint(equalTo: dimmedView.centerYAnchor, constant: 40).isActive = true
     
   }
   
