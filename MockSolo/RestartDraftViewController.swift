@@ -30,7 +30,7 @@ class RestartDraftViewController: UIViewController {
     restartDraftButton.backgroundColor = UIColor(red: 46/255, green: 60/255, blue: 70/255, alpha: 1)
     restartDraftButton.layer.cornerRadius = 5
     restartDraftButton.contentEdgeInsets = UIEdgeInsetsMake(20, 20, 20, 20)
-    restartDraftButton.setTitle("Do you Want to Restart Your Draft?", for: .normal)
+    restartDraftButton.setTitle("Restart Draft", for: .normal)
     restartDraftButton.tintColor = UIColor.black
     restartDraftButton.setTitleColor(UIColor.white, for: .normal)
     restartDraftButton.addTarget(self, action: #selector(restartDraft), for: .touchUpInside)
@@ -57,7 +57,7 @@ class RestartDraftViewController: UIViewController {
     
     restartDraftButton.translatesAutoresizingMaskIntoConstraints = false
     restartDraftButton.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
-    restartDraftButton.bottomAnchor.constraint(equalTo: dimmedView.bottomAnchor, constant: -35).isActive = true
+    restartDraftButton.bottomAnchor.constraint(equalTo: dimmedView.bottomAnchor, constant: -95).isActive = true
     
   }
   
