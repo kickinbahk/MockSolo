@@ -21,6 +21,12 @@ class RestartDraftViewController: UIViewController {
     updateUI()
     view.layoutIfNeeded()
   }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "RestartDraft" {
+      DraftManager.sharedInstance.newDraft()
+    }
+  }
 
   func updateUI() {
     let image = UIImage(named: "stadium_seats")

@@ -85,6 +85,42 @@ class Draft {
     }
   }
   
+  func newDraft() {
+    draftPickNumber = 5
+    numberOfDrafters = 10
+    roster = Roster([["C": ""],
+                    ["1B": ""],
+                    ["2B": ""],
+                    ["SS": ""],
+                    ["2B/SS": ""],
+                    ["3B": ""],
+                    ["1B/3B": ""],
+                    ["OF": ""],
+                    ["OF": ""],
+                    ["OF": ""],
+                    ["OF": ""],
+                    ["OF": ""],
+                    ["Util": ""],
+                    ["P": ""],
+                    ["P": ""],
+                    ["P": ""],
+                    ["P": ""],
+                    ["P": ""],
+                    ["P": ""],
+                    ["P": ""],
+                    ["P": ""],
+                    ["P": ""],
+                    ["Bench": ""],
+                    ["Bench": ""],
+                    ["Bench": ""]])
+    
+    if let jsonDictionary = self.parse(json: self.performLoad(with: fileToLoad)!) {
+      playerArray = parse(dictionary: jsonDictionary)
+    }
+    
+    players = playerArray
+  }
+  
   func performLoad(with file: String) -> String? {
     guard let url = Bundle.main.url(forResource: file, withExtension: "json") else { return nil }
     
