@@ -23,7 +23,6 @@
 		EBF304801DF62A8E00AD50D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3047F1DF62A8E00AD50D0 /* AppDelegate.swift */; };
 		EBF304851DF62A8E00AD50D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBF304831DF62A8E00AD50D0 /* Main.storyboard */; };
 		EBF304871DF62A8E00AD50D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBF304861DF62A8E00AD50D0 /* Assets.xcassets */; };
-		EBF3048A1DF62A8E00AD50D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBF304881DF62A8E00AD50D0 /* LaunchScreen.storyboard */; };
 		EBF304951DF62A8F00AD50D0 /* MockSoloTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF304941DF62A8F00AD50D0 /* MockSoloTests.swift */; };
 		EBF304A01DF62A8F00AD50D0 /* MockSoloUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3049F1DF62A8F00AD50D0 /* MockSoloUITests.swift */; };
 		EBF304B01DF6352A00AD50D0 /* MSADraftPlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF304AF1DF6352A00AD50D0 /* MSADraftPlayersViewController.swift */; };
@@ -67,7 +66,6 @@
 		EBF3047F1DF62A8E00AD50D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBF304841DF62A8E00AD50D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EBF304861DF62A8E00AD50D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		EBF304891DF62A8E00AD50D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EBF3048B1DF62A8F00AD50D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBF304901DF62A8F00AD50D0 /* MockSoloTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MockSoloTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBF304941DF62A8F00AD50D0 /* MockSoloTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSoloTests.swift; sourceTree = "<group>"; };
@@ -137,7 +135,6 @@
 				EB5089C81E4B79E900DAE097 /* HowToPlayViewController.swift */,
 				EBF3048B1DF62A8F00AD50D0 /* Info.plist */,
 				EBF485591E4CC45200C2337B /* InstructionsViewController.swift */,
-				EBF304881DF62A8E00AD50D0 /* LaunchScreen.storyboard */,
 				EBF304831DF62A8E00AD50D0 /* Main.storyboard */,
 				EB013BA21E004638006A8A29 /* MSADimmingPresentationController.swift */,
 				EB5C02AA1DFB05280078253C /* MSADraftPickCell.swift */,
@@ -241,7 +238,7 @@
 				TargetAttributes = {
 					EBF3047B1DF62A8E00AD50D0 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = HPWA75Z78H;
+						DevelopmentTeam = 6VCPF4YUJN;
 						ProvisioningStyle = Automatic;
 					};
 					EBF3048F1DF62A8F00AD50D0 = {
@@ -283,7 +280,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBF3048A1DF62A8E00AD50D0 /* LaunchScreen.storyboard in Resources */,
 				EB9748E41E3D6BF500ADC802 /* Espn2017Top300.json in Resources */,
 				EBF304871DF62A8E00AD50D0 /* Assets.xcassets in Resources */,
 				EBF304851DF62A8E00AD50D0 /* Main.storyboard in Resources */,
@@ -371,14 +367,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		EBF304881DF62A8E00AD50D0 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EBF304891DF62A8E00AD50D0 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -423,7 +411,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -467,7 +455,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -479,10 +467,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = HPWA75Z78H;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
+				DEVELOPMENT_TEAM = 6VCPF4YUJN;
 				INFOPLIST_FILE = MockSolo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kickinbahkproductions.MockSolo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kickinbahkproductions.MockSoloBaseball;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -492,10 +482,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = HPWA75Z78H;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
+				DEVELOPMENT_TEAM = 6VCPF4YUJN;
 				INFOPLIST_FILE = MockSolo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kickinbahkproductions.MockSolo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kickinbahkproductions.MockSoloBaseball;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
