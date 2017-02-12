@@ -224,8 +224,27 @@ extension NewDraftSettingsViewController: UITextFieldDelegate {
       }
       textField.resignFirstResponder()
       
-      if playerDraftPosition != 0 && playerNumberOfTeams != 0  {
-        startDraftButton.isEnabled = true
+      if playerDraftPosition != 0 && playerNumberOfTeams != 0 {
+        if playerNumberOfTeams < 33 {
+          if playerDraftPosition <= playerNumberOfTeams {
+            startDraftButton.isEnabled = true
+          } else {
+            let alertController = UIAlertController(title: "Invalid Input",
+                                                    message: "Your draft position must be less than the number of total teams drafting", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertController.addAction(defaultAction)
+            
+            present(alertController, animated: true, completion: nil)
+          }
+        } else {
+          let alertController = UIAlertController(title: "Invalid Input",
+                                                  message: "You must enter 32 teams or less", preferredStyle: .alert)
+          let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+          alertController.addAction(defaultAction)
+          
+          present(alertController, animated: true, completion: nil)
+        }
+
       }
     } else {
       let alertController = UIAlertController(title: "Invalid Input",
