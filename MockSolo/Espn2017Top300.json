@@ -1293,12 +1293,12 @@
     "name": "Brandon Phillips",
     "positions": ["2B"],
     "team": "CIN",
-    "eligiblePositions": ["P", "SP", "Bench"]
+    "eligiblePositions": ["2B", "2B/SS", "Util", "Bench"]
   },
   "217": {
     "name": "Chris Carter",
     "positions": ["1B"],
-    "team": "SP",
+    "team": "FA",
     "eligiblePositions": ["1B", "1B/3B", "Util", "Bench"]
   },
   "218": {
