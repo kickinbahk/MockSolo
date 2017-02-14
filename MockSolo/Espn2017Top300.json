@@ -51,7 +51,7 @@
     "name": "Anthony Rizzo",
     "positions": ["1B"],
     "team": "CHC",
-    "eligiblePositions": ["1B", "1B/3B", "Util", "Bench"],
+    "eligiblePositions": ["1B", "1B/3B", "Util", "Bench"]
   },
   "10": {
     "name": "Bryce Harper",
@@ -1677,7 +1677,7 @@
     "name": "Joe Panik",
     "positions": ["2B"],
     "team": "SF",
-    "eligiblePositions": ["2B", "2B/SS" "Util", "Bench"]
+    "eligiblePositions": ["2B", "2B/SS", "Util", "Bench"]
   },
   "281": {
     "name": "Santiago Catilla",
@@ -1701,7 +1701,7 @@
     "name": "Wilmer Flores",
     "positions": ["3B", "1B"],
     "team": "NYM",
-    "eligiblePositions": ["3B", "1B", "1B/3B" "Util", "Bench"]
+    "eligiblePositions": ["3B", "1B", "1B/3B", "Util", "Bench"]
   },
   "285": {
     "name": "Cam Bedrosian",
@@ -1713,7 +1713,7 @@
     "name": "Asdrubal Cabrera",
     "positions": ["SS"],
     "team": "NYM",
-    "eligiblePositions": ["SS", "2B/SS" "Util", "Bench"]
+    "eligiblePositions": ["SS", "2B/SS", "Util", "Bench"]
   },
   "287": {
     "name": "Pedro Alvarez",
@@ -1797,6 +1797,6 @@
     "name": "Yangervis Solarte",
     "positions": ["3B"],
     "team": "SD",
-    "eligiblePositions": ["3B", "1B/3B" "Util", "Bench"]
+    "eligiblePositions": ["3B", "1B/3B", "Util", "Bench"]
   }
 }
