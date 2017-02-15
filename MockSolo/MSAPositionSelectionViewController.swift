@@ -131,6 +131,7 @@ class PositionSelectionViewController: UIViewController {
     promptLabel.textColor = .white
     promptLabel.font = UIFont(name: promptLabel.font.fontName, size: 15)
     promptLabel.numberOfLines = 2
+    promptLabel.textAlignment = .center
     
     positionSegmentedControl.frame = CGRect(x: 0,
                                             y: popUpView.bounds.height - 46,
@@ -153,7 +154,7 @@ class PositionSelectionViewController: UIViewController {
     popUpView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     popUpView.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -40).isActive = true
     popUpView.heightAnchor.constraint(equalTo: view.heightAnchor,
-                                      constant: -(view.bounds.height / 2)).isActive = true
+                                      constant: -(view.bounds.height / 1.5)).isActive = true
     
     closeButton.translatesAutoresizingMaskIntoConstraints = false
     closeButton.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -5).isActive = true
@@ -165,8 +166,9 @@ class PositionSelectionViewController: UIViewController {
 
     promptLabel.translatesAutoresizingMaskIntoConstraints = false
     promptLabel.centerXAnchor.constraint(equalTo: popUpView.centerXAnchor).isActive = true
-    promptLabel.bottomAnchor.constraint(greaterThanOrEqualTo: positionSegmentedControl.topAnchor,
-                                        constant: -20).isActive = true
+    promptLabel.centerYAnchor.constraint(equalTo: popUpView.centerYAnchor).isActive = true
+//    promptLabel.bottomAnchor.constraint(greaterThanOrEqualTo: positionSegmentedControl.topAnchor,
+//                                        constant: -20).isActive = true
     promptLabel.widthAnchor.constraint(equalTo: popUpView.widthAnchor, constant: -20).isActive = true
     
     positionSegmentedControl.translatesAutoresizingMaskIntoConstraints = false
