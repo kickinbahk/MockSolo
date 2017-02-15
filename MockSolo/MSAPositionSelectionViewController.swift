@@ -122,7 +122,7 @@ class PositionSelectionViewController: UIViewController {
     
     playerNameLabel.text = selectedPlayer.name
     playerNameLabel.textColor = .white
-    playerNameLabel.font = UIFont.boldSystemFont(ofSize: 17)
+    playerNameLabel.font = UIFont.boldSystemFont(ofSize: 20)
     playerNameLabel.sizeToFit()
     
     // promptLabel.preferredMaxLayoutWidth = popUpView.bounds.width - 20
@@ -157,25 +157,25 @@ class PositionSelectionViewController: UIViewController {
                                       constant: -(view.bounds.height / 1.5)).isActive = true
     
     closeButton.translatesAutoresizingMaskIntoConstraints = false
-    closeButton.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -5).isActive = true
+    closeButton.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -8).isActive = true
     closeButton.topAnchor.constraint(equalTo: margins.topAnchor, constant: 5).isActive = true
     
     playerNameLabel.translatesAutoresizingMaskIntoConstraints = false
-    playerNameLabel.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 5).isActive = true
+    playerNameLabel.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 8).isActive = true
     playerNameLabel.topAnchor.constraint(equalTo: margins.topAnchor, constant: 10).isActive = true
 
     promptLabel.translatesAutoresizingMaskIntoConstraints = false
     promptLabel.centerXAnchor.constraint(equalTo: popUpView.centerXAnchor).isActive = true
     promptLabel.centerYAnchor.constraint(equalTo: popUpView.centerYAnchor).isActive = true
-//    promptLabel.bottomAnchor.constraint(greaterThanOrEqualTo: positionSegmentedControl.topAnchor,
-//                                        constant: -20).isActive = true
     promptLabel.widthAnchor.constraint(equalTo: popUpView.widthAnchor, constant: -20).isActive = true
     
     positionSegmentedControl.translatesAutoresizingMaskIntoConstraints = false
-    positionSegmentedControl.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -10).isActive = true
-    positionSegmentedControl.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 5).isActive = true
-    positionSegmentedControl.trailingAnchor.constraint(equalTo: margins.trailingAnchor,
-                                                       constant: -5).isActive = true
+    positionSegmentedControl.centerXAnchor.constraint(equalTo: popUpView.centerXAnchor,
+                                                      constant: 1.5).isActive = true
+    positionSegmentedControl.bottomAnchor.constraint(equalTo: margins.bottomAnchor,
+                                                     constant: -10).isActive = true
+    positionSegmentedControl.widthAnchor.constraint(equalTo: popUpView.widthAnchor,
+                                                    constant: -10).isActive = true
   }
   
   func positionSelected(_ sender: UISegmentedControl) {
