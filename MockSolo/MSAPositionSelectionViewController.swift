@@ -120,24 +120,15 @@ class PositionSelectionViewController: UIViewController {
       closeButton.setImage(closeImage, for: [])
     }
     
-    playerNameLabel.frame = CGRect(x: 0,
-                                   y: 0,
-                                   width: 10,
-                                   height: 10)
     playerNameLabel.text = selectedPlayer.name
     playerNameLabel.textColor = .white
     playerNameLabel.font = UIFont.boldSystemFont(ofSize: 17)
     playerNameLabel.sizeToFit()
     
-    promptLabel.frame = CGRect(x: 15,
-                               y: 40,
-                               width: 300,
-                               height: 30)
-    promptLabel.preferredMaxLayoutWidth = popUpView.bounds.width - 20
+    // promptLabel.preferredMaxLayoutWidth = popUpView.bounds.width - 20
     promptLabel.text = NSLocalizedString("What position would you like to add this player to?",
                                     comment: "Position Pop Up Prompt")
     promptLabel.textColor = .white
-    promptLabel.lineBreakMode = .byWordWrapping
     promptLabel.font = UIFont(name: promptLabel.font.fontName, size: 15)
     promptLabel.numberOfLines = 2
     
@@ -159,23 +150,24 @@ class PositionSelectionViewController: UIViewController {
     
     popUpView.translatesAutoresizingMaskIntoConstraints = false
     popUpView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-    popUpView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40).isActive = true
-    popUpView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40).isActive = true
-    popUpView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -150).isActive = true
-    popUpView.topAnchor.constraint(equalTo: view.topAnchor, constant: 150).isActive = true
+    popUpView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+    popUpView.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -40).isActive = true
+    popUpView.heightAnchor.constraint(equalTo: view.heightAnchor,
+                                      constant: -(view.bounds.height / 2)).isActive = true
     
     closeButton.translatesAutoresizingMaskIntoConstraints = false
-    closeButton.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: 0).isActive = true
-    closeButton.topAnchor.constraint(equalTo: margins.topAnchor, constant: -5).isActive = true
+    closeButton.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -5).isActive = true
+    closeButton.topAnchor.constraint(equalTo: margins.topAnchor, constant: 5).isActive = true
     
     playerNameLabel.translatesAutoresizingMaskIntoConstraints = false
     playerNameLabel.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 5).isActive = true
     playerNameLabel.topAnchor.constraint(equalTo: margins.topAnchor, constant: 10).isActive = true
 
     promptLabel.translatesAutoresizingMaskIntoConstraints = false
-    promptLabel.topAnchor.constraint(equalTo: playerNameLabel.topAnchor, constant: 30).isActive = true
-    promptLabel.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 5).isActive = true
-    promptLabel.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: 0).isActive = true
+    promptLabel.centerXAnchor.constraint(equalTo: popUpView.centerXAnchor).isActive = true
+    promptLabel.bottomAnchor.constraint(greaterThanOrEqualTo: positionSegmentedControl.topAnchor,
+                                        constant: -20).isActive = true
+    promptLabel.widthAnchor.constraint(equalTo: popUpView.widthAnchor, constant: -20).isActive = true
     
     positionSegmentedControl.translatesAutoresizingMaskIntoConstraints = false
     positionSegmentedControl.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -10).isActive = true
