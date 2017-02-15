@@ -110,10 +110,6 @@ class PositionSelectionViewController: UIViewController {
     let margins = popUpView.layoutMarginsGuide
     let positionSegmentedControl = UISegmentedControl(items: positions)
    
-    
-    popUpView.frame = CGRect(x: 0, y: 0,
-                             width: self.view.frame.width / 1.1,
-                             height: self.view.frame.height - 400)
     popUpView.backgroundColor = PopUpViewProps.blueGray
     popUpView.layer.cornerRadius = PopUpViewProps.radius
     popUpView.center = CGPoint(x: self.view.center.x, y: self.view.center.y)
@@ -161,6 +157,13 @@ class PositionSelectionViewController: UIViewController {
     popUpView.addSubview(closeButton)
     popUpView.addSubview(positionSegmentedControl)
     
+    popUpView.translatesAutoresizingMaskIntoConstraints = false
+    popUpView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    popUpView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40).isActive = true
+    popUpView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40).isActive = true
+    popUpView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -150).isActive = true
+    popUpView.topAnchor.constraint(equalTo: view.topAnchor, constant: 150).isActive = true
+    
     closeButton.translatesAutoresizingMaskIntoConstraints = false
     closeButton.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: 0).isActive = true
     closeButton.topAnchor.constraint(equalTo: margins.topAnchor, constant: -5).isActive = true
@@ -175,9 +178,10 @@ class PositionSelectionViewController: UIViewController {
     promptLabel.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: 0).isActive = true
     
     positionSegmentedControl.translatesAutoresizingMaskIntoConstraints = false
-    positionSegmentedControl.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -5).isActive = true
-    positionSegmentedControl.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 0).isActive = true
-    positionSegmentedControl.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: 1).isActive = true
+    positionSegmentedControl.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -10).isActive = true
+    positionSegmentedControl.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 5).isActive = true
+    positionSegmentedControl.trailingAnchor.constraint(equalTo: margins.trailingAnchor,
+                                                       constant: -5).isActive = true
   }
   
   func positionSelected(_ sender: UISegmentedControl) {
