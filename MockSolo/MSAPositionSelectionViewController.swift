@@ -81,10 +81,14 @@ class PositionSelectionViewController: UIViewController {
         
         present(alertController, animated: true, completion: nil)
       } else {
+        var found = false
+        
         for position in roster {
+          print(position)
           for (key, value) in position {
-            if key == positionToBeAdded && value.isEmpty {
+            if key == positionToBeAdded && value.isEmpty && !found {
               finishedCounter = counter
+              found = true
             }
           }
           counter += 1

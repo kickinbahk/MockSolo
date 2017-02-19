@@ -25,6 +25,7 @@ class DraftPicksTableViewController: UITableViewController {
   }
   
   override func viewDidLoad() {
+    print(positions.availablePositions)
     super.viewDidLoad()
     self.tableView.contentInset = UIEdgeInsetsMake(DraftPicksTableViewProps.topContentInset,
                                                    DraftPicksTableViewProps.sideContentInset,
