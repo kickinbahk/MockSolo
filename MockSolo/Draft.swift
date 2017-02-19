@@ -88,6 +88,7 @@ class Draft {
   func newDraft() {
     draftPickNumber = 5
     numberOfDrafters = 10
+    count = 1
     roster = Roster([["C": ""],
                     ["1B": ""],
                     ["2B": ""],

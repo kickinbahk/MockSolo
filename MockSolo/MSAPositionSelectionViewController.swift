@@ -11,6 +11,7 @@ import UIKit
 class PositionSelectionViewController: UIViewController {
   var isPopUp = false
   var selectedIndex: Int = 0
+  var indexPath: Int = 0
   var selectedPlayer: Player! {
     didSet {
       if isViewLoaded {
@@ -80,7 +81,6 @@ class PositionSelectionViewController: UIViewController {
         
         present(alertController, animated: true, completion: nil)
       } else {
-        print("Recieved: \(roster)")
         for position in roster {
           for (key, value) in position {
             if key == positionToBeAdded && value.isEmpty {
@@ -91,9 +91,7 @@ class PositionSelectionViewController: UIViewController {
         }
         
         if let count = finishedCounter {
-          print(count)
           roster[count].updateValue(selectedPlayer.name, forKey: positionToBeAdded)
-          print(" Sent: \(roster)")
         }
         DraftManager.sharedInstance.removePreviousPlayers()
         draftPicksController.positions.availablePositions = roster
@@ -180,6 +178,16 @@ class PositionSelectionViewController: UIViewController {
   
   func positionSelected(_ sender: UISegmentedControl) {
     selectedIndex = sender.selectedSegmentIndex
+    let draft = DraftManager.sharedInstance
+    var amountToRemove = 0
+    if draft.count % 2 == 0 {
+      amountToRemove = (draft.draftPickNumber * 2) - 1
+    } else if draft.count % 2 != 0 {
+      amountToRemove = ((draft.numberOfDrafters - draft.draftPickNumber) * 2)
+    }
+    if amountToRemove < indexPath {
+      DraftManager.sharedInstance.players.remove(at: indexPath)
+    }
     performSegue(withIdentifier: "DraftPlayer", sender: sender)
   }
 

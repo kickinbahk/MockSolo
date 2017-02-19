@@ -56,6 +56,7 @@ class DraftPlayersViewController: UIViewController {
       } else {
         selectedPlayer = playerList[indexPath.row]
       }
+      positionSelectionController.indexPath = indexPath.row
       positionSelectionController.selectedPlayer = selectedPlayer
       positionSelectionController.isPopUp = true
     }
