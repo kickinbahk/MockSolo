@@ -84,7 +84,6 @@ class PositionSelectionViewController: UIViewController {
         var found = false
         
         for position in roster {
-          print(position)
           for (key, value) in position {
             if key == positionToBeAdded && value.isEmpty && !found {
               finishedCounter = counter
