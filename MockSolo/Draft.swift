@@ -60,21 +60,19 @@ class Draft {
     
     if count % 2 == 0 {
       let amountToRemove = (draftPickNumber * 2) - 1
-      print("number to remove: \(amountToRemove)")
+      print("Even pick number to remove: \(amountToRemove)")
       for _ in 0..<amountToRemove {
         players.remove(at: 0)
       }
     } else if count % 2 != 0 {
       let amountToRemove = ((numberOfDrafters - draftPickNumber) * 2)
-      print(amountToRemove)
+      print("Odd pick number to remove: \(amountToRemove)")
       for _ in 0...amountToRemove {
         players.remove(at: 0)
       }
     }
-    
 
     count += 1
-    print(players)
   }
   
   func startDraft() {

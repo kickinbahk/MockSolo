@@ -185,7 +185,7 @@ class PositionSelectionViewController: UIViewController {
     } else if draft.count % 2 != 0 {
       amountToRemove = ((draft.numberOfDrafters - draft.draftPickNumber) * 2)
     }
-    if amountToRemove < indexPath {
+    if amountToRemove <= indexPath {
       DraftManager.sharedInstance.players.remove(at: indexPath)
     }
     performSegue(withIdentifier: "DraftPlayer", sender: sender)
