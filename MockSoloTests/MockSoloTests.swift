@@ -28,5 +28,33 @@ class MockSoloTests: QuickSpec {
         expect(roster).to(beAnInstanceOf(Roster.self))
       }
     }
+    
+    describe("Start draft") {
+      it("removes correct number of players") {
+        let draft = Draft()
+        let position = draft.draftPickNumber
+        draft.startDraft()
+        let startingPlayer = draft.players[0]
+        
+        expect(position).to(equal(startingPlayer.rank))
+      }
+      
+      it("given non-default pick number removes correct number of players") {
+        let draft = Draft()
+        draft.draftPickNumber = 2
+        let position = draft.draftPickNumber
+        draft.startDraft()
+        let startingPlayer = draft.players[0]
+        
+        expect(position).to(equal(startingPlayer.rank))
+      }
+    }
+    
+  
   }
+  
+  
+  
+  
+  
 }
