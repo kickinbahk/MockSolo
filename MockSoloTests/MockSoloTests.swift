@@ -334,13 +334,5 @@ class MockSoloTests: QuickSpec {
         expect(thirdPickPosition).to(equal(thirdPick.rank))
       }
     }
-
-    
-    
-    
-    
-    
-    
-    
   }
 }
