@@ -50,11 +50,297 @@ class MockSoloTests: QuickSpec {
       }
     }
     
-  
+    describe("8 team draft") {
+      it("first 3 picks are correct from 4 spot") {
+        let draft = Draft()
+        draft.draftPickNumber = 4
+        draft.numberOfDrafters = 8
+        
+        let firstPickPosition = 4
+        let secondPickPosition = 13
+        let thirdPickPosition = 20
+        
+        draft.startDraft()
+        
+        let firstPick = draft.players[0]
+        expect(firstPickPosition).to(equal(firstPick.rank))
+        
+        draft.removePreviousPlayers()
+        let secondPick = draft.players[0]
+        expect(secondPickPosition).to(equal(secondPick.rank))
+        
+        draft.removePreviousPlayers()
+        let thirdPick = draft.players[0]
+        expect(thirdPickPosition).to(equal(thirdPick.rank))
+      }
+      
+      it("first 3 picks are correct from 1 spot") {
+        let draft = Draft()
+        draft.draftPickNumber = 1
+        draft.numberOfDrafters = 8
+        
+        let firstPickPosition = 1
+        let secondPickPosition = 16
+        let thirdPickPosition = 17
+        
+        draft.startDraft()
+        
+        let firstPick = draft.players[0]
+        expect(firstPickPosition).to(equal(firstPick.rank))
+        
+        draft.removePreviousPlayers()
+        let secondPick = draft.players[0]
+        expect(secondPickPosition).to(equal(secondPick.rank))
+
+        
+        draft.removePreviousPlayers()
+        let thirdPick = draft.players[0]
+        expect(thirdPickPosition).to(equal(thirdPick.rank))
+      }
+      
+      it("first 3 picks are correct from 8 spot") {
+        let draft = Draft()
+        draft.draftPickNumber = 8
+        draft.numberOfDrafters = 8
+        
+        let firstPickPosition = 8
+        let secondPickPosition = 9
+        let thirdPickPosition = 24
+        
+        draft.startDraft()
+        
+        let firstPick = draft.players[0]
+        expect(firstPickPosition).to(equal(firstPick.rank))
+        
+        draft.removePreviousPlayers()
+        let secondPick = draft.players[0]
+        expect(secondPickPosition).to(equal(secondPick.rank))
+        
+        draft.removePreviousPlayers()
+        let thirdPick = draft.players[0]
+        XCTAssertEqual(thirdPickPosition, thirdPick.rank)
+      }
+    }
+
+    describe("10 team draft") {
+      it("first 3 picks are correct from 5 spot") {
+        let draft = Draft()
+        draft.draftPickNumber = 5
+        draft.numberOfDrafters = 10
+        
+        let firstPickPosition = 5
+        let secondPickPosition = 16
+        let thirdPickPosition = 25
+        
+        draft.startDraft()
+        
+        let firstPick = draft.players[0]
+        expect(firstPickPosition).to(equal(firstPick.rank))
+        
+        draft.removePreviousPlayers()
+        let secondPick = draft.players[0]
+        expect(secondPickPosition).to(equal(secondPick.rank))
+        
+        draft.removePreviousPlayers()
+        let thirdPick = draft.players[0]
+        expect(thirdPickPosition).to(equal(thirdPick.rank))
+      }
+      
+      it("first 3 picks are correct from 1 spot") {
+        let draft = Draft()
+        draft.draftPickNumber = 1
+        draft.numberOfDrafters = 10
+        
+        let firstPickPosition = 1
+        let secondPickPosition = 20
+        let thirdPickPosition = 21
+        
+        draft.startDraft()
+        
+        let firstPick = draft.players[0]
+        expect(firstPickPosition).to(equal(firstPick.rank))
+        
+        draft.removePreviousPlayers()
+        let secondPick = draft.players[0]
+        expect(secondPickPosition).to(equal(secondPick.rank))
+        
+        draft.removePreviousPlayers()
+        let thirdPick = draft.players[0]
+        expect(thirdPickPosition).to(equal(thirdPick.rank))
+      }
+      
+      it("first 3 picks are correct from 10 spot") {
+        let draft = Draft()
+        draft.draftPickNumber = 10
+        draft.numberOfDrafters = 10
+        
+        let firstPickPosition = 10
+        let secondPickPosition = 11
+        let thirdPickPosition = 30
+        
+        draft.startDraft()
+        
+        let firstPick = draft.players[0]
+        expect(firstPickPosition).to(equal(firstPick.rank))
+        
+        draft.removePreviousPlayers()
+        let secondPick = draft.players[0]
+        expect(secondPickPosition).to(equal(secondPick.rank))
+        
+        draft.removePreviousPlayers()
+        let thirdPick = draft.players[0]
+        expect(thirdPickPosition).to(equal(thirdPick.rank))
+      }
+    }
+    
+    describe("12 team draft") {
+      it("first 3 picks are correct from 6 spot") {
+        let draft = Draft()
+        draft.draftPickNumber = 6
+        draft.numberOfDrafters = 12
+        
+        let firstPickPosition = 6
+        let secondPickPosition = 19
+        let thirdPickPosition = 30
+        
+        draft.startDraft()
+        
+        let firstPick = draft.players[0]
+        expect(firstPickPosition).to(equal(firstPick.rank))
+        
+        draft.removePreviousPlayers()
+        let secondPick = draft.players[0]
+        expect(secondPickPosition).to(equal(secondPick.rank))
+        
+        draft.removePreviousPlayers()
+        let thirdPick = draft.players[0]
+        expect(thirdPickPosition).to(equal(thirdPick.rank))
+      }
+      
+      it("first 3 picks are correct from 1 spot") {
+        let draft = Draft()
+        draft.draftPickNumber = 1
+        draft.numberOfDrafters = 12
+        
+        let firstPickPosition = 1
+        let secondPickPosition = 24
+        let thirdPickPosition = 25
+        
+        draft.startDraft()
+        
+        let firstPick = draft.players[0]
+        expect(firstPickPosition).to(equal(firstPick.rank))
+        
+        draft.removePreviousPlayers()
+        let secondPick = draft.players[0]
+        expect(secondPickPosition).to(equal(secondPick.rank))
+        
+        draft.removePreviousPlayers()
+        let thirdPick = draft.players[0]
+        expect(thirdPickPosition).to(equal(thirdPick.rank))
+      }
+      
+      it("first 3 picks are correct from 12 spot") {
+        let draft = Draft()
+        draft.draftPickNumber = 12
+        draft.numberOfDrafters = 12
+        
+        let firstPickPosition = 12
+        let secondPickPosition = 13
+        let thirdPickPosition = 36
+        
+        draft.startDraft()
+        
+        let firstPick = draft.players[0]
+        expect(firstPickPosition).to(equal(firstPick.rank))
+        
+        draft.removePreviousPlayers()
+        let secondPick = draft.players[0]
+        expect(secondPickPosition).to(equal(secondPick.rank))
+        
+        draft.removePreviousPlayers()
+        let thirdPick = draft.players[0]
+        expect(thirdPickPosition).to(equal(thirdPick.rank))
+      }
+    }
+    
+    describe("16 team draft") {
+      it("first 3 picks are correct from 8 spot") {
+        let draft = Draft()
+        draft.draftPickNumber = 8
+        draft.numberOfDrafters = 16
+        
+        let firstPickPosition = 8
+        let secondPickPosition = 25
+        let thirdPickPosition = 40
+        
+        draft.startDraft()
+        
+        let firstPick = draft.players[0]
+        expect(firstPickPosition).to(equal(firstPick.rank))
+        
+        draft.removePreviousPlayers()
+        let secondPick = draft.players[0]
+        expect(secondPickPosition).to(equal(secondPick.rank))
+        
+        draft.removePreviousPlayers()
+        let thirdPick = draft.players[0]
+        expect(thirdPickPosition).to(equal(thirdPick.rank))
+      }
+      
+      it("first 3 picks are correct from 1 spot") {
+        let draft = Draft()
+        draft.draftPickNumber = 1
+        draft.numberOfDrafters = 16
+        
+        let firstPickPosition = 1
+        let secondPickPosition = 32
+        let thirdPickPosition = 33
+        
+        draft.startDraft()
+        
+        let firstPick = draft.players[0]
+        expect(firstPickPosition).to(equal(firstPick.rank))
+        
+        draft.removePreviousPlayers()
+        let secondPick = draft.players[0]
+        expect(secondPickPosition).to(equal(secondPick.rank))
+        
+        draft.removePreviousPlayers()
+        let thirdPick = draft.players[0]
+        expect(thirdPickPosition).to(equal(thirdPick.rank))
+      }
+      
+      it("first 3 picks are correct from 16 spot") {
+        let draft = Draft()
+        draft.draftPickNumber = 16
+        draft.numberOfDrafters = 16
+        
+        let firstPickPosition = 16
+        let secondPickPosition = 17
+        let thirdPickPosition = 48
+        
+        draft.startDraft()
+        
+        let firstPick = draft.players[0]
+        expect(firstPickPosition).to(equal(firstPick.rank))
+        
+        draft.removePreviousPlayers()
+        let secondPick = draft.players[0]
+        expect(secondPickPosition).to(equal(secondPick.rank))
+        
+        draft.removePreviousPlayers()
+        let thirdPick = draft.players[0]
+        expect(thirdPickPosition).to(equal(thirdPick.rank))
+      }
+    }
+
+    
+    
+    
+    
+    
+    
+    
   }
-  
-  
-  
-  
-  
 }
