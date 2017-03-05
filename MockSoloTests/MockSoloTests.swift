@@ -50,7 +50,78 @@ class MockSoloTests: QuickSpec {
       }
     }
     
-  
+    describe("8 team draft") {
+      it("first 3 picks are correct from 4 spot") {
+        let draft = Draft()
+        draft.draftPickNumber = 4
+        draft.numberOfDrafters = 8
+        
+        let firstPickPosition = 4
+        let secondPickPosition = 13
+        let thirdPickPosition = 20
+        
+        draft.startDraft()
+        
+        let firstPick = draft.players[0]
+        expect(firstPickPosition).to(equal(firstPick.rank))
+        
+        draft.removePreviousPlayers()
+        let secondPick = draft.players[0]
+        expect(secondPickPosition).to(equal(secondPick.rank))
+        
+        draft.removePreviousPlayers()
+        let thirdPick = draft.players[0]
+        expect(thirdPickPosition).to(equal(thirdPick.rank))
+      }
+      
+      it("first 3 picks are correct from 1 spot") {
+        let draft = Draft()
+        draft.draftPickNumber = 1
+        draft.numberOfDrafters = 8
+        
+        let firstPickPosition = 1
+        let secondPickPosition = 16
+        let thirdPickPosition = 17
+        
+        draft.startDraft()
+        
+        let firstPick = draft.players[0]
+        expect(firstPickPosition).to(equal(firstPick.rank))
+        
+        draft.removePreviousPlayers()
+        let secondPick = draft.players[0]
+        expect(secondPickPosition).to(equal(secondPick.rank))
+
+        
+        draft.removePreviousPlayers()
+        let thirdPick = draft.players[0]
+        expect(thirdPickPosition).to(equal(thirdPick.rank))
+      }
+      
+      it("first 3 picks are correct from 8 spot") {
+        let draft = Draft()
+        draft.draftPickNumber = 8
+        draft.numberOfDrafters = 8
+        
+        let firstPickPosition = 8
+        let secondPickPosition = 9
+        let thirdPickPosition = 24
+        
+        draft.startDraft()
+        
+        let firstPick = draft.players[0]
+        expect(firstPickPosition).to(equal(firstPick.rank))
+        
+        draft.removePreviousPlayers()
+        let secondPick = draft.players[0]
+        expect(secondPickPosition).to(equal(secondPick.rank))
+        
+        draft.removePreviousPlayers()
+        let thirdPick = draft.players[0]
+        XCTAssertEqual(thirdPickPosition, thirdPick.rank)
+      }
+      
+    }
   }
   
   
