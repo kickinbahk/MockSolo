@@ -14,6 +14,7 @@ class NewDraftSettingsViewController: UIViewController {
   let pageTitle = UILabel()
   let playerDraftPositionLabel = UILabel()
   let playerDraftPositionTextField = UITextField()
+  let playerDraftPositionPicker = UIPickerView()
   let playerNumberOfTeamsLabel = UILabel()
   let playerNumberOfTeamsTextField = UITextField()
   let startDraftButton = UIButton()
@@ -21,6 +22,7 @@ class NewDraftSettingsViewController: UIViewController {
   var dimmedView = UIView()
   var startDraftImage = UIImageView()
   var playerDraftPosition: Int = 0
+  var playerDraftPositionPickerOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   var playerNumberOfTeams: Int = 0
   override var preferredStatusBarStyle : UIStatusBarStyle {
     return .lightContent
@@ -36,6 +38,8 @@ class NewDraftSettingsViewController: UIViewController {
     
     playerDraftPositionTextField.delegate = self
     playerNumberOfTeamsTextField.delegate = self
+    playerDraftPositionPicker.dataSource = self
+    playerDraftPositionPicker.delegate = self
 
     updateUI()
     view.layoutIfNeeded()
@@ -137,6 +141,7 @@ class NewDraftSettingsViewController: UIViewController {
     dimmedView.addSubview(pageTitle)
     dimmedView.addSubview(howToPlayButton)
     dimmedView.addSubview(playerDraftPositionLabel)
+    dimmedView.addSubview(playerDraftPositionPicker)
     dimmedView.addSubview(playerDraftPositionTextField)
     dimmedView.addSubview(playerNumberOfTeamsLabel)
     dimmedView.addSubview(playerNumberOfTeamsTextField)
@@ -165,11 +170,16 @@ class NewDraftSettingsViewController: UIViewController {
     playerDraftPositionLabel.bottomAnchor.constraint(equalTo: playerDraftPositionTextField.topAnchor,
                                                      constant: -20).isActive = true
     
-    playerDraftPositionTextField.translatesAutoresizingMaskIntoConstraints = false
-    playerDraftPositionTextField.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
-    playerDraftPositionTextField.bottomAnchor.constraint(equalTo: playerNumberOfTeamsLabel.topAnchor,
-                                                         constant: -30).isActive = true
-    playerDraftPositionTextField.widthAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true
+    playerDraftPositionPicker.translatesAutoresizingMaskIntoConstraints = false
+    playerDraftPositionPicker.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
+    playerDraftPositionPicker.bottomAnchor.constraint(equalTo: playerNumberOfTeamsLabel.topAnchor,
+                                                      constant: -30).isActive = true
+    
+//    playerDraftPositionTextField.translatesAutoresizingMaskIntoConstraints = false
+//    playerDraftPositionTextField.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
+//    playerDraftPositionTextField.bottomAnchor.constraint(equalTo: playerNumberOfTeamsLabel.topAnchor,
+//                                                         constant: -30).isActive = true
+//    playerDraftPositionTextField.widthAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true
     
     playerNumberOfTeamsLabel.translatesAutoresizingMaskIntoConstraints = false
     playerNumberOfTeamsLabel.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
@@ -262,4 +272,23 @@ extension NewDraftSettingsViewController: UITextFieldDelegate {
     return true
   }
   
+}
+
+extension NewDraftSettingsViewController: UIPickerViewDelegate {
+  func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    return String(playerDraftPositionPickerOptions[row])
+  }
+  
+  func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    playerDraftPosition = playerDraftPositionPickerOptions[row]
+  }
+}
+
+extension NewDraftSettingsViewController: UIPickerViewDataSource {
+  func numberOfComponents(in: UIPickerView) -> Int {
+    return 1
+  }
+  func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    return playerDraftPositionPickerOptions.count
+  }
 }
