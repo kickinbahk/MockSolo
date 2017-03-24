@@ -140,11 +140,11 @@ class NewDraftSettingsViewController: UIViewController {
     view.addSubview(dimmedView)
     dimmedView.addSubview(pageTitle)
     dimmedView.addSubview(howToPlayButton)
-    dimmedView.addSubview(playerDraftPositionLabel)
-    dimmedView.addSubview(playerDraftPositionPicker)
-    dimmedView.addSubview(playerDraftPositionTextField)
-    dimmedView.addSubview(playerNumberOfTeamsLabel)
-    dimmedView.addSubview(playerNumberOfTeamsTextField)
+//    dimmedView.addSubview(playerDraftPositionLabel)
+//    dimmedView.addSubview(playerDraftPositionPicker)
+//    dimmedView.addSubview(playerDraftPositionTextField)
+//    dimmedView.addSubview(playerNumberOfTeamsLabel)
+//    dimmedView.addSubview(playerNumberOfTeamsTextField)
     dimmedView.addSubview(startDraftButton)
     
     addConstraints()
@@ -157,23 +157,25 @@ class NewDraftSettingsViewController: UIViewController {
     dimmedView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
     dimmedView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
     
+    startDraftImage.translatesAutoresizingMaskIntoConstraints = false
+    startDraftImage.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    startDraftImage.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+    startDraftImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+    startDraftImage.contentMode = .scaleAspectFill
+
     pageTitle.translatesAutoresizingMaskIntoConstraints = false
     pageTitle.topAnchor.constraint(equalTo: dimmedView.topAnchor, constant: 40).isActive = true
     pageTitle.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
     
-    howToPlayButton.translatesAutoresizingMaskIntoConstraints = false
-    howToPlayButton.topAnchor.constraint(equalTo: pageTitle.topAnchor, constant: 75).isActive = true
-    howToPlayButton.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
-    
-    playerDraftPositionLabel.translatesAutoresizingMaskIntoConstraints = false
-    playerDraftPositionLabel.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
-    playerDraftPositionLabel.bottomAnchor.constraint(equalTo: playerDraftPositionTextField.topAnchor,
-                                                     constant: -20).isActive = true
-    
-    playerDraftPositionPicker.translatesAutoresizingMaskIntoConstraints = false
-    playerDraftPositionPicker.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
-    playerDraftPositionPicker.bottomAnchor.constraint(equalTo: playerNumberOfTeamsLabel.topAnchor,
-                                                      constant: -30).isActive = true
+//    playerDraftPositionLabel.translatesAutoresizingMaskIntoConstraints = false
+//    playerDraftPositionLabel.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
+//    playerDraftPositionLabel.bottomAnchor.constraint(equalTo: playerDraftPositionTextField.topAnchor,
+//                                                     constant: -20).isActive = true
+//    
+//    playerDraftPositionPicker.translatesAutoresizingMaskIntoConstraints = false
+//    playerDraftPositionPicker.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
+//    playerDraftPositionPicker.bottomAnchor.constraint(equalTo: playerNumberOfTeamsLabel.topAnchor,
+//                                                      constant: -30).isActive = true
     
 //    playerDraftPositionTextField.translatesAutoresizingMaskIntoConstraints = false
 //    playerDraftPositionTextField.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
@@ -181,22 +183,22 @@ class NewDraftSettingsViewController: UIViewController {
 //                                                         constant: -30).isActive = true
 //    playerDraftPositionTextField.widthAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true
     
-    playerNumberOfTeamsLabel.translatesAutoresizingMaskIntoConstraints = false
-    playerNumberOfTeamsLabel.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
-    playerNumberOfTeamsLabel.bottomAnchor.constraint(equalTo: playerNumberOfTeamsTextField.topAnchor,
-                                                     constant: -20).isActive = true
+//    playerNumberOfTeamsLabel.translatesAutoresizingMaskIntoConstraints = false
+//    playerNumberOfTeamsLabel.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
+//    playerNumberOfTeamsLabel.bottomAnchor.constraint(equalTo: playerNumberOfTeamsTextField.topAnchor,
+//                                                     constant: -20).isActive = true
+//    
+//    playerNumberOfTeamsTextField.translatesAutoresizingMaskIntoConstraints = false
+//    playerNumberOfTeamsTextField.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
+//    playerNumberOfTeamsTextField.bottomAnchor.constraint(equalTo: startDraftButton.topAnchor,
+//                                                         constant: -40).isActive = true
+//    playerNumberOfTeamsTextField.widthAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true
     
-    playerNumberOfTeamsTextField.translatesAutoresizingMaskIntoConstraints = false
-    playerNumberOfTeamsTextField.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
-    playerNumberOfTeamsTextField.bottomAnchor.constraint(equalTo: startDraftButton.topAnchor,
-                                                         constant: -40).isActive = true
-    playerNumberOfTeamsTextField.widthAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true
     
-    startDraftImage.translatesAutoresizingMaskIntoConstraints = false
-    startDraftImage.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-    startDraftImage.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
-    startDraftImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
-    startDraftImage.contentMode = .scaleAspectFill
+    howToPlayButton.translatesAutoresizingMaskIntoConstraints = false
+    howToPlayButton.topAnchor.constraint(equalTo: startDraftButton.topAnchor, constant: -60).isActive = true
+    howToPlayButton.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
+  
     
     startDraftButton.translatesAutoresizingMaskIntoConstraints = false
     startDraftButton.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
