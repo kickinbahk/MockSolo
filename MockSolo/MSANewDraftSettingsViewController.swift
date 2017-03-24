@@ -12,11 +12,15 @@ class NewDraftSettingsViewController: UIViewController {
 
   let howToPlayButton = UIButton()
   let pageTitle = UILabel()
+  
+  let playerNumberOfTeamsLabel = UILabel()
+  let playerNumberOfTeamsTextField = UITextField()
+  let playerNumberOfTeamsPicker = UIPickerView()
+  
   let playerDraftPositionLabel = UILabel()
   let playerDraftPositionTextField = UITextField()
   let playerDraftPositionPicker = UIPickerView()
-  let playerNumberOfTeamsLabel = UILabel()
-  let playerNumberOfTeamsTextField = UITextField()
+  
   let startDraftButton = UIButton()
   
   var dimmedView = UIView()
@@ -24,6 +28,9 @@ class NewDraftSettingsViewController: UIViewController {
   var playerDraftPosition: Int = 0
   var playerDraftPositionPickerOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   var playerNumberOfTeams: Int = 0
+  var playerNumberOfTeamsPickerOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+                                          11, 12, 13, 14, 15, 16, 17, 18, 19,
+                                          20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32]
   override var preferredStatusBarStyle : UIStatusBarStyle {
     return .lightContent
   }
@@ -140,10 +147,12 @@ class NewDraftSettingsViewController: UIViewController {
     view.addSubview(dimmedView)
     dimmedView.addSubview(pageTitle)
     dimmedView.addSubview(howToPlayButton)
+    dimmedView.addSubview(playerNumberOfTeamsLabel)
+    //dimmedView.addSubview(playerNumberOfTeamsPicker)
 //    dimmedView.addSubview(playerDraftPositionLabel)
 //    dimmedView.addSubview(playerDraftPositionPicker)
 //    dimmedView.addSubview(playerDraftPositionTextField)
-//    dimmedView.addSubview(playerNumberOfTeamsLabel)
+
 //    dimmedView.addSubview(playerNumberOfTeamsTextField)
     dimmedView.addSubview(startDraftButton)
     
@@ -167,6 +176,11 @@ class NewDraftSettingsViewController: UIViewController {
     pageTitle.topAnchor.constraint(equalTo: dimmedView.topAnchor, constant: 40).isActive = true
     pageTitle.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
     
+    playerNumberOfTeamsLabel.translatesAutoresizingMaskIntoConstraints = false
+    playerNumberOfTeamsLabel.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
+    playerNumberOfTeamsLabel.bottomAnchor.constraint(equalTo: pageTitle.bottomAnchor,
+                                                     constant: 40).isActive = true
+
 //    playerDraftPositionLabel.translatesAutoresizingMaskIntoConstraints = false
 //    playerDraftPositionLabel.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
 //    playerDraftPositionLabel.bottomAnchor.constraint(equalTo: playerDraftPositionTextField.topAnchor,
@@ -183,10 +197,7 @@ class NewDraftSettingsViewController: UIViewController {
 //                                                         constant: -30).isActive = true
 //    playerDraftPositionTextField.widthAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true
     
-//    playerNumberOfTeamsLabel.translatesAutoresizingMaskIntoConstraints = false
-//    playerNumberOfTeamsLabel.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
-//    playerNumberOfTeamsLabel.bottomAnchor.constraint(equalTo: playerNumberOfTeamsTextField.topAnchor,
-//                                                     constant: -20).isActive = true
+
 //    
 //    playerNumberOfTeamsTextField.translatesAutoresizingMaskIntoConstraints = false
 //    playerNumberOfTeamsTextField.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
