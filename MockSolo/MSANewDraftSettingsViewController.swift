@@ -310,9 +310,10 @@ extension NewDraftSettingsViewController: UIPickerViewDelegate {
   }
   
   func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-    let titleData = playerNumberOfTeamsPickerOptions[row]
-    let myTitle = NSAttributedString(string: String(titleData), attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 15.0)!,NSForegroundColorAttributeName:UIColor.white])
-    return myTitle
+    let pickerLabel = String(playerNumberOfTeamsPickerOptions[row])
+    let label = NSAttributedString(string: pickerLabel,
+                                     attributes: [ NSForegroundColorAttributeName: UIColor.white ])
+    return label
   }
 }
 
