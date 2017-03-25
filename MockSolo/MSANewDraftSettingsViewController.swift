@@ -92,15 +92,16 @@ class NewDraftSettingsViewController: UIViewController {
     startDraftImage = UIImageView(image: image!)
     
     pageTitle.text = "MockSolo"
-    pageTitle.textColor = UIColor.white
+    pageTitle.textColor = .white
     pageTitle.font = UIFont.boldSystemFont(ofSize: 20)
     
-    howToPlayButton.setTitle("Click Here for Instructions", for: .normal)
-    howToPlayButton.setTitleColor(UIColor.cyan, for: .normal)
-    howToPlayButton.addTarget(self, action: #selector(openHowToPlay), for: .touchUpInside)
-    howToPlayButton.contentEdgeInsets = UIEdgeInsetsMake(5, 10, 5, 10)
-    howToPlayButton.layer.cornerRadius = 5
     
+    playerNumberOfTeamsLabel.textColor = .white
+    playerNumberOfTeamsLabel.text = "How Many Teams Are In Your League?"
+    playerNumberOfTeamsLabel.lineBreakMode = .byWordWrapping
+    playerNumberOfTeamsLabel.numberOfLines = 3
+    playerNumberOfTeamsLabel.preferredMaxLayoutWidth = view.bounds.width - 10
+    playerNumberOfTeamsLabel.sizeToFit()
     
     playerDraftPositionLabel.textColor = UIColor.white
     playerDraftPositionLabel.text = "What Position Are You Drafting From?"
@@ -118,13 +119,7 @@ class NewDraftSettingsViewController: UIViewController {
     playerDraftPositionTextField.textAlignment = .center
     playerDraftPositionTextField.attributedPlaceholder = NSAttributedString(string:"5",
                                                                              attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
-    
-    playerNumberOfTeamsLabel.textColor = UIColor.white
-    playerNumberOfTeamsLabel.text = "How Many Teams Are In Your League?"
-    playerNumberOfTeamsLabel.lineBreakMode = .byWordWrapping
-    playerNumberOfTeamsLabel.numberOfLines = 3
-    playerNumberOfTeamsLabel.preferredMaxLayoutWidth = view.bounds.width - 10
-    playerNumberOfTeamsLabel.sizeToFit()
+
   
     
     playerNumberOfTeamsTextField.layer.masksToBounds = true
@@ -136,6 +131,13 @@ class NewDraftSettingsViewController: UIViewController {
     playerNumberOfTeamsTextField.textAlignment = .center
     playerNumberOfTeamsTextField.attributedPlaceholder = NSAttributedString(string:"10",
                                                                             attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
+    
+    howToPlayButton.setTitle("Click Here for Instructions", for: .normal)
+    howToPlayButton.setTitleColor(UIColor.cyan, for: .normal)
+    howToPlayButton.addTarget(self, action: #selector(openHowToPlay), for: .touchUpInside)
+    howToPlayButton.contentEdgeInsets = UIEdgeInsetsMake(5, 10, 5, 10)
+    howToPlayButton.layer.cornerRadius = 5
+    
     
     startDraftButton.backgroundColor = UIColor(red: 46/255, green: 60/255, blue: 70/255, alpha: 1)
     startDraftButton.layer.cornerRadius = 5
@@ -305,6 +307,12 @@ extension NewDraftSettingsViewController: UIPickerViewDelegate {
   
   func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
     playerNumberOfTeams = playerNumberOfTeamsPickerOptions[row]
+  }
+  
+  func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+    let titleData = playerNumberOfTeamsPickerOptions[row]
+    let myTitle = NSAttributedString(string: String(titleData), attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 15.0)!,NSForegroundColorAttributeName:UIColor.white])
+    return myTitle
   }
 }
 
