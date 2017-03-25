@@ -45,6 +45,10 @@ class NewDraftSettingsViewController: UIViewController {
     
     playerDraftPositionTextField.delegate = self
     playerNumberOfTeamsTextField.delegate = self
+    
+    playerNumberOfTeamsPicker.dataSource = self
+    playerNumberOfTeamsPicker.delegate = self
+    
     playerDraftPositionPicker.dataSource = self
     playerDraftPositionPicker.delegate = self
 
@@ -148,7 +152,7 @@ class NewDraftSettingsViewController: UIViewController {
     dimmedView.addSubview(pageTitle)
     dimmedView.addSubview(howToPlayButton)
     dimmedView.addSubview(playerNumberOfTeamsLabel)
-    //dimmedView.addSubview(playerNumberOfTeamsPicker)
+    dimmedView.addSubview(playerNumberOfTeamsPicker)
 //    dimmedView.addSubview(playerDraftPositionLabel)
 //    dimmedView.addSubview(playerDraftPositionPicker)
 //    dimmedView.addSubview(playerDraftPositionTextField)
@@ -180,16 +184,23 @@ class NewDraftSettingsViewController: UIViewController {
     playerNumberOfTeamsLabel.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
     playerNumberOfTeamsLabel.bottomAnchor.constraint(equalTo: pageTitle.bottomAnchor,
                                                      constant: 40).isActive = true
+    
+    playerNumberOfTeamsPicker.translatesAutoresizingMaskIntoConstraints = false
+    playerNumberOfTeamsPicker.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = false
+    playerNumberOfTeamsPicker.topAnchor.constraint(equalTo: playerNumberOfTeamsLabel.bottomAnchor,
+                                                   constant: -50).isActive = true
+    
+//    playerDraftPositionPicker.translatesAutoresizingMaskIntoConstraints = false
+//    playerDraftPositionPicker.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
+//    playerDraftPositionPicker.topAnchor.constraint(equalTo: playerNumberOfTeamsLabel.bottomAnchor,
+//                                                      constant: -30).isActive = true
 
 //    playerDraftPositionLabel.translatesAutoresizingMaskIntoConstraints = false
 //    playerDraftPositionLabel.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
 //    playerDraftPositionLabel.bottomAnchor.constraint(equalTo: playerDraftPositionTextField.topAnchor,
 //                                                     constant: -20).isActive = true
 //    
-//    playerDraftPositionPicker.translatesAutoresizingMaskIntoConstraints = false
-//    playerDraftPositionPicker.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
-//    playerDraftPositionPicker.bottomAnchor.constraint(equalTo: playerNumberOfTeamsLabel.topAnchor,
-//                                                      constant: -30).isActive = true
+
     
 //    playerDraftPositionTextField.translatesAutoresizingMaskIntoConstraints = false
 //    playerDraftPositionTextField.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
@@ -289,11 +300,11 @@ extension NewDraftSettingsViewController: UITextFieldDelegate {
 
 extension NewDraftSettingsViewController: UIPickerViewDelegate {
   func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-    return String(playerDraftPositionPickerOptions[row])
+    return String(playerNumberOfTeamsPickerOptions[row])
   }
   
   func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-    playerDraftPosition = playerDraftPositionPickerOptions[row]
+    playerNumberOfTeams = playerNumberOfTeamsPickerOptions[row]
   }
 }
 
@@ -302,6 +313,6 @@ extension NewDraftSettingsViewController: UIPickerViewDataSource {
     return 1
   }
   func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-    return playerDraftPositionPickerOptions.count
+    return playerNumberOfTeamsPickerOptions.count
   }
 }
