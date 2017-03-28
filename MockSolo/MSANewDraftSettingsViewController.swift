@@ -111,6 +111,7 @@ class NewDraftSettingsViewController: UIViewController {
   
     playerDraftPositionPicker.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
     playerDraftPositionPicker.isUserInteractionEnabled = false
+    playerDraftPositionPicker.alpha = 0.5
     
     howToPlayButton.setTitle("Click Here for Instructions", for: .normal)
     howToPlayButton.setTitleColor(UIColor.cyan, for: .normal)
@@ -232,14 +233,30 @@ extension NewDraftSettingsViewController: UIPickerViewDelegate {
         pickNumbers.append(number)
       }
       
-      playerDraftPositionPickerOptions = pickNumbers
-      playerDraftPositionPicker.reloadAllComponents()
-      playerDraftPositionPicker.isUserInteractionEnabled = true
+      if playerNumberOfTeamsPickerOptions[row] == 0 {
+        playerDraftPositionPicker.isUserInteractionEnabled = false
+        playerDraftPositionPicker.alpha = 0.5
+        let alertController = UIAlertController(title: "Invalid Input",
+                                                message: "You must Choose a Number Greater than Zero",
+                                                preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(defaultAction)
+        
+        present(alertController, animated: true, completion: nil)
+      } else {
+        playerDraftPositionPickerOptions = pickNumbers
+        playerDraftPositionPicker.reloadAllComponents()
+        playerDraftPositionPicker.isUserInteractionEnabled = true
+        playerDraftPositionPicker.alpha = 1
+      }
+      
     } else if pickerView == playerDraftPositionPicker {
       playerDraftPosition = playerDraftPositionPickerOptions[row]
     }
 
-    
+    if playerDraftPosition > 0 && playerNumberOfTeams > 0 {
+      startDraftButton.isEnabled = true
+    }
   }
   
   func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
