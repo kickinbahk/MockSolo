@@ -26,9 +26,9 @@ class NewDraftSettingsViewController: UIViewController {
   var dimmedView = UIView()
   var startDraftImage = UIImageView()
   var playerDraftPosition: Int = 0
-  var playerDraftPositionPickerOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  var playerDraftPositionPickerOptions = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   var playerNumberOfTeams: Int = 0
-  var playerNumberOfTeamsPickerOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+  var playerNumberOfTeamsPickerOptions = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
                                           11, 12, 13, 14, 15, 16, 17, 18, 19,
                                           20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32]
   override var preferredStatusBarStyle : UIStatusBarStyle {
@@ -110,6 +110,7 @@ class NewDraftSettingsViewController: UIViewController {
     playerDraftPositionLabel.sizeToFit()
   
     playerDraftPositionPicker.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+    playerDraftPositionPicker.isUserInteractionEnabled = false
     
     howToPlayButton.setTitle("Click Here for Instructions", for: .normal)
     howToPlayButton.setTitleColor(UIColor.cyan, for: .normal)
@@ -177,7 +178,7 @@ class NewDraftSettingsViewController: UIViewController {
     playerDraftPositionPicker.translatesAutoresizingMaskIntoConstraints = false
     playerDraftPositionPicker.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
     playerDraftPositionPicker.topAnchor.constraint(equalTo: playerDraftPositionLabel.bottomAnchor,
-                                                      constant: -30).isActive = true
+                                                      constant: -35).isActive = true
     
     howToPlayButton.translatesAutoresizingMaskIntoConstraints = false
     howToPlayButton.topAnchor.constraint(equalTo: startDraftButton.topAnchor, constant: -60).isActive = true
@@ -209,56 +210,6 @@ class NewDraftSettingsViewController: UIViewController {
 
 }
 
-extension NewDraftSettingsViewController: UITextFieldDelegate {
-  func textFieldDidEndEditing(_ textField: UITextField) {
-    if Int(textField.text!) != nil && Int(textField.text!) != 0 {
-      textField.resignFirstResponder()
-      if textField == playerDraftPositionTextField {
-        playerDraftPosition = Int(textField.text!)!
-      } else if textField == playerNumberOfTeamsTextField {
-        playerNumberOfTeams = Int(textField.text!)!
-      }
-      textField.resignFirstResponder()
-      
-      if playerDraftPosition != 0 && playerNumberOfTeams != 0 {
-        if playerNumberOfTeams < 33 {
-          if playerDraftPosition <= playerNumberOfTeams {
-            startDraftButton.isEnabled = true
-          } else {
-            let alertController = UIAlertController(title: "Invalid Input",
-                                                    message: "Your draft position must be less than the number of total teams drafting", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-            alertController.addAction(defaultAction)
-            
-            present(alertController, animated: true, completion: nil)
-          }
-        } else {
-          let alertController = UIAlertController(title: "Invalid Input",
-                                                  message: "You must enter 32 teams or less", preferredStyle: .alert)
-          let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-          alertController.addAction(defaultAction)
-          
-          present(alertController, animated: true, completion: nil)
-        }
-
-      }
-    } else {
-      let alertController = UIAlertController(title: "Invalid Input",
-                                              message: "You must enter a Non-Zero Number", preferredStyle: .alert)
-      let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-      alertController.addAction(defaultAction)
-      
-      present(alertController, animated: true, completion: nil)
-    }
-    
-  }
-  
-  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    textField.resignFirstResponder()
-    return true
-  }
-  
-}
 
 extension NewDraftSettingsViewController: UIPickerViewDelegate {
   func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -274,11 +225,21 @@ extension NewDraftSettingsViewController: UIPickerViewDelegate {
   
   func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
     if pickerView == playerNumberOfTeamsPicker {
+      var pickNumbers = [Int]()
       playerNumberOfTeams = playerNumberOfTeamsPickerOptions[row]
+      
+      for number in 0...playerNumberOfTeams {
+        pickNumbers.append(number)
+      }
+      
+      playerDraftPositionPickerOptions = pickNumbers
+      playerDraftPositionPicker.reloadAllComponents()
+      playerDraftPositionPicker.isUserInteractionEnabled = true
     } else if pickerView == playerDraftPositionPicker {
       playerDraftPosition = playerDraftPositionPickerOptions[row]
     }
 
+    
   }
   
   func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
