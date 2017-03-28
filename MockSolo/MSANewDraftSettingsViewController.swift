@@ -100,7 +100,7 @@ class NewDraftSettingsViewController: UIViewController {
     playerNumberOfTeamsLabel.preferredMaxLayoutWidth = view.bounds.width - 10
     playerNumberOfTeamsLabel.sizeToFit()
     
-    playerNumberOfTeamsPicker.transform = CGAffineTransform(scaleX: 0.8, y: 0.8);
+    playerNumberOfTeamsPicker.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
     
     playerDraftPositionLabel.textColor = UIColor.white
     playerDraftPositionLabel.text = "What Position Are You Drafting From?"
@@ -109,7 +109,7 @@ class NewDraftSettingsViewController: UIViewController {
     playerDraftPositionLabel.preferredMaxLayoutWidth = view.bounds.width - 10
     playerDraftPositionLabel.sizeToFit()
   
-    
+    playerDraftPositionPicker.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
     
     howToPlayButton.setTitle("Click Here for Instructions", for: .normal)
     howToPlayButton.setTitleColor(UIColor.cyan, for: .normal)
