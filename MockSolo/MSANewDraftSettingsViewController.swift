@@ -265,11 +265,11 @@ extension NewDraftSettingsViewController: UIPickerViewDelegate {
     if pickerView == playerNumberOfTeamsPicker {
       let pickerLabel = String(playerNumberOfTeamsPickerOptions[row])
       label = NSAttributedString(string: pickerLabel,
-                                     attributes: [ NSForegroundColorAttributeName: UIColor.white ])
+                                 attributes: [ NSForegroundColorAttributeName: UIColor.white ])
     } else if pickerView == playerDraftPositionPicker {
       let pickerLabel = String(playerDraftPositionPickerOptions[row])
       label = NSAttributedString(string: pickerLabel,
-                                     attributes: [ NSForegroundColorAttributeName: UIColor.white ])
+                                 attributes: [ NSForegroundColorAttributeName: UIColor.white ])
     }
 
     return label
