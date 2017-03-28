@@ -43,9 +43,6 @@ class NewDraftSettingsViewController: UIViewController {
     gestureRecognizer.cancelsTouchesInView = false
     view.addGestureRecognizer(gestureRecognizer)
     
-    playerDraftPositionTextField.delegate = self
-    playerNumberOfTeamsTextField.delegate = self
-    
     playerNumberOfTeamsPicker.dataSource = self
     playerNumberOfTeamsPicker.delegate = self
     
@@ -111,28 +108,8 @@ class NewDraftSettingsViewController: UIViewController {
     playerDraftPositionLabel.numberOfLines = 2
     playerDraftPositionLabel.preferredMaxLayoutWidth = view.bounds.width - 10
     playerDraftPositionLabel.sizeToFit()
-    
-    playerDraftPositionTextField.layer.masksToBounds = true
-    playerDraftPositionTextField.layer.borderWidth = 1.0
-    playerDraftPositionTextField.layer.borderColor = UIColor.white.cgColor
-    playerDraftPositionTextField.textColor = UIColor.white
-    playerDraftPositionTextField.tintColor = UIColor.white
-    playerDraftPositionTextField.borderStyle = .line
-    playerDraftPositionTextField.textAlignment = .center
-    playerDraftPositionTextField.attributedPlaceholder = NSAttributedString(string:"5",
-                                                                             attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
-
   
     
-    playerNumberOfTeamsTextField.layer.masksToBounds = true
-    playerNumberOfTeamsTextField.layer.borderWidth = 1.0
-    playerNumberOfTeamsTextField.layer.borderColor = UIColor.white.cgColor
-    playerNumberOfTeamsTextField.textColor = UIColor.white
-    playerNumberOfTeamsTextField.tintColor = UIColor.white
-    playerNumberOfTeamsTextField.borderStyle = .line
-    playerNumberOfTeamsTextField.textAlignment = .center
-    playerNumberOfTeamsTextField.attributedPlaceholder = NSAttributedString(string:"10",
-                                                                            attributes:[NSForegroundColorAttributeName: UIColor.lightGray])
     
     howToPlayButton.setTitle("Click Here for Instructions", for: .normal)
     howToPlayButton.setTitleColor(UIColor.cyan, for: .normal)
@@ -158,10 +135,7 @@ class NewDraftSettingsViewController: UIViewController {
     dimmedView.addSubview(playerNumberOfTeamsLabel)
     dimmedView.addSubview(playerNumberOfTeamsPicker)
     dimmedView.addSubview(playerDraftPositionLabel)
-//    dimmedView.addSubview(playerDraftPositionPicker)
-//    dimmedView.addSubview(playerDraftPositionTextField)
-
-//    dimmedView.addSubview(playerNumberOfTeamsTextField)
+    dimmedView.addSubview(playerDraftPositionPicker)
     dimmedView.addSubview(startDraftButton)
     
     addConstraints()
@@ -200,28 +174,10 @@ class NewDraftSettingsViewController: UIViewController {
                                                      constant: -30).isActive = true
 
     
-//    playerDraftPositionPicker.translatesAutoresizingMaskIntoConstraints = false
-//    playerDraftPositionPicker.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
-//    playerDraftPositionPicker.topAnchor.constraint(equalTo: playerNumberOfTeamsLabel.bottomAnchor,
-//                                                      constant: -30).isActive = true
-
-
-
-    
-//    playerDraftPositionTextField.translatesAutoresizingMaskIntoConstraints = false
-//    playerDraftPositionTextField.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
-//    playerDraftPositionTextField.bottomAnchor.constraint(equalTo: playerNumberOfTeamsLabel.topAnchor,
-//                                                         constant: -30).isActive = true
-//    playerDraftPositionTextField.widthAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true
-    
-
-//    
-//    playerNumberOfTeamsTextField.translatesAutoresizingMaskIntoConstraints = false
-//    playerNumberOfTeamsTextField.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
-//    playerNumberOfTeamsTextField.bottomAnchor.constraint(equalTo: startDraftButton.topAnchor,
-//                                                         constant: -40).isActive = true
-//    playerNumberOfTeamsTextField.widthAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true
-    
+    playerDraftPositionPicker.translatesAutoresizingMaskIntoConstraints = false
+    playerDraftPositionPicker.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
+    playerDraftPositionPicker.topAnchor.constraint(equalTo: playerDraftPositionLabel.bottomAnchor,
+                                                      constant: -30).isActive = true
     
     howToPlayButton.translatesAutoresizingMaskIntoConstraints = false
     howToPlayButton.topAnchor.constraint(equalTo: startDraftButton.topAnchor, constant: -60).isActive = true
@@ -306,17 +262,38 @@ extension NewDraftSettingsViewController: UITextFieldDelegate {
 
 extension NewDraftSettingsViewController: UIPickerViewDelegate {
   func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-    return String(playerNumberOfTeamsPickerOptions[row])
+    if pickerView == playerNumberOfTeamsPicker {
+      return String(playerNumberOfTeamsPickerOptions[row])
+    } else if pickerView == playerDraftPositionPicker {
+      return String(playerDraftPositionPickerOptions[row])
+    } else {
+      return ""
+    }
+
   }
   
   func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-    playerNumberOfTeams = playerNumberOfTeamsPickerOptions[row]
+    if pickerView == playerNumberOfTeamsPicker {
+      playerNumberOfTeams = playerNumberOfTeamsPickerOptions[row]
+    } else if pickerView == playerDraftPositionPicker {
+      playerDraftPosition = playerDraftPositionPickerOptions[row]
+    }
+
   }
   
   func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-    let pickerLabel = String(playerNumberOfTeamsPickerOptions[row])
-    let label = NSAttributedString(string: pickerLabel,
+    var label = NSAttributedString(string: "",
+                                   attributes: [ NSForegroundColorAttributeName: UIColor.white ])
+    if pickerView == playerNumberOfTeamsPicker {
+      let pickerLabel = String(playerNumberOfTeamsPickerOptions[row])
+      label = NSAttributedString(string: pickerLabel,
                                      attributes: [ NSForegroundColorAttributeName: UIColor.white ])
+    } else if pickerView == playerDraftPositionPicker {
+      let pickerLabel = String(playerDraftPositionPickerOptions[row])
+      label = NSAttributedString(string: pickerLabel,
+                                     attributes: [ NSForegroundColorAttributeName: UIColor.white ])
+    }
+
     return label
   }
 }
@@ -325,7 +302,14 @@ extension NewDraftSettingsViewController: UIPickerViewDataSource {
   func numberOfComponents(in: UIPickerView) -> Int {
     return 1
   }
+  
   func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-    return playerNumberOfTeamsPickerOptions.count
+    if pickerView == playerNumberOfTeamsPicker {
+      return playerNumberOfTeamsPickerOptions.count
+    } else if pickerView == playerDraftPositionPicker {
+      return playerDraftPositionPickerOptions.count
+    } else {
+      return 0
+    }
   }
 }
