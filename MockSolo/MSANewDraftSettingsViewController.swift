@@ -60,24 +60,9 @@ class NewDraftSettingsViewController: UIViewController {
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "StartDraft" {
-      
-      guard let draftPosition = playerDraftPositionTextField.text else {
-        print("Invalid Draft Position: \(playerDraftPositionTextField.text)")
-        return
-      }
-      
-      guard let numberOfDrafters = playerNumberOfTeamsTextField.text else {
-        print("Invalid Number of Drafters: \(playerNumberOfTeamsTextField.text)")
-        return
-      }
-      
-      if let draftPositionInt = Int(draftPosition) {
-        DraftManager.sharedInstance.draftPickNumber = draftPositionInt
-      }
-      if let numberOfDraftersInt = Int(numberOfDrafters) {
-        DraftManager.sharedInstance.numberOfDrafters = numberOfDraftersInt
-      }
-      
+      DraftManager.sharedInstance.numberOfDrafters = playerNumberOfTeams
+      DraftManager.sharedInstance.draftPickNumber = playerDraftPosition
+
       DraftManager.sharedInstance.startDraft()
     }
   }
@@ -90,14 +75,18 @@ class NewDraftSettingsViewController: UIViewController {
     
     pageTitle.text = "MockSolo"
     pageTitle.textColor = .white
-    pageTitle.font = UIFont.boldSystemFont(ofSize: 20)
-    
+    pageTitle.font = UIFont.boldSystemFont(ofSize: 30)
+    pageTitle.adjustsFontSizeToFitWidth = true
+    pageTitle.minimumScaleFactor = 0.8
+    pageTitle.sizeToFit()
     
     playerNumberOfTeamsLabel.textColor = .white
     playerNumberOfTeamsLabel.text = "How Many Teams Are In Your League?"
-    playerNumberOfTeamsLabel.lineBreakMode = .byWordWrapping
-    playerNumberOfTeamsLabel.numberOfLines = 3
-    playerNumberOfTeamsLabel.preferredMaxLayoutWidth = view.bounds.width - 10
+    playerNumberOfTeamsLabel.font = UIFont.systemFont(ofSize: 20)
+    playerNumberOfTeamsLabel.lineBreakMode = .byTruncatingTail
+    playerNumberOfTeamsLabel.numberOfLines = 1
+    playerNumberOfTeamsLabel.minimumScaleFactor = 0.8
+    playerNumberOfTeamsLabel.adjustsFontSizeToFitWidth = true
     playerNumberOfTeamsLabel.sizeToFit()
     
     playerNumberOfTeamsPicker.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
@@ -158,15 +147,21 @@ class NewDraftSettingsViewController: UIViewController {
 
     pageTitle.translatesAutoresizingMaskIntoConstraints = false
     pageTitle.topAnchor.constraint(equalTo: dimmedView.topAnchor, constant: 40).isActive = true
+    pageTitle.widthAnchor.constraint(lessThanOrEqualTo: dimmedView.widthAnchor,
+                                     constant: -10).isActive = true
     pageTitle.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
     
     playerNumberOfTeamsLabel.translatesAutoresizingMaskIntoConstraints = false
+    playerNumberOfTeamsLabel.widthAnchor.constraint(lessThanOrEqualTo: dimmedView.widthAnchor,
+                                                    constant: -10).isActive = true
     playerNumberOfTeamsLabel.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
-    playerNumberOfTeamsLabel.bottomAnchor.constraint(equalTo: pageTitle.bottomAnchor,
-                                                     constant: 40).isActive = true
+    playerNumberOfTeamsLabel.bottomAnchor.constraint(greaterThanOrEqualTo: pageTitle.bottomAnchor,
+                                                     constant: 10).isActive = true
+    playerNumberOfTeamsLabel.bottomAnchor.constraint(lessThanOrEqualTo: pageTitle.bottomAnchor,
+                                                     constant: 70).isActive = true
     
     playerNumberOfTeamsPicker.translatesAutoresizingMaskIntoConstraints = false
-    playerNumberOfTeamsPicker.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = false
+    playerNumberOfTeamsPicker.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
     playerNumberOfTeamsPicker.topAnchor.constraint(equalTo: playerNumberOfTeamsLabel.bottomAnchor,
                                                    constant: -35).isActive = true
     
@@ -180,6 +175,8 @@ class NewDraftSettingsViewController: UIViewController {
     playerDraftPositionPicker.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
     playerDraftPositionPicker.topAnchor.constraint(equalTo: playerDraftPositionLabel.bottomAnchor,
                                                       constant: -35).isActive = true
+    playerDraftPositionPicker.bottomAnchor.constraint(lessThanOrEqualTo: howToPlayButton.topAnchor,
+                                                      constant: 40).isActive = true
     
     howToPlayButton.translatesAutoresizingMaskIntoConstraints = false
     howToPlayButton.topAnchor.constraint(equalTo: startDraftButton.topAnchor, constant: -60).isActive = true
