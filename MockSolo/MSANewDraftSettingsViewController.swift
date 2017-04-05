@@ -93,9 +93,11 @@ class NewDraftSettingsViewController: UIViewController {
     
     playerDraftPositionLabel.textColor = UIColor.white
     playerDraftPositionLabel.text = "What Position Are You Drafting From?"
-    playerDraftPositionLabel.lineBreakMode = .byWordWrapping
-    playerDraftPositionLabel.numberOfLines = 2
-    playerDraftPositionLabel.preferredMaxLayoutWidth = view.bounds.width - 10
+    playerDraftPositionLabel.font = UIFont.systemFont(ofSize: 20)
+    playerDraftPositionLabel.lineBreakMode = .byTruncatingTail
+    playerDraftPositionLabel.numberOfLines = 1
+    playerDraftPositionLabel.minimumScaleFactor = 0.8
+    playerDraftPositionLabel.adjustsFontSizeToFitWidth = true
     playerDraftPositionLabel.sizeToFit()
   
     playerDraftPositionPicker.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
@@ -156,7 +158,7 @@ class NewDraftSettingsViewController: UIViewController {
                                                     constant: -10).isActive = true
     playerNumberOfTeamsLabel.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
     playerNumberOfTeamsLabel.bottomAnchor.constraint(greaterThanOrEqualTo: pageTitle.bottomAnchor,
-                                                     constant: 10).isActive = true
+                                                     constant: 30).isActive = true
     playerNumberOfTeamsLabel.bottomAnchor.constraint(lessThanOrEqualTo: pageTitle.bottomAnchor,
                                                      constant: 70).isActive = true
     
@@ -166,11 +168,14 @@ class NewDraftSettingsViewController: UIViewController {
                                                    constant: -35).isActive = true
     
     playerDraftPositionLabel.translatesAutoresizingMaskIntoConstraints = false
+    playerDraftPositionLabel.widthAnchor.constraint(lessThanOrEqualTo: dimmedView.widthAnchor,
+                                                    constant: -10).isActive = true
     playerDraftPositionLabel.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
-    playerDraftPositionLabel.topAnchor.constraint(equalTo: playerNumberOfTeamsPicker.bottomAnchor,
+    playerDraftPositionLabel.topAnchor.constraint(greaterThanOrEqualTo: playerNumberOfTeamsPicker.bottomAnchor,
                                                      constant: -30).isActive = true
+    playerDraftPositionLabel.topAnchor.constraint(lessThanOrEqualTo: playerNumberOfTeamsPicker.bottomAnchor,
+                                                  constant: 10).isActive = true
 
-    
     playerDraftPositionPicker.translatesAutoresizingMaskIntoConstraints = false
     playerDraftPositionPicker.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
     playerDraftPositionPicker.topAnchor.constraint(equalTo: playerDraftPositionLabel.bottomAnchor,
