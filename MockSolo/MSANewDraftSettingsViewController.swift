@@ -193,16 +193,16 @@ class NewDraftSettingsViewController: UIViewController {
     startDraftButton.bottomAnchor.constraint(equalTo: dimmedView.bottomAnchor, constant: -35).isActive = true
   }
   
-  func tap() {
+    @objc func tap() {
     playerDraftPositionTextField.resignFirstResponder()
     playerNumberOfTeamsTextField.resignFirstResponder()
   }
 
-  func openHowToPlay(_ sender: UIButton) {
+    @objc func openHowToPlay(_ sender: UIButton) {
     performSegue(withIdentifier: "HowToPlay", sender: sender)
   }
   
-  func startDraft(_ sender: UIButton) {
+    @objc func startDraft(_ sender: UIButton) {
     performSegue(withIdentifier: "StartDraft", sender: sender)
   }
   
@@ -263,15 +263,15 @@ extension NewDraftSettingsViewController: UIPickerViewDelegate {
   
   func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
     var label = NSAttributedString(string: "",
-                                   attributes: [ NSForegroundColorAttributeName: UIColor.white ])
+                                   attributes: [ NSAttributedStringKey.foregroundColor: UIColor.white ])
     if pickerView == playerNumberOfTeamsPicker {
       let pickerLabel = String(playerNumberOfTeamsPickerOptions[row])
       label = NSAttributedString(string: pickerLabel,
-                                 attributes: [ NSForegroundColorAttributeName: UIColor.white ])
+                                 attributes: [ NSAttributedStringKey.foregroundColor: UIColor.white ])
     } else if pickerView == playerDraftPositionPicker {
       let pickerLabel = String(playerDraftPositionPickerOptions[row])
       label = NSAttributedString(string: pickerLabel,
-                                 attributes: [ NSForegroundColorAttributeName: UIColor.white ])
+                                 attributes: [ NSAttributedStringKey.foregroundColor: UIColor.white ])
     }
 
     return label

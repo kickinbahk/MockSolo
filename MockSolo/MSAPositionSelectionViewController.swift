@@ -102,7 +102,7 @@ class PositionSelectionViewController: UIViewController {
     }
   }
   
-  func close(_ sender: Any) {
+    @objc func close(_ sender: Any) {
     dismiss(animated: true, completion: nil)
   }
   
@@ -179,7 +179,7 @@ class PositionSelectionViewController: UIViewController {
                                                     constant: -10).isActive = true
   }
   
-  func positionSelected(_ sender: UISegmentedControl) {
+    @objc func positionSelected(_ sender: UISegmentedControl) {
     selectedIndex = sender.selectedSegmentIndex
     let draft = DraftManager.sharedInstance
     var amountToRemove = 0

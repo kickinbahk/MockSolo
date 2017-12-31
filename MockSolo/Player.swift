@@ -9,20 +9,20 @@
 import Foundation
 
 class Player {
-  var rank: Int
-  var name: String
-  var positions: [String]
-  var team: String
-  var eligiblePositions: [String]
+      var rank: Int
+      var name: String
+      var positions: [String]
+      var team: String
+      var eligiblePositions: [String]
   
     
-  init(rank: Int, name: String, positions: [String], team: String, eligiblePositions: [String]) {
-    self.rank = rank
-    self.name = name
-    self.positions = positions
-    self.team = team
-    self.eligiblePositions = eligiblePositions
-  }
+    init(rank: Int, name: String, positions: [String], team: String, eligiblePositions: [String]) {
+        self.rank = rank
+        self.name = name
+        self.positions = positions
+        self.team = team
+        self.eligiblePositions = eligiblePositions
+    }
     
   
 }

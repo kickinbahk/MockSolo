@@ -87,7 +87,7 @@ class RestartDraftViewController: UIViewController {
     
   }
   
-  func restartDraft(_ sender: UIButton) {
+    @objc func restartDraft(_ sender: UIButton) {
     performSegue(withIdentifier: "RestartDraft", sender: sender)
   }
 }

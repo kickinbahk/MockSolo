@@ -9,7 +9,6 @@
 import UIKit
 
 class HowToPlayViewController: UIViewController {
-  
   let closeButton = UIButton()
   let instructionTitleLabel = UILabel()
   let instructionTextLabel = UILabel()
@@ -95,7 +94,7 @@ class HowToPlayViewController: UIViewController {
     
   }
 
-  func close() {
+    @objc func close() {
     dismiss(animated: true, completion: nil)
   }
 
