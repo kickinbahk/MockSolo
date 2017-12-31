@@ -21,6 +21,7 @@ class Draft {
   var loadedPlayers = [String: AnyObject]()
   
   init() {
+    FirebaseApp.configure()
     self.draftPickNumber = 5
     self.numberOfDrafters = 10
     self.roster = Roster([["C": ""],

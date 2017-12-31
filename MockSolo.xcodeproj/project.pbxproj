@@ -12,7 +12,7 @@
 		EB013BA11DFF6713006A8A29 /* MSAPositionSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB013BA01DFF6713006A8A29 /* MSAPositionSelectionViewController.swift */; };
 		EB013BA31E004638006A8A29 /* MSADimmingPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB013BA21E004638006A8A29 /* MSADimmingPresentationController.swift */; };
 		EB013BA51E004693006A8A29 /* MSAGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB013BA41E004693006A8A29 /* MSAGradientView.swift */; };
-		EB43E9C51FF98BB7001273F7 /* GoogleService-Info-2.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB43E9C41FF98BB6001273F7 /* GoogleService-Info-2.plist */; };
+		EB43E9C71FF991FD001273F7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB43E9C61FF991FD001273F7 /* GoogleService-Info.plist */; };
 		EB4ACB3B1E12BB70007B44DB /* Draft.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4ACB3A1E12BB70007B44DB /* Draft.swift */; };
 		EB5089C91E4B79E900DAE097 /* HowToPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5089C81E4B79E900DAE097 /* HowToPlayViewController.swift */; };
 		EB5C02A91DFB03880078253C /* MSADraftPicksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5C02A81DFB03880078253C /* MSADraftPicksTableViewController.swift */; };
@@ -64,7 +64,7 @@
 		EB013BA01DFF6713006A8A29 /* MSAPositionSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSAPositionSelectionViewController.swift; sourceTree = "<group>"; };
 		EB013BA21E004638006A8A29 /* MSADimmingPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSADimmingPresentationController.swift; sourceTree = "<group>"; };
 		EB013BA41E004693006A8A29 /* MSAGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSAGradientView.swift; sourceTree = "<group>"; };
-		EB43E9C41FF98BB6001273F7 /* GoogleService-Info-2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-2.plist"; sourceTree = "<group>"; };
+		EB43E9C61FF991FD001273F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EB4ACB3A1E12BB70007B44DB /* Draft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Draft.swift; sourceTree = "<group>"; };
 		EB5089C81E4B79E900DAE097 /* HowToPlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowToPlayViewController.swift; sourceTree = "<group>"; };
 		EB5C02A81DFB03880078253C /* MSADraftPicksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSADraftPicksTableViewController.swift; sourceTree = "<group>"; };
@@ -169,7 +169,7 @@
 		EBF3047E1DF62A8E00AD50D0 /* MockSolo */ = {
 			isa = PBXGroup;
 			children = (
-				EB43E9C41FF98BB6001273F7 /* GoogleService-Info-2.plist */,
+				EB43E9C61FF991FD001273F7 /* GoogleService-Info.plist */,
 				EBF3047F1DF62A8E00AD50D0 /* AppDelegate.swift */,
 				EBF304861DF62A8E00AD50D0 /* Assets.xcassets */,
 				EB4ACB3A1E12BB70007B44DB /* Draft.swift */,
@@ -336,8 +336,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB9748E41E3D6BF500ADC802 /* Espn2017Top300.json in Resources */,
+				EB43E9C71FF991FD001273F7 /* GoogleService-Info.plist in Resources */,
 				EBF304871DF62A8E00AD50D0 /* Assets.xcassets in Resources */,
-				EB43E9C51FF98BB7001273F7 /* GoogleService-Info-2.plist in Resources */,
 				EBF304851DF62A8E00AD50D0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
