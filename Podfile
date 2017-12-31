@@ -6,14 +6,14 @@ target 'MockSolo' do
   use_frameworks!
 
   # Pods for MockSolo
+  pod 'Firebase/Core'
+  pod 'Firebase/Firestore'
 
   target 'MockSoloTests' do
     inherit! :search_paths
     # Pods for testing
     pod 'Quick'
     pod 'Nimble'
-    pod 'Firebase/Core'
-    pod 'Firebase/Firestore'
   end
 
   target 'MockSoloUITests' do
