@@ -19,9 +19,10 @@ class Draft {
   var count = 1
   var fileToLoad = "Espn2017Top300"
   var loadedPlayers = [String: AnyObject]()
-  
+    
   init() {
     FirebaseApp.configure()
+    let db = Firestore.firestore()
     self.draftPickNumber = 5
     self.numberOfDrafters = 10
     self.roster = Roster([["C": ""],
@@ -50,11 +51,27 @@ class Draft {
                     ["Bench": ""],
                     ["Bench": ""]])
 
-    if let jsonDictionary = self.parse(json: self.performLoad(with: fileToLoad)!) {
-     playerArray = parse(dictionary: jsonDictionary)
-    }
     
-    self.players = playerArray
+    db.collection("espn-top-300-ranks").getDocuments() { (querySnapshot, err) in
+        if let err = err {
+            print("Error getting documents: \(err)")
+        } else {
+            for document in querySnapshot!.documents {
+               // print("\(document.documentID) => \(document.data())")
+                self.playerArray.append(self.parse(id: document.documentID, dictionary: document.data()))
+                
+            }
+        }
+        self.players = self.playerArray
+        for player in self.players {
+            print("\(player.name) - \(player.rank)")
+        }
+    }
+//    if let jsonDictionary = self.parse(json: self.performLoad(with: fileToLoad)!) {
+//     playerArray = parse(dictionary: jsonDictionary)
+//    }
+
+
 
   }
   
@@ -115,11 +132,11 @@ class Draft {
                     ["Bench": ""],
                     ["Bench": ""]])
     
-    if let jsonDictionary = self.parse(json: self.performLoad(with: fileToLoad)!) {
-      playerArray = parse(dictionary: jsonDictionary)
-    }
-    
-    players = playerArray
+//    if let jsonDictionary = self.parse(json: self.performLoad(with: fileToLoad)!) {
+//      playerArray = parse(dictionary: jsonDictionary)
+//    }
+//
+//    players = playerArray
   }
   
   func performLoad(with file: String) -> String? {
@@ -144,35 +161,34 @@ class Draft {
     }
   }
   
-  func parse(dictionary: [String: Any]) -> [Player] {
-    var array = [Player]()
-    let numberOfItems = dictionary.count + 1
-    var playerName: String = ""
-    var playerPositions = [String]()
-    var playerTeam: String = ""
-    var playerEligiblePositions = [String]()
-    
-    for rank in 1..<numberOfItems {
-      let item = dictionary.first(where: { Int($0.key) == rank })!.value as! [String: AnyObject]
+    func parse(id: String?, dictionary: [String: Any]) -> Player {
+        var rank = 0
+        var playerName = ""
+        var playerPositions = [String]()
+        var playerTeam = ""
+        var playerEligiblePositions = [String]()
+        
+        if let playerRank = Int(id!) {
+            rank = playerRank
+        }
+
+        if let name = dictionary["name"] {
+            print("Got Name: \(name)")
+            playerName = name as! String
+        }
+        if let positions = dictionary["positions"] {
+            playerPositions = positions as! [String]
+            print("Positions: \(playerPositions)")
+        }
+        if let team = dictionary["team"] {
+            playerTeam = team as! String
+        }
+        if let eligiblePositions = dictionary["eligiblePositions"] {
+            playerEligiblePositions = eligiblePositions as! [String]
+        }
       
-      if let name = item["name"] {
-        playerName = name as! String
-      }
-      if let positions = item["positions"] {
-        playerPositions = positions as! [String]
-      }
-      if let team = item["team"] {
-        playerTeam = team as! String
-      }
-      if let eligiblePositions = item["eligiblePositions"] {
-        playerEligiblePositions = eligiblePositions as! [String]
-      }
-      
-      array.append(Player(rank: rank, name: playerName, positions: playerPositions,
-                          team: playerTeam, eligiblePositions: playerEligiblePositions))
+        return Player(rank: rank, name: playerName, positions: playerPositions,
+                      team: playerTeam, eligiblePositions: playerEligiblePositions)
     }
-    
-    return array
-  }
 
 }

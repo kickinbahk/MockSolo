@@ -28,6 +28,7 @@ class DraftPlayersViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     playerList = DraftManager.sharedInstance.players
+    print(playerList)
     
     draftPlayersSearchBar.delegate = self
     draftPlayersTableView.delegate = self
