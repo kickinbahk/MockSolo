@@ -60,6 +60,7 @@ class NewDraftSettingsViewController: UIViewController {
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "StartDraft" {
+        
       DraftManager.sharedInstance.numberOfDrafters = playerNumberOfTeams
       DraftManager.sharedInstance.draftPickNumber = playerDraftPosition
 
