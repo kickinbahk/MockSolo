@@ -10,70 +10,67 @@ import Foundation
 import Firebase
 
 class Draft {
-  var playerArray = [Player]()
-  
-  var draftPickNumber: Int
-  var roster: Roster
-  var players = [Player]()
-  var numberOfDrafters: Int
-  var count = 1
-  var fileToLoad = "Espn2017Top300"
-  var loadedPlayers = [String: AnyObject]()
-    
-  init() {
-    FirebaseApp.configure()
-    let db = Firestore.firestore()
-    self.draftPickNumber = 5
-    self.numberOfDrafters = 10
-    self.roster = Roster([["C": ""],
-                    ["1B": ""],
-                    ["2B": ""],
-                    ["SS": ""],
-                    ["2B/SS": ""],
-                    ["3B": ""],
-                    ["1B/3B": ""],
-                    ["OF": ""],
-                    ["OF": ""],
-                    ["OF": ""],
-                    ["OF": ""],
-                    ["OF": ""],
-                    ["Util": ""],
-                    ["P": ""],
-                    ["P": ""],
-                    ["P": ""],
-                    ["P": ""],
-                    ["P": ""],
-                    ["P": ""],
-                    ["P": ""],
-                    ["P": ""],
-                    ["P": ""],
-                    ["Bench": ""],
-                    ["Bench": ""],
-                    ["Bench": ""]])
+    var playerArray = [Player]()
 
-    
-    db.collection("espn-top-300-ranks").getDocuments() { (querySnapshot, err) in
-        if let err = err {
-            print("Error getting documents: \(err)")
-        } else {
-            for document in querySnapshot!.documents {
-               // print("\(document.documentID) => \(document.data())")
-                self.playerArray.append(self.parse(id: document.documentID, dictionary: document.data()))
-                
+    var draftPickNumber: Int
+    var roster: Roster
+    var players = [Player]()
+    var numberOfDrafters: Int
+    var count = 1
+    var fileToLoad = "Espn2017Top300"
+    var loadedPlayers = [String: AnyObject]()
+    var dataReceived = false
+
+    init() {
+        FirebaseApp.configure()
+        let db = Firestore.firestore()
+        self.draftPickNumber = 5
+        self.numberOfDrafters = 10
+        self.roster = Roster([["C": ""],
+                            ["1B": ""],
+                            ["2B": ""],
+                            ["SS": ""],
+                            ["2B/SS": ""],
+                            ["3B": ""],
+                            ["1B/3B": ""],
+                            ["OF": ""],
+                            ["OF": ""],
+                            ["OF": ""],
+                            ["OF": ""],
+                            ["OF": ""],
+                            ["Util": ""],
+                            ["P": ""],
+                            ["P": ""],
+                            ["P": ""],
+                            ["P": ""],
+                            ["P": ""],
+                            ["P": ""],
+                            ["P": ""],
+                            ["P": ""],
+                            ["P": ""],
+                            ["Bench": ""],
+                            ["Bench": ""],
+                            ["Bench": ""]])
+
+
+        db.collection("espn-top-300-ranks").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                   // print("\(document.documentID) => \(document.data())")
+                    self.playerArray.append(self.parse(id: document.documentID, dictionary: document.data()))
+                    
+                    self.dataReceived = true
+                }
+            }
+            self.players = self.playerArray
+            for player in self.players {
+                print("\(player.name) - \(player.rank)")
             }
         }
-        self.players = self.playerArray
-        for player in self.players {
-            print("\(player.name) - \(player.rank)")
-        }
+
     }
-//    if let jsonDictionary = self.parse(json: self.performLoad(with: fileToLoad)!) {
-//     playerArray = parse(dictionary: jsonDictionary)
-//    }
-
-
-
-  }
   
   func removePreviousPlayers() {
     
