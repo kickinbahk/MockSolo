@@ -9,19 +9,26 @@
 import Foundation
 import Firebase
 
-class Draft {
-    var playerArray = [Player]()
+let playerArrayDidUpdateNotification = "playerArrayDidUpdateNotification"
 
+class Draft {
+
+    var playerArray = [Player]()
     var draftPickNumber: Int
     var roster: Roster
-    var players = [Player]()
+    var players: [Player]? {
+        didSet {
+            NotificationCenter.default.post(name:
+                NSNotification.Name(rawValue: playerArrayDidUpdateNotification), object: nil)
+        }
+    }
     var numberOfDrafters: Int
     var count = 1
-    var fileToLoad = "Espn2017Top300"
     var loadedPlayers = [String: AnyObject]()
-    var dataReceived = false
+
 
     init() {
+        print("Draft Init")
         FirebaseApp.configure()
         let db = Firestore.firestore()
         self.draftPickNumber = 5
@@ -52,7 +59,7 @@ class Draft {
                             ["Bench": ""],
                             ["Bench": ""]])
 
-
+        
         db.collection("espn-top-300-ranks").getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
@@ -61,15 +68,10 @@ class Draft {
                    // print("\(document.documentID) => \(document.data())")
                     self.playerArray.append(self.parse(id: document.documentID, dictionary: document.data()))
                     
-                    self.dataReceived = true
                 }
-            }
-            self.players = self.playerArray
-            for player in self.players {
-                print("\(player.name) - \(player.rank)")
+                self.players = self.playerArray
             }
         }
-
     }
   
   func removePreviousPlayers() {
@@ -78,26 +80,26 @@ class Draft {
       let amountToRemove = (draftPickNumber * 2) - 1
       print("Even pick number to remove: \(amountToRemove)")
       for _ in 0..<amountToRemove {
-        players.remove(at: 0)
+        players?.remove(at: 0)
       }
     } else if count % 2 != 0 {
       let amountToRemove = ((numberOfDrafters - draftPickNumber) * 2)
       print("Odd pick number to remove: \(amountToRemove)")
       for _ in 0...amountToRemove {
-        players.remove(at: 0)
+        players?.remove(at: 0)
       }
     }
 
     count += 1
   }
   
-  func startDraft() {
-    let amountToRemove = draftPickNumber - 1
-    
-    for _ in 0..<amountToRemove {
-      players.remove(at: 0)
+    func startDraft() {
+        let amountToRemove = draftPickNumber - 1
+        print(players)
+        for _ in 0..<amountToRemove {            
+            players!.remove(at: 0)
+        }
     }
-  }
   
   func newDraft() {
     draftPickNumber = 5

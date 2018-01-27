@@ -53,20 +53,19 @@ class NewDraftSettingsViewController: UIViewController {
     view.layoutIfNeeded()
   }
   
-  override func viewWillAppear(_ animated: Bool) {
-    UIApplication.shared.statusBarStyle = .lightContent
-  }
+    override func viewWillAppear(_ animated: Bool) {
+        UIApplication.shared.statusBarStyle = .lightContent
+    }
 
   
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == "StartDraft" {
-        
-      DraftManager.sharedInstance.numberOfDrafters = playerNumberOfTeams
-      DraftManager.sharedInstance.draftPickNumber = playerDraftPosition
-
-      DraftManager.sharedInstance.startDraft()
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "StartDraft" {
+            DraftManager.sharedInstance.numberOfDrafters = playerNumberOfTeams
+            DraftManager.sharedInstance.draftPickNumber = playerDraftPosition
+            
+            DraftManager.sharedInstance.startDraft()
+        }
     }
-  }
 
   func updateUI() {
     let image = UIImage(named: "baseball")
@@ -193,24 +192,19 @@ class NewDraftSettingsViewController: UIViewController {
     startDraftButton.centerXAnchor.constraint(equalTo: dimmedView.centerXAnchor).isActive = true
     startDraftButton.bottomAnchor.constraint(equalTo: dimmedView.bottomAnchor, constant: -35).isActive = true
   }
-  
+    
     @objc func tap() {
-    playerDraftPositionTextField.resignFirstResponder()
-    playerNumberOfTeamsTextField.resignFirstResponder()
-  }
+        playerDraftPositionTextField.resignFirstResponder()
+        playerNumberOfTeamsTextField.resignFirstResponder()
+    }
 
     @objc func openHowToPlay(_ sender: UIButton) {
-    performSegue(withIdentifier: "HowToPlay", sender: sender)
-  }
+        performSegue(withIdentifier: "HowToPlay", sender: sender)
+    }
   
     @objc func startDraft(_ sender: UIButton) {
-    performSegue(withIdentifier: "StartDraft", sender: sender)
-  }
-  
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
+        performSegue(withIdentifier: "StartDraft", sender: sender)
+    }
 
 }
 

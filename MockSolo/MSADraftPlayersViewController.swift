@@ -27,23 +27,9 @@ class DraftPlayersViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    playerList = DraftManager.sharedInstance.players
-    print(playerList)
+     NotificationCenter.default.addObserver(self, selector: #selector(getDataUpdate),
+                                            name: NSNotification.Name(rawValue: playerArrayDidUpdateNotification), object: nil)
     
-    draftPlayersSearchBar.delegate = self
-    draftPlayersTableView.delegate = self
-    draftPlayersTableView.dataSource = self
-    
-    draftPlayersSearchBar.returnKeyType = UIReturnKeyType.done
-    draftPlayersSearchBar.enablesReturnKeyAutomatically = false
-
-    draftPlayersTableView.contentInset = UIEdgeInsets(top: DraftPlayersTableViewProps.topContentInset,
-                                                      left: DraftPlayersTableViewProps.sideContentInset,
-                                                      bottom: DraftPlayersTableViewProps.bottomContentInset,
-                                                      right: DraftPlayersTableViewProps.sideContentInset)
-    draftPlayersTableView.rowHeight = DraftPlayersTableViewProps.cellHeight
-    
-    draftPlayersTableView.layoutIfNeeded()
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -62,6 +48,27 @@ class DraftPlayersViewController: UIViewController {
       positionSelectionController.isPopUp = true
     }
   }
+    
+    
+    func layoutUI() {
+        print(playerList)
+        
+        draftPlayersSearchBar.delegate = self
+        draftPlayersTableView.delegate = self
+        draftPlayersTableView.dataSource = self
+        
+        draftPlayersSearchBar.returnKeyType = UIReturnKeyType.done
+        draftPlayersSearchBar.enablesReturnKeyAutomatically = false
+        
+        draftPlayersTableView.contentInset = UIEdgeInsets(top: DraftPlayersTableViewProps.topContentInset,
+                                                          left: DraftPlayersTableViewProps.sideContentInset,
+                                                          bottom: DraftPlayersTableViewProps.bottomContentInset,
+                                                          right: DraftPlayersTableViewProps.sideContentInset)
+        draftPlayersTableView.rowHeight = DraftPlayersTableViewProps.cellHeight
+        
+        draftPlayersTableView.layoutIfNeeded()
+    }
+    
   
   func filterPlayersForSearchText(searchText: String, scope: String = "All") {
     filteredPlayers = playerList.filter { player in
@@ -70,11 +77,12 @@ class DraftPlayersViewController: UIViewController {
     draftPlayersTableView.reloadData()
   }
 
-  // MARK: - Memory Warning
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
+    @objc private func getDataUpdate() {
+        if let players = DraftManager.sharedInstance.players {
+            playerList = players
+        }
+        layoutUI()
+    }
 }
 
 extension DraftPlayersViewController: UITableViewDataSource {
